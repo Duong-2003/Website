@@ -15,7 +15,8 @@
 
 
 <?php
-include('../Includes/FE/header.php');
+ include('../sources/FE/header.php');
+ 
 
 
 ?>
@@ -108,7 +109,8 @@ include('../Includes/FE/header.php');
 </style>
 
 <?php
-include('../Includes/FE/footer.php');
+ 
+ include('../sources/FE/footer.php');
 
 
 ?>

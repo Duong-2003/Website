@@ -48,11 +48,11 @@ a{
 </script>
 <body>
     <?php
-    include('../Includes/FE/header.php');
-    include('../Includes/FE/menu.php');
-    include('../Includes/FE/slide.php');
-    include('../Includes/FE/content.php');
-    include('../Includes/FE/footer.php');
+    include('../sources/FE/header.php');
+    include('../sources/FE/menu.php');
+    include('../sources/FE/slide.php');
+    include('../sources/FE/content.php');
+    include('../sources/FE/footer.php');
     
     
     ?>

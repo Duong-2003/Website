@@ -12,12 +12,13 @@
 </head>
 <body>
     <?php
-        include('../Includes/FE/header.php');
-        include('../Includes/FE/menu.php');
+        include('../sources/FE/header.php');
+        include('../sources/FE/menu.php');
+       
     ?>
 
     <?php
-    include_once('../Includes/connect.php');
+    include_once('../sources/connect.php');
     if($_GET['sp_ma'] != '' ){
         $id = $_GET['sp_ma'];
         $sql =  "SELECT * FROM sanpham WHERE sp_ma = $id";

@@ -131,7 +131,7 @@
 
                 <!-- _____________________________________ -->
                 <?php
-                  include_once('../Includes/connect.php');
+                  include_once('../sources/connect.php');
                   $sql = "SELECT * FROM sanpham ORDER BY RAND() LIMIT 8";
                   $result = $connect->query($sql);
                   $duongdanimg = "../Assets/img/SanPham/";
