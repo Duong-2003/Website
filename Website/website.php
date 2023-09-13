@@ -9,6 +9,11 @@
     <!-- <link rel="stylesheet" href="website.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Document</title>
+
+    <?php
+    include('../sources/linkFIle.php');
+    ?>
+
 </head>
 <style>
 *{
@@ -48,11 +53,11 @@ a{
 </script>
 <body>
     <?php
-    include('../Includes/FE/header.php');
-    include('../Includes/FE/menu.php');
-    include('../Includes/FE/slide.php');
-    include('../Includes/FE/content.php');
-    include('../Includes/FE/footer.php');
+    include($linkFE.'header.php');
+    include($linkFE.'menu.php');
+    include($linkFE.'slide.php');
+    include($linkFE.'content.php');
+    include($linkFE.'footer.php');
     
     
     ?>

@@ -1,5 +1,6 @@
 <?php
-include ('../connect.php');
+include('../linkFile.php');
+include ($linkconnSources);
 session_start();
 ob_start();
 $username = $_POST['account'];
@@ -13,12 +14,12 @@ if(isset($_POST['submit']) && $username != '' && $password != ''){
         if (password_verify($password, $stored_hashed_password)) {
             if($user['role'] !=1){
             $connect->close();
-            header("location:../../Pages/website.php");
+            header("location:".$linkWebsite."website.php");
             exit();
             }
             else{
                 $connect->close();
-                header("location:../../admin/MenuAdmin.php");
+                header("location:../../admin/Includes/FE/MenuAdmin.php");
                 exit(); 
             }
         } 

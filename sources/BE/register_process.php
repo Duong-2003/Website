@@ -1,5 +1,6 @@
 <?php
-include ('../connect.php');
+include('../linkFIle.php');
+include ($linkconnSources);
 session_start();
 ob_start();
 if(isset($_POST['submit']) && $_POST['username'] != '' && $_POST['password'] != ''&& $_POST['rePass']!= ''){
@@ -12,7 +13,7 @@ if(isset($_POST['submit']) && $_POST['username'] != '' && $_POST['password'] != 
     if($password != $rePass)
     {
         $connect->close();
-        header("location:../../Pages/register.php");
+        header("location:".$linkWebsite."register.php");
         exit(); 
     }
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
@@ -24,7 +25,7 @@ if(isset($_POST['submit']) && $_POST['username'] != '' && $_POST['password'] != 
         $query = "INSERT INTO users (name, pass, role,email) VALUES ('$username', '$hashed_password','$role',NULL)";
     }
     if ($connect->query($query) === TRUE) {
-        header("location:../../Pages/login.php");
+        header("location:".$linkWebsite."login.php");
     }else {
         echo "Lỗi khi đăng ký: " . $connect->error;
     }
@@ -32,7 +33,7 @@ if(isset($_POST['submit']) && $_POST['username'] != '' && $_POST['password'] != 
 }
 else{
     $connect->close();
-    header("location:../../Pages/register.php");
+    header("location:".$linkWebsite."register.php");
     exit(); 
 }
 ?>

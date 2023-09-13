@@ -11,13 +11,12 @@
     <title>Document</title>
     <style>
       
-    
-
-.content a{
+    .content a{
     text-decoration: none;
 }
 
     </style>
+    
 </head>
 <body>
 
@@ -32,74 +31,74 @@
 
                   <div class=" col-lg-1 col-md-2 col-sm-2">
                         <a href="" style="color:coral">
-                        <img src="../Assets/img/Sanpham/ip1menu.webp" alt="">
+                        <img src=<?=$linkImgSp."ip1menu.webp" ?>alt="">
                         <p>Samsung Galaxy Z Flip5</p>
                         </a>
                       </div>
                    <div class=" col-lg-1 col-md-2 col-sm-2">
                         <a href="" style="color:coral">
-                        <img src="../Assets/img/Sanpham//ip2menu.webp" alt="">
+                        <img src=<?=$linkImgSp."ip2menu.webp" ?> alt="">
                         <p width="">Iphone 14 Pro Max</p>
                         </a>
                       </div>
                  <div class=" col-lg-1 col-md-2 col-sm-2">
                       <a href="" style="color:coral">
-                      <img src="../Assets/img/Sanpham//ip3menu.webp" alt="">
+                      <img src=<?=$linkImgSp."ip3menu.webp" ?> alt="">
                       <p>Samsung Galaxy Z Fold5</p>
                         </a>
                       </div>
                 <div class=" col-lg-1 col-md-2 col-sm-2">
                       <a href=""style="color:coral">
-                      <img src="../Assets/img/Sanpham//ip4menu.webp" alt="">
+                      <img src=<?=$linkImgSp."ip4menu.webp" ?> alt="">
                       <p>Iphone 13</p>
                         </a>
                       </div>
                 <div class=" col-lg-1 col-md-2 col-sm-2">
                       <a href=""style="color:coral">
-                      <img src="../Assets/img/Sanpham//ip5menu.webp" alt="">
+                      <img src=<?=$linkImgSp."ip5menu.webp"?> alt="">
                       <p>Macbook Air M1</p>
                         </a>
                       </div>
                 <div class=" col-lg-1 col-md-2 col-sm-2">
                       <a href=""style="color:coral">
-                      <img src="../Assets/img/Sanpham//ip6menu.webp" alt="">
+                      <img src=<?=$linkImgSp."/ip6menu.webp" ?> alt="">
                       <p>Iphone 12 Pro Max</p>
                         </a>
                       </div>
                 <div class=" col-lg-1 col-md-2 col-sm-2">
                       <a href=""style="color:coral">
-                      <img src="../Assets/img/Sanpham//ip7menu.webp" alt="">
+                      <img src=<?=$linkImgSp."/ip7menu.webp" ?> alt="">
                       <p>Oppo Reno 10</p>
                         </a>
                       </div>
                  <div class=" col-lg-1 col-md-2 col-sm-2">
                       <a href=""style="color:coral">
-                      <img src="../Assets/img/Sanpham//ip7menu.webp" alt="">
+                      <img src=<?=$linkImgSp."/ip7menu.webp" ?>alt="">
                         <p>Oppo Reno 10</p>
                         </a>
                       </div>
                  <div class=" col-lg-1 col-md-2 col-sm-2">
                       <a href=""style="color:coral">
-                      <img src="../Assets/img/Sanpham//ip7menu.webp" alt="">
+                      <img src=<?=$linkImgSp."/ip7menu.webp"?> alt="">
                         <p>Oppo Reno 10</p>
                         </a>
                       </div>
                  <div class=" col-lg-1 col-md-2 col-sm-2">
                       <a href=""style="color:coral">
-                      <img src="../Assets/img/Sanpham//ip7menu.webp" alt="">
+                      <img src=<?=$linkImgSp."/ip7menu.webp"?> alt="">
                         <p>Oppo Reno 10</p>
                         </a>
                         
                       </div>
                  <div class=" col-lg-1 col-md-2 col-sm-2">
                         <a href="" style="color:coral">
-                        <img src="../Assets/img/Sanpham//ip1menu.webp" alt="">
+                        <img src=<?=$linkImgSp."/ip1menu.webp"?> alt="">
                         <p>Samsung Galaxy Z Flip5</p>
                         </a>
                       </div>
                  <div class=" col-lg-1 col-md-2 col-sm-2">
                         <a href="" style="color:coral">
-                        <img src="../Assets/img/Sanpham//ip1menu.webp" alt="">
+                        <img src=<?=$linkImgSp."/ip1menu.webp"?> alt="">
                         <p>Samsung Galaxy Z Flip5</p>
                         </a>
                       </div>
@@ -131,10 +130,10 @@
 
                 <!-- _____________________________________ -->
                 <?php
-                  include_once('../Includes/connect.php');
+                  include_once($linkconnWebsite);
                   $sql = "SELECT * FROM sanpham ORDER BY RAND() LIMIT 8";
                   $result = $connect->query($sql);
-                  $duongdanimg = "../Assets/img/SanPham/";
+                  $duongdanimg = $linkImgSp;
 
                   $data = array();
                   if ($result->num_rows > 0) {

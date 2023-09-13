@@ -9,13 +9,17 @@
     <link rel="stylesheet" href="website.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Register</title>
+
+    <?php
+    include_once('../sources/linkFIle.php');
+    ?>
 </head>
 
 <body>
 
 
 <?php
-include('../Includes/FE/header.php');
+include($linkFE.'header.php');
 
 
 ?>
@@ -24,14 +28,14 @@ include('../Includes/FE/header.php');
   <div class="container">
     <div class="logForm">
       <div class="registry log_logo">
-        <img src="./assets/img/user.png" alt="">
+        <img src=<?= $linkImgIndex."user.png"  ?> alt="">
       </div>
       <div class="error">
         <p name = "notifi" id="notifi_register"></p>
         <p name = "error" id="error_register"></p>
       </div>
       <span class="log_heading text-dark mb-3">ĐĂNG KÝ</span>
-      <form action="../Includes/BE/register_process.php" method="post">
+      <form action= <?= $linkBE."register_process.php"?> method="post">
         <div class="form-group">
             <label for="email" id="userEmail">Email:</label>
             <div class="input-group mb-3">
@@ -108,7 +112,7 @@ include('../Includes/FE/header.php');
 </style>
 
 <?php
-include('../Includes/FE/footer.php');
+include($linkFE.'footer.php');
 
 
 ?>

@@ -9,7 +9,7 @@
    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Document</title>
-
+    
     <style>
 
 li{
@@ -94,7 +94,7 @@ li{
             <div class="row py-2 " style="text-align: center;">
                 <!-- ------logo-------- -->
                 <div class="col-lg-3 col-md-12" id="logo" style="padding:5px 5px">
-                <a href="./website.php"><img src="../Assets/img/index/Lazada.png" alt=""style="height:50px;witdh:100%" ></a>
+                <a href="./website.php"><img src=<?=$linkImgIndex."Lazada.png" ?> alt=""style="height:50px;witdh:100%" ></a>
                
             </div>
 

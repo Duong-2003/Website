@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="website.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Document</title>
+    
     <style>
 
 
@@ -47,13 +48,13 @@
   </div>
   <div class="carousel-inner" id="slide1">
     <div class="carousel-item active">
-      <img src="../Assets/img/index/ipslide1.webp" class="d-block w-100" alt="...">
+      <img src=<?=$linkImgIndex."ipslide1.webp" ?> class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="../Assets/img/index/ipslide2.webp" class="d-block w-100" alt="...">
+      <img src=<?=$linkImgIndex."ipslide2.webp" ?> class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="../Assets/img/index/ipslide3.webp" class="d-block w-100" alt="...">
+      <img src=<?=$linkImgIndex."ipslide3.webp"?> class="d-block w-100" alt="...">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -86,11 +87,11 @@
             <div class=" slide2 col-sm-4" >
                 
                     <div class="col "id="slide2">
-                        <img  src="../Assets/img/index/ipslide1.webp" alt="">
+                        <img  src=<?=$linkImgIndex."/ipslide1.webp"?> alt="">
                     </div>
 
                     <div class="col "id="slide3">
-                        <img src="../Assets/img/index/ipslide2.webp" alt="">
+                        <img src=<?=$linkImgIndex."ipslide2.webp"?> alt="">
                     </div>
                 </div>
             </div>

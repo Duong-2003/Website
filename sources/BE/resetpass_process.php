@@ -1,5 +1,7 @@
 <?php
-include ('../connect.php');
+include('../linkFile.php');
+include ($linkconnSources);
+
 session_start();
 ob_start();
 $username = $_POST['account'];

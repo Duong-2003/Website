@@ -6,14 +6,15 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./website.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Login</title>
-    <link rel="stylesheet" href="./website.css">
+    <?php
+    include('../sources/linkFIle.php');
+    ?>
 </head>
 <body>
 <?php
-include('../Includes/FE/header.php');
+include($linkFE.'header.php');
 
 
 ?>
@@ -22,14 +23,14 @@ include('../Includes/FE/header.php');
   <div class="container">
     <div class="logForm">
       <div class="login log_logo">
-        <img src="./assets/img/user.png" alt="">
+        <img src= <?=$linkImgIndex."user.png" ?> alt="">
       </div>
       <div class="error">
         <p name = "notifi" id="notifi_log"></p>
         <p name="error" id="error_log"></p>
       </div>
       <span class="log_heading text-dark mb-3">ĐĂNG NHẬP</span>
-      <form action="../Includes/BE/log_process.php" method="post">
+      <form action= <?=$linkBE."log_process.php"?> method="post">
         <div class="form-group">
           <label for="account" id="userAccount">Tài khoản:</label>
           <div class="input-group mb-3">
@@ -69,7 +70,7 @@ include('../Includes/FE/header.php');
 </style>
 
 <?php
-include('../Includes/FE/footer.php');
+include($linkFE.'footer.php');
 
 ?>
 </body>
