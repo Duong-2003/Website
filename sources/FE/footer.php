@@ -45,10 +45,10 @@
 
                     <ul class="list-unstyled mb-0">
                         <li>
-                            <a href="#!" class="text-white">Danh sách cửa hàng</a>
+                            <a href="../Website/form404.php" class="text-white">Danh sách cửa hàng</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-white">Tuyển dụng mới nhất</a>
+                            <a href="../Website/form404.php" class="text-white">Tuyển dụng mới nhất</a>
                         </li>
                         
                     </ul>
@@ -60,10 +60,10 @@
 
                 <ul class="list-unstyled mb-0">
                         <li>
-                            <a href="#!" class="text-white">Chính sách bảo hành</a>
+                            <a href="../Website/form404.php" class="text-white">Chính sách bảo hành</a>
                         </li>
                         <li>
-                            <a href="#!" class="text-white">Chính sách đổi trả</a>
+                            <a href="../Website/form404.php" class="text-white">Chính sách đổi trả</a>
                         </li>
                         
                     </ul>
@@ -74,15 +74,15 @@
 
                     <ul class="list-unstyled mb-0">
                         <li>
-                            <a href="#!" class="text-white">Kỹ thuật: </a>
+                            <a href="../Website/form404.php" class="text-white">Kỹ thuật: </a>
                            <strong>0123.4567 (08:30 – 21:30)</strong>
                         </li>
                         <li>
-                        <a href="#!" class="text-white">Bảo hành: </a>
+                        <a href="../Website/form404.php" class="text-white">Bảo hành: </a>
                            <strong>0123.4567 (08:30 – 21:30)</strong>
                         </li>
                         <li>
-                            <a href="#!" class="text-white">Góp ý: </a>
+                            <a href="../Website/form404.php" class="text-white">Góp ý: </a>
                            <strong>0123.4567 (08:30 – 21:30)</strong>
                         </li>
                         <li>
