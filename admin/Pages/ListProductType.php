@@ -19,7 +19,7 @@
   <div class="content" style="padding: 0 30px;">
     <h1>Danh sách loại sản phẩm</h1>
     <?php
-    include_once('../Includes/connect.php');
+    include_once('../connect.php');
     $sql =  "SELECT * FROM loaisp";
     $result = $connect->query($sql);
 
