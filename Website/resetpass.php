@@ -13,7 +13,7 @@
 <body>
 <?php
  include('../sources/FE/header.php');
-
+ include('../sources/FE/menu.php');
 
 ?>
 
