@@ -86,11 +86,11 @@ nav #menu li:hover  a{
 
 
 
-<<<<<<< HEAD:FE/menu.php
+<!-- <<<<<<< HEAD:FE/menu.php
                            
 =======
                             
->>>>>>> 1bd98092068a83796b163a0b10534da0df7d4dc9:Includes/FE/menu.php
+>>>>>>> 1bd98092068a83796b163a0b10534da0df7d4dc9:Includes/FE/menu.php -->
                             
                         </ul>
                    </div>
