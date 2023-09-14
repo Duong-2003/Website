@@ -1,5 +1,6 @@
 <?php
-include('../connect.php');
+include("../linkAdmin.php");
+include($linkconnIncludes);
 session_start();
 ob_start();
 if(isset($_POST['submit']) && $_POST['sp_img'] != '' && $_POST['sp_motachitiet'] != '' && $_POST['sp_ten'] != '' && $_POST['sp_gia'] != ''&& $_POST['sp_soluong']!= ''){
@@ -22,7 +23,7 @@ if(isset($_POST['submit']) && $_POST['sp_img'] != '' && $_POST['sp_motachitiet']
         VALUES ('$name', '$price',NULL,'$describeDetail','$quantity','$type','$img')";
     }
     if ($connect->query($query) === TRUE) {
-        header("location:../../Pages/ListProduct.php");
+        header("location:".$linkPages."ListProduct.php");
         // echo ("Thành công");
     }else {
         echo "Lỗi không thêm được sản phẩm: " . $connect->error;

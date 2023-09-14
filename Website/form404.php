@@ -2,13 +2,15 @@
 
 
 <?php
-include('../sources/FE/header.php');
+include('../sources/linkFIle.php');
+
+include($linkFE.'header.php');
     
 ?>
 
 
 <div class="" style="text-align: center;">
-    <img src="../Assets/img/index/img404.png" alt="">
+    <img src= <?=$linkImgIndex."img404.png"?> alt="">
 </div>
 
 <?php

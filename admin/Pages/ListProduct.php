@@ -3,12 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>Product List</title>
+
+    <?php
+    include("../Includes/linkAdmin.php");
+    ?>
   </head>
   
   <body>
 
   <?php
-    include('../Includes/FE/MenuAdmin.php');
+     include("./MenuAdmin.php");
+     
   ?>
 
 <script>
@@ -21,7 +26,7 @@
     <h1 style="text-align: center;">Danh mục sản phẩm</h1>
     <hr style="color:aqua">
     <?php
-    include_once('../connect.php');
+    include_once($linkconnPages);
     $sqlLSP =  "SELECT * FROM loaisp";
     $resultLSP = $connect->query($sqlLSP);
 
@@ -82,7 +87,7 @@
                 <div class="container text-center">
                   <div class="row gx-2">
                     <div class="col">
-                    <div class="p-2"><a href="../Includes/BE/DeleteSQL.php?key=sp_ma&table=sanpham&datakey=<?= $sp['sp_ma']?>">
+                    <div class="p-2"><a href= <?=$linkBE."DeleteSQL.php?key=sp_ma&table=sanpham&datakey=".$sp['sp_ma']?>>
                     <button type="submit" name="submit" type="button" class="btn btn-dark">Xóa</button>
                     </a></div>
                     </div>
@@ -107,7 +112,7 @@
       <h1 style="text-align:center">Thêm sản phẩm</h1></span>
       <hr>
     <div class="menu-content  " style="margin: 0 150px;">
-      <form action="./Add_product.php"  method="post">
+      <form action= <?=$linkBE."Add_product.php"?>  method="post">
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Tên sp<span style="color: red;">*</span></span>
           <input name="sp_ten"  type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">

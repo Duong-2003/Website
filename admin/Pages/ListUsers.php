@@ -4,12 +4,15 @@
      <meta charset="utf-8">
     <title>Users List</title>
     
+    <?php
+    include("../Includes/linkAdmin.php");
+    ?>
   </head>
   
   <body>
 
   <?php
-  include('../Includes/FE/MenuAdmin.php');
+  include("./MenuAdmin.php");
   ?>
 
 <script>
@@ -20,7 +23,7 @@
   <div class="content" style="padding: 0 30px;">
     <h1>Danh sách nguời dùng</h1>
     <?php
-    include_once('../connect.php');
+    include_once($linkconnPages);
     $sql =  "SELECT * FROM users";
     $result = $connect->query($sql);
 
@@ -57,7 +60,7 @@
                 <div class="container text-center">
                   <div class="row gx-2">
                     <div class="col">
-                    <div class="p-2"><a href="../Includes/BE/DeleteSQL.php?key=name&table=users&datakey=<?= $user['name']?>">Xóa</a></div>
+                    <div class="p-2"><a href=<?=$linkBE."DeleteSQL.php?key=name&table=users&datakey=".$user['name']?>>Xóa</a></div>
                     </div>
                     <div class="col">
                     <div class="p-2"><a href="">Sửa</a></div>

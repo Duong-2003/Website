@@ -16,8 +16,8 @@
 <?php
 
 include($linkFE.'header.php');
-include($linkFE.'menu.php)
 
+include($linkFE.'menu.php');
 
 ?>
 
@@ -72,7 +72,7 @@ include($linkFE.'menu.php)
 </style>
 
 <?php
-include($linkFE.'footer.php');
+include($linkFE."footer.php");
 
 ?>
 

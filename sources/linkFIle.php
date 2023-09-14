@@ -10,6 +10,7 @@ $linkconnWebsite = '../sources/connect.php';
 
 // Dùng trong Folder source
 $linkconnSources ='../connect.php';
+
 $linkImgIndex = '../Assets/img/index/';
 $linkImgSp = '../Assets/img/SanPham/';
 // link dẫn đến folder website (chỉ dùng cho source)

@@ -3,12 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>Product List</title>
+    <?php
+
+    include("../Includes/linkAdmin.php");
+    ?>
   </head>
   
   <body>
 
   <?php
-  include('../Includes/FE/MenuAdmin.php');
+  include("./MenuAdmin.php");
   ?>
 
 <script>
@@ -18,7 +22,7 @@
 
   <div class="content" style="padding: 0 30px;">
     <?php
-   include_once('../Includes/connect.php');
+   include_once($linkconnPages);
     $sqlLSP =  "SELECT * FROM loaisp";
     $resultLSP = $connect->query($sqlLSP);
 

@@ -1,4 +1,5 @@
 <?php
+include("../linkAdmin.php");
 include('../connect.php');
 session_start();
 ob_start();
@@ -14,7 +15,7 @@ if(isset($_POST['submit']) && $_POST['loaisp'] != ''){
     $queryAdd = "INSERT INTO loaisp (loaisp_ten) VALUES ('$type')";
     
     if ($connect->query($queryAdd) === TRUE) {
-        header("location:../../Pages/ListProductType.php");
+        header("location:".$linkPages."ListProductType.php");
     }else {
         echo "Lỗi không thêm được sản phẩm: " . $connect->error;
     }

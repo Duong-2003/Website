@@ -7,7 +7,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Document</title>
-    
+   
+
     <style>
         .b-example-divider {
           width: 100%;
@@ -99,12 +100,12 @@
   <h1 class="visually-hidden">Sidebars examples</h1>
   <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;" style="position: fixed; top : 0px;">
     <div class="col-lg-3 col-md-6" id="logo" style="padding:5px 5px">
-        <a href=""><img src="../Assets/img/admin.png" alt=""style="height:50px;witdh:100%" ></a> 
+        <a href=""><img src=<?= $linkImg."admin.png"?> alt=""style="height:50px;witdh:100%" ></a> 
      </div>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li>
-        <a href="./ListProductType.php" class="nav-link text-white" id="productType">
+        <a href= "./ListProductType.php" class="nav-link text-white" id="productType">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>
           Danh mục Loại Sản phẩm 
         </a>
@@ -135,7 +136,7 @@
         <strong>admin</strong>
       </a>
       <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-        <li><a class="dropdown-item" href="../../Pages/Website.php">View</a></li>
+        <li><a class="dropdown-item" href=".././Website/Website.php">View</a></li>
         <li><hr class="dropdown-divider"></li>
         <li><a class="dropdown-item" href="#">Sign out</a></li>
       </ul>
