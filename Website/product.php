@@ -14,12 +14,14 @@
 </head>
 <body>
     <?php
+
         include($linkFE.'header.php');
         include($linkFE.'menu.php');
     ?>
 
     <?php
     include_once($linkconnWebsite);
+
     if($_GET['sp_ma'] != '' ){
         $id = $_GET['sp_ma'];
         $sql =  "SELECT * FROM sanpham WHERE sp_ma = $id";

@@ -20,7 +20,7 @@
   <div class="content" style="padding: 0 30px;">
     <h1>Danh sách nguời dùng</h1>
     <?php
-    include_once('../Includes/connect.php');
+    include_once('../connect.php');
     $sql =  "SELECT * FROM users";
     $result = $connect->query($sql);
 

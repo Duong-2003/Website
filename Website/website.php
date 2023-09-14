@@ -53,12 +53,13 @@ a{
 </script>
 <body>
     <?php
+
     include($linkFE.'header.php');
     include($linkFE.'menu.php');
     include($linkFE.'slide.php');
     include($linkFE.'content.php');
     include($linkFE.'footer.php');
-    
+
     
     ?>
     

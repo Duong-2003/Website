@@ -21,7 +21,7 @@
     <h1 style="text-align: center;">Danh mục sản phẩm</h1>
     <hr style="color:aqua">
     <?php
-    include_once('../Includes/connect.php');
+    include_once('../connect.php');
     $sqlLSP =  "SELECT * FROM loaisp";
     $resultLSP = $connect->query($sqlLSP);
 

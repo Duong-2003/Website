@@ -130,7 +130,9 @@
 
                 <!-- _____________________________________ -->
                 <?php
+
                   include_once($linkconnWebsite);
+
                   $sql = "SELECT * FROM sanpham ORDER BY RAND() LIMIT 8";
                   $result = $connect->query($sql);
                   $duongdanimg = $linkImgSp;

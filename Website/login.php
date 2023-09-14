@@ -14,7 +14,9 @@
 </head>
 <body>
 <?php
+
 include($linkFE.'header.php');
+include($linkFE.'menu.php)
 
 
 ?>
@@ -73,5 +75,6 @@ include($linkFE.'header.php');
 include($linkFE.'footer.php');
 
 ?>
+
 </body>
 </html>

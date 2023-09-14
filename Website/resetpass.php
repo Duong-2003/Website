@@ -16,8 +16,9 @@
 </head>
 <body>
 <?php
-include($linkFE.'header.php');
 
+include($linkFE.'header.php');
+include($linkFE.'menu.php');
 
 ?>
 
