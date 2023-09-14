@@ -8,11 +8,11 @@
     include("../Includes/linkAdmin.php");
     ?>
   </head>
+  <body>
   <?php
 
-    include($linkFE."Menu.php");
-    ?>
-  <body>
-
-  <
+  include($linkFE."Menu.php");
+  ?>
+  </body>
+  
 </html>
