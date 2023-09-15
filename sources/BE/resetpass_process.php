@@ -7,7 +7,8 @@ ob_start();
 $username = $_POST['account'];
 $passwordReset = $_POST['passwordReset'];
 $email = $_POST['email'];
-
+$error = null;
+$notifi = null;
 if(isset($_POST['submit']) && $username != '' && $passwordReset != '' &&  $email != ''){
     $select_sql = "SELECT * FROM users WHERE name = '$username'";
     $result = $connect->query($select_sql);
@@ -16,30 +17,40 @@ if(isset($_POST['submit']) && $username != '' && $passwordReset != '' &&  $email
         $user = $result->fetch_assoc();
         $stored_hashed_email = $user['email'];
         if($stored_hashed_email == NULL){
-            echo "Tài khoản không có email không thể lấy lại";
-            exit();
+            $connect->close();
+            $error = "Tài khoản không có email không thể lấy lại";
+            header("location:".$linkWebsite."resetpass.php?error=".$error);
         }
         if (!password_verify($email, $stored_hashed_email)){
-            echo "Nhấp sai email";
-            exit();
+            $connect->close();
+            $error = "Nhấp sai email";
+            header("location:".$linkWebsite."resetpass.php?error=".$error);
         }
         $hashed_password = password_hash($passwordReset, PASSWORD_DEFAULT);
         $update_sql = "UPDATE users
                         SET pass = '$hashed_password'
                         WHERE name = '$username'";
         if ($connect->query($update_sql) === TRUE) {
-            echo "Thay đổi mật khẩu thành công";
+            $connect->close();
+            $notifi = "Thay đổi mật khẩu thành công";
+            header("location:".$linkWebsite."login.php?notifi=".$notifi);
         } else {
-            echo "Thay đổi mật khẩu không thành công". $conn->error;
+            $error = "Thay đổi mật khẩu không thành công". $conn->error;
+            $connect->close();
+            header("location:".$linkWebsite."resetpass.php?error=".$notifi);
         }
         
     } else {
-        echo "Tài khoản đã nhập chưa đăng ký.";
+        $connect->close();
+        $error = "Tài khoản đã nhập chưa đăng ký.";
+        header("location:".$linkWebsite."resetpass.php?error=".$error);
     }
 }
 else
 {
-    echo "Nhap tk mkreset!";
+    $connect->close();
+    $error = 'Chưa nhập toàn bộ thông tin bắt buộc';
+    header("location:".$linkWebsite."resetpass.php?error=".$error);
 }
 $connect->close();
 

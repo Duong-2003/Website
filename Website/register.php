@@ -6,7 +6,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="website.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Register</title>
 
@@ -24,16 +23,28 @@ include($linkFE.'menu.php');
 
 ?>
 
+<style>
+.error > p{
+  font-size: 20px;
+  text-align:center;
+  font-weight: 600;
+}
+
+</style>
+
+
 <div id="main_registry">
   <div class="container">
     <div class="logForm">
       <div class="registry log_logo">
         <img src=<?= $linkImgIndex."user.png"  ?> alt="">
       </div>
+
       <div class="error">
-        <p name = "notifi" id="notifi_register"></p>
-        <p name = "error" id="error_register"></p>
+        <p name = "notifi" id="notifi_register" class="text-primary"><?= isset($_GET["notifi"]) ? $_GET["notifi"] : ''?></p>
+        <p name = "error" id="error_register" class="text-danger"><?= isset($_GET["error"]) ? $_GET["error"] : ''?></p>
       </div>
+
       <span class="log_heading text-dark mb-3">ĐĂNG KÝ</span>
       <form action= <?= $linkBE."register_process.php"?> method="post">
         <div class="form-group">
@@ -102,14 +113,6 @@ include($linkFE.'menu.php');
   </div>
 </div>
 
-<style>
-.error > p{
-  font-size: 15px;
-}
-#error{
-  color: red;
-}
-</style>
 
 <?php
 

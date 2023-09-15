@@ -5,6 +5,7 @@ session_start();
 ob_start();
 $username = $_POST['account'];
 $password = $_POST['password'];
+$error = null;
 if(isset($_POST['submit']) && $username != '' && $password != ''){
     $query = "SELECT * FROM users WHERE name = '$username'";
     $result = $connect->query($query);  
@@ -13,12 +14,12 @@ if(isset($_POST['submit']) && $username != '' && $password != ''){
         $stored_hashed_password = $user['pass'];
         if (password_verify($password, $stored_hashed_password)) {
             if($user['role'] !=1){
-            $connect->close();
-            $_SESSION['username'] = $username;
-            header("location:".$linkWebsite."website.php");
-            exit();
-        }
-        else{
+                $connect->close();
+                $_SESSION['username'] = $username;
+                header("location:".$linkWebsite."website.php");
+                exit();
+            }
+            else{
                 $connect->close();
                 $_SESSION['username'] = $username;
                 header("location:../../admin/Includes/FE/MenuAdmin.php");
@@ -26,17 +27,22 @@ if(isset($_POST['submit']) && $username != '' && $password != ''){
             }
         } 
         else {
-            echo "Sai mật khẩu!";
+            $connect->close();
+            $error = 'Sai mật khẩu hoặc tài khoản';
+            header("location:".$linkWebsite."login.php?error=".$error);
         }
     } else {
-        // Tên đăng nhập không tồn tại
-        echo "Tên đăng nhập không tồn tại!";
+        $connect->close();
+        $error = 'Tên đăng nhập không tồn tại ';
+        header("location:".$linkWebsite."login.php?error=".$error);
     }
 }
 else
 {
-    echo "Nhap tk mk!";
+    $connect->close();
+    $error = 'Chưa nhập toàn bộ thông tin cần thiết';
+    header("location:".$linkWebsite."login.php?error=".$error);
 }
-$connect->close();
+
 
 ?>

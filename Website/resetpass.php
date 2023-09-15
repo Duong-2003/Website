@@ -22,6 +22,15 @@ include($linkFE.'menu.php');
 
 ?>
 
+<style>
+.error > p{
+  font-size: 20px;
+  text-align:center;
+  font-weight: 600;
+}
+
+</style>
+
 <div id="main_login">
   <div class="container">
     <div class="logForm">
@@ -29,8 +38,8 @@ include($linkFE.'menu.php');
         <img src=<?= $linkImgIndex."user.png" ?> alt="">
       </div>
       <div class="error">
-        <p name = "notifi" id="notifi_log"></p>
-        <p name="error" id="error_log"></p>
+      <p name = "notifi" class="text-primary"><?= isset($_GET["notifi"]) ? $_GET["notifi"] : ''?></p>
+        <p name = "error" class="text-danger"><?= isset($_GET["error"]) ? $_GET["error"] : ''?></p>
       </div>
       <span class="log_heading text-dark mb-3">QUÊN MẬT KHẨU</span>
       <form action=<?= $linkBE."resetpass_process.php" ?> method="post">

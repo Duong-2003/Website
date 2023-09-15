@@ -14,7 +14,7 @@
 </head>
 <body>
     <?php
-
+        session_start();
         include($linkFE.'header.php');
         include($linkFE.'menu.php');
     ?>
@@ -100,7 +100,7 @@
                         <div >
                             <div class="p-1">
                                 <div class="d-grid gap-2 col-6 mx-auto">
-                                    <button class="btn btn-primary" type="button">Thêm vào giỏ hàng</button>
+                                    <button class="btn btn-primary" type="button">Mua</button>
                                 </div>
                             </div>
                         </div>

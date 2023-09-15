@@ -21,16 +21,27 @@ include($linkFE.'menu.php');
 
 ?>
 
+<style>
+.error > p{
+  font-size: 20px;
+  text-align:center;
+  font-weight: 600;
+}
+
+</style>
+
 <div id="main_login">
   <div class="container">
     <div class="logForm">
       <div class="login log_logo">
         <img src= <?=$linkImgIndex."user.png" ?> alt="">
       </div>
+
       <div class="error">
-        <p name = "notifi" id="notifi_log"></p>
-        <p name="error" id="error_log"></p>
+        <p name = "notifi" id="notifi_log" class="text-primary"><?= isset($_GET["notifi"]) ? $_GET["notifi"] : ''?></p>
+        <p name="error" id="error_log" class="text-danger"><?= isset($_GET["error"]) ? $_GET["error"] : ''?></p>
       </div>
+
       <span class="log_heading text-dark mb-3">ĐĂNG NHẬP</span>
       <form action= <?=$linkBE."login_process.php"?> method="post">
         <div class="form-group">
@@ -62,14 +73,7 @@ include($linkFE.'menu.php');
   </div>
 </div>
 
-<style>
-.error > p{
-  font-size: 15px;
-}
-#error{
-  color: red;
-}
-</style>
+
 
 <?php
 include($linkFE."footer.php");
