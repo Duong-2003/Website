@@ -14,11 +14,13 @@ if(isset($_POST['submit']) && $username != '' && $password != ''){
         if (password_verify($password, $stored_hashed_password)) {
             if($user['role'] !=1){
             $connect->close();
+            $_SESSION['username'] = $username;
             header("location:".$linkWebsite."website.php");
             exit();
-            }
-            else{
+        }
+        else{
                 $connect->close();
+                $_SESSION['username'] = $username;
                 header("location:../../admin/Includes/FE/MenuAdmin.php");
                 exit(); 
             }

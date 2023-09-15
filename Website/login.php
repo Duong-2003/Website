@@ -32,7 +32,7 @@ include($linkFE.'menu.php');
         <p name="error" id="error_log"></p>
       </div>
       <span class="log_heading text-dark mb-3">ĐĂNG NHẬP</span>
-      <form action= <?=$linkBE."log_process.php"?> method="post">
+      <form action= <?=$linkBE."login_process.php"?> method="post">
         <div class="form-group">
           <label for="account" id="userAccount">Tài khoản:</label>
           <div class="input-group mb-3">
