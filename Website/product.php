@@ -41,7 +41,7 @@
     ?>
     <html>
         <!-------------------PRODUCT----------------  -->
-        <section class="product">
+        <form method="post" action = <?=$linkBE."order_process.php"?>>
             <div class="container">
                  <div class="row">
                     <div class="col-6">
@@ -56,6 +56,7 @@
                         </div>
                         <div >
                             <div class="p-1">MSP:<?=$sp['sp_ma']?></div>
+                            <input style="display: none;" type="text" name="sp_ma" value="<?php echo $sp['sp_ma']; ?>">
                         </div>
                         <div >
                             <div class="p-1">
@@ -72,7 +73,7 @@
                             <div class="p-1">
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="inputGroup-sizing-default">Số lượng mua<span style="color: red;">*</span></span>
-                                    <input id ='value_buy' name="sp_soluong" type="number" max ='<?=$sp['sp_soluong']?>' min='0'  value="1" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                                    <input id ='value_buy' name="donhang_soluongsp" type="number" max ='<?=$sp['sp_soluong']?>' min='0'  value="1" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                                 </div>
                             </div>
                         </div>
@@ -80,6 +81,8 @@
                             <div class="p-1" id='pay'>
                                 Giá phải trả : <?=number_format($sp['sp_gia'], 0, '.', ',') ; ?>
                                 <script>
+
+                                    
                                     const inputElement = document.getElementById('value_buy');
                                     const ouputElement = document.getElementById('pay');
                                     inputElement.addEventListener('change', function(event) {
@@ -88,6 +91,8 @@
                                         var textpay = "Giá phải trả : "+ valuepay ;
                                         ouputElement.textContent = textpay ;
                                     });
+                                    
+                                
                                 </script>
                             </div>
                         </div>
@@ -100,7 +105,7 @@
                         <div >
                             <div class="p-1">
                                 <div class="d-grid gap-2 col-6 mx-auto">
-                                    <button class="btn btn-primary" type="button">Mua</button>
+                                    <button class="btn btn-primary" type="submit" name ="submit" id ="btn_dathang">Mua</button>
                                 </div>
                             </div>
                         </div>
@@ -109,9 +114,8 @@
                 </div>
                 
             </div>
-
-        </section>
-
+        </form>
+       
         <!---------------------------------------  -->
 </body>
 </html>

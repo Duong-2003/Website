@@ -24,7 +24,6 @@ if(isset($_POST['submit']) && $_POST['sp_img'] != '' && $_POST['sp_motachitiet']
     }
     if ($connect->query($query) === TRUE) {
         header("location:".$linkPages."ListProduct.php");
-        // echo ("Thành công");
     }else {
         echo "Lỗi không thêm được sản phẩm: " . $connect->error;
     }

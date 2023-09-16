@@ -191,7 +191,7 @@ nav #menu li:hover a.menu-dropdown {
                             
                            
 
-                            <li><a href="register.php" >
+                            <li><a href="./cart.php" >
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                              Giỏ hàng
                             </a></li>
