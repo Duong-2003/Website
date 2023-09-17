@@ -122,8 +122,8 @@
           Danh mục Người dùng
         </a>
       </li>
-      <li id="order">
-        <a href="" class="nav-link text-white" id="order">
+      <li >
+        <a href="ListOrder.php" class="nav-link text-white" id="order">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
           Danh mục Đơn hàng
         </a>

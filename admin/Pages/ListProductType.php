@@ -40,7 +40,7 @@
     <table class = " table table-striped table-bordered table-hover">
       <thead>
         <tr>
-          <th>Tên loại sản phẩm</th>
+          <th>Loại sản phẩm</th>
           <th>Thao tác</th>
         </tr>
       </thead>
