@@ -37,7 +37,7 @@ if (isset($_POST['submit']) && $_POST['donhang_soluongsp'] != '' && $_POST['sp_m
             if ($stmt->execute()) {
                 echo "Thành công";
             } else {
-                echo 'Lỗi đăng ký !' . $stmt->error;
+                echo 'Lỗi đặt hàng !' . $stmt->error;
             }
         } else {
             echo "Không có sản phẩm";

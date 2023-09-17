@@ -46,34 +46,62 @@
                     );
             }
         }
-        $connect->close();
     ?>
     <h1>Giỏ hàng</h1>
     <ul>
     <?php
-    if ($danhsachdonhang): ?>
-        <?php foreach ($danhsachdonhang as $donhang): ?>
-            <li>
-                <div class="card mb-3" style="max-width: 540px; max-height: 200px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="<?= $linkImgSp . 'ip7.png' ?>" class="img-fluid rounded-start" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">Sản phẩm</h5>
-                                <p class="card-text">Số lượng: 30</p>
-                                <p class="card-text">Giá: 3,000,000</p>
-                                <p class="card-text">Trạng thái: Đang giao</p>
-                                <p class="card-text"><small class="text-body-secondary">Ngày đặt: 30/3/2023</small></p>
-                            </div>
+if ($danhsachdonhang): ?>
+    <?php foreach ($danhsachdonhang as $donhang): ?>
+        <?php
+        // Truy vấn sản phẩm tương ứng với đơn hàng
+        $sql = "SELECT sanpham.*
+            FROM donhang
+            INNER JOIN sanpham ON donhang.sp_ma = sanpham.sp_ma
+            WHERE donhang.sp_ma = '" . $donhang['sp_ma'] . "';";
+        $result = $connect->query($sql);
+        $sp = array();
+
+        if (!$result) {
+            echo("Lỗi select đơn hàng");
+            exit();
+        }
+
+        while ($row = $result->fetch_assoc()) {
+            $sp = array(
+                'sp_ma' => $row['sp_ma'],
+                'sp_ten' => $row['sp_ten'],
+                'loaisp_ten' => $row['loaisp_ten'],
+                'sp_gia' => $row['sp_gia'],
+                'sp_mota' => $row['sp_mota'],
+                'sp_motachitiet' => $row['sp_motachitiet'],
+                'sp_img' => $row['sp_img'],
+                'sp_soluong' => $row['sp_soluong']
+            );
+        }
+        ?>
+
+        <li>
+            <div class="card mb-3" style="max-width: 540px; max-height: 200px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="<?= $linkImgSp . $sp['sp_img'] ?>" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $sp['sp_ten'] ?></h5>
+                            <p class="card-text">Mã đơn hàng: <?= $donhang['donhang_ma'] ?></p>
+                            <p class="card-text">Số lượng: <?= $donhang['donhang_soluongsp'] ?></p>
+                            <p class="card-text">Giá: <?=number_format($donhang['donhang_gia'], 0, '.', ',')?> <sub>đ</sub></p>
+                            <p class="card-text">Trạng thái: <?= $donhang['donhang_trangthai'] ?></p>
+                            <p class="card-text"><small class="text-body-secondary">Ngày đặt: <?= $donhang['timeorder'] ?></small></p>
                         </div>
                     </div>
                 </div>
-            </li>
+            </div>
+        </li>
         <?php endforeach; ?>
-    <?php endif; 
-    ?>
+    <?php endif; ?>
+
     
     </ul>
 </body>
