@@ -3,10 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>Product List</title>
-    <?php
-
-    include("../Includes/linkAdmin.php");
-    ?>
   </head>
   
   <body>

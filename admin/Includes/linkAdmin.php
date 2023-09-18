@@ -15,4 +15,6 @@ $linkconnPages ='../Includes/connect.php';
 
 //Pages dùng (chú ý khi include file BE đường dẫn của file include sẽ tính từ file nhận include)
 $linkImg = '../Assets/img/';
+
+$linkVerdors = "../Assets/verdors/";
 ?>

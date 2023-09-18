@@ -4,10 +4,7 @@
     <meta charset="utf-8">
     <title>Product List</title>
   </head>
-  <?php
-
-    include("../Includes/linkAdmin.php");
-    ?>
+  
   <body>
 
   <?php
@@ -55,7 +52,7 @@
     // var_dump(($danhsachSP));
     ?>
     
-    <table class = "table table-striped table-bordered table-hover">
+    <table id="danhsach" class = "table table-striped table-bordered table-hover">
       <thead>
         <tr style="border:1px solid;text-align:center">
           <th>Mã sp</th>
@@ -151,5 +148,10 @@
   </div>
 </div>
 
+<script>
+  $(document).ready(function(){
+    $('#danhsach').DataTable();
+  });
+</script>
 </body>
 </html>

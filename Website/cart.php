@@ -28,6 +28,7 @@
         } else {
             $connect->close();
             header("location:./login.php?error='Vui lòng đăng nhập để vào giỏ hàng'");
+            exit();
         }
 
         $sql =  "SELECT * FROM donhang WHERE name = '$name'";

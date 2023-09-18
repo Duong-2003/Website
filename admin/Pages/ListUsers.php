@@ -4,9 +4,6 @@
      <meta charset="utf-8">
     <title>Users List</title>
     
-    <?php
-    include("../Includes/linkAdmin.php");
-    ?>
   </head>
   
   <body>
@@ -38,7 +35,7 @@
     
     // var_dump(($danhsachSP));
     ?>
-    <table class = "table table-striped table-bordered table-hover">
+    <table id="danhsach" class = "table table-striped table-bordered table-hover">
       <thead>
         <tr>
           <th>Tên đăng nhập</th>
@@ -75,6 +72,10 @@
     </table>
   </div>
 </div>
-
+<script>
+  $(document).ready(function(){
+    $('#danhsach').DataTable();
+  });
+</script>
 </body>
 </html>

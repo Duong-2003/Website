@@ -4,9 +4,6 @@
     <meta charset="utf-8">
     <title>Product List</title>
 
-    <?php
-    include("../Includes/linkAdmin.php");
-    ?>
   </head>
   
   <body>
@@ -43,7 +40,7 @@
     
     // var_dump(($danhsachSP));
     ?>
-    <table class = " table table-striped table-bordered table-hover">
+    <table  id="danhsach" class = " table table-striped table-bordered table-hover">
       <thead>
         <tr>
           <th>Mã đơn hàng</th>
@@ -65,7 +62,7 @@
               <td><?= $donhang['name'] ?></td>
               <td><?= $donhang['timeorder'] ?></td>
               <td><?= $donhang['donhang_trangthai'] ?></td>
-              <td><?= $donhang['donhang_gia'] ?></td>
+              <td><?= number_format($donhang['donhang_gia'], 0, '.', ',')?></td>
               <td><?= $donhang['donhang_soluongsp'] ?></td>
               
               <td>
@@ -97,6 +94,10 @@
     </div> -->
   </div>
 </div>
-
+<script>
+  $(document).ready(function(){
+    $('#danhsach').DataTable();
+  });
+</script>
 </body>
 </html>
