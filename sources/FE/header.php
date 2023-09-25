@@ -18,7 +18,7 @@ li{
 }
  #home ul{
    display: flex;
-   justify-content: space-around;
+   justify-content: flex-start;
     padding-top: 10px;
   
 
@@ -50,6 +50,13 @@ li{
     font-size: 25px;
 }
 
+#home :hover a {
+    border-radius: 5px;
+   
+    box-shadow: 0 0 20px 3px;
+}
+
+
 
 
 
@@ -73,8 +80,11 @@ li{
 }
 }
 @media  screen and (max-width: 990px) {
-    #home{
-    display: none;
+    #home ul{
+    /* display: none; */
+    padding: 0px;
+   margin-top: -10px;
+   justify-content: center;
     
 }
 .header-input{
@@ -82,7 +92,62 @@ li{
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+/* Style The Dropdown Button */
+.dropbtn {
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px px rgba(0,0,0,0.2);
+  z-index: 100;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    background-color: #7070a7;
+    padding: 10px 0;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+/* .dropdown-content a:hover {background-color: #f1f1f1} */
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+
+
     </style>
+
 </head>
 <body>
 <?php
@@ -98,7 +163,7 @@ li{
                
             </div>
 
-            <div class="col-lg-4 col-md-12 text-white " style="text-align:center;padding: 8px 0;">
+            <div class="col-lg-6 col-md-12 text-white " style="text-align:center;padding: 8px 0;">
                     <div class="input-group mb-3 " id="header-input" style="padding:5px 5px">
                             <input type="text" class="form-control" placeholder="Nhấn để tìm kiếm" >
                             <span  class="input-group-text" style="background-color:#9fa3fe;">
@@ -111,32 +176,22 @@ li{
 
                     </div>
 
-                <div class="col-lg-5 col-md-12 " id="home">
-                    <div class="row ">
+                <div class="col-lg-3 col-md-12 " id="home">
+                    
                         <ul id="menu-header">
-                            <li><a href="">
-                            <i class="fa fa-heart" aria-hidden="true"></i>
-                                
-                            </a></li>
-
-
-                            <li><a href="">
-                            <i class="fa fa-commenting" aria-hidden="true" ></i>
-                           
-                            </a></li>
-
-
-                            <li><a href="" >
-                            <i class="fa fa-user-plus" aria-hidden="true"  style="color:#6d6deb"></i>
-                           
-                            </a></li>
-
-
-
-                            <li><a href=""style="color:#ba4646;">
-                            <i class="fa fa-phone" aria-hidden="true"  style="color:#ba4646;"></i>
-                          
-                            </a></li>
+                        <li>
+                            <div class="dropdown" id= "ic-notuser" >
+                                <a href="#" class="nav-link " id="order"> 
+                                    <i class="fa fa-user" aria-hidden="true"  style="color: #5c64b4;"></i>
+                                    <strong style="font-size:25px">USER</strong>
+                                </a>
+                                <div class="dropdown-content" >
+                                    <a href="./login.php" class ="menu-dropdown">Đăng nhập</a>
+                                    <a href="./register.php" class ="menu-dropdown">Đăng ký</a>
+                                </div>
+                             
+                            
+                            </li>
                             
                         </ul>
                     </div>
