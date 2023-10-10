@@ -47,14 +47,14 @@
   </div>
   <div class="carousel-inner" id="slide1">
     <div class="carousel-item active">
-      <img src=<?=$linkImgIndex."ipslide1.webp" ?> class="d-block w-100" alt="...">
+      <img src=<?=$linkImgIndex."slide_1.webp" ?> class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src=<?=$linkImgIndex."ipslide2.webp" ?> class="d-block w-100" alt="...">
+      <img src=<?=$linkImgIndex."slide_3.webp" ?> class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
 
-      <img src=<?=$linkImgIndex."ipslide3.webp"?> class="d-block w-100" alt="...">
+      <img src=<?=$linkImgIndex."slide_4.webp"?> class="d-block w-100" alt="...">
 
     </div>
   </div>
@@ -88,11 +88,11 @@
             <div class=" slide2 col-sm-4" >
                 
                     <div class="col "id="slide2">
-                        <img  src=<?=$linkImgIndex."/ipslide1.webp"?> alt="">
+                    <img src=<?=$linkImgIndex."slide_3.webp" ?> class="d-block w-100" alt="...">
                     </div>
 
-                    <div class="col "id="slide3">
-                        <img src=<?=$linkImgIndex."ipslide2.webp"?> alt="">
+                    <div class="col "id="slide3" style="padding-top:10px">
+                    <img src=<?=$linkImgIndex."slide_4.webp"?> class="d-block w-100" alt="...">
                     </div>
                 </div>
             </div>

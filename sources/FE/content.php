@@ -30,6 +30,7 @@
       box-shadow: 0 0 20px 5px;
       color:   white;
     }
+    
 
     #font-card:hover {
       box-shadow: 0 0 20px 5px;
@@ -43,9 +44,20 @@
         justify-content: space-evenly;
 
       }
+      .card img{
+        height: 200px;
+      }
+    }
+    @media screen and (min-width: 768px ) and (max-width:1024px) {
+      
+      .card img{
+      
+        height: 150px;
+      }
     }
 
-    @media screen and (max-width: 1190px) {
+
+    @media screen and  (min-width: 1024px )and (max-width: 1366px) {
       #menu {
         flex-wrap: wrap;
         justify-content: space-evenly;
@@ -175,7 +187,7 @@
 
 
         <div class=" col-lg-3 col-md-4 col-sm-6 py-2" id="font-card">
-          <div id='card1' class="card">
+          <div id='card2' class="card">
             <img src="<?= $duongdanimg . $data[0]['sp_img'] ?>" class="card-img-top" alt="...">
             <div class="card-body">
               <div>

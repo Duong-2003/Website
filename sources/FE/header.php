@@ -9,7 +9,7 @@
    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Document</title>
-    
+    <!-- form ->post url -Get -->
     <style>
 
 li{
@@ -42,7 +42,7 @@ li{
 
 
 #header {
-    background-image: linear-gradient(to bottom, #e46f6f, #6d6deb);
+    background-image: linear-gradient(to bottom, #bfa4a4, #9b9be1);
 }
 
 
@@ -159,7 +159,7 @@ li{
             <div class="row py-2 " style="text-align: center;">
                 <!-- ------logo-------- -->
                 <div class="col-lg-3 col-md-12" id="logo" style="padding:5px 5px">
-                <a href="./website.php"><img src=<?=$linkImgIndex."Lazada.png" ?> alt=""style="height:50px;witdh:100%" ></a>
+                <a href="./website.php"><img src=<?=$linkImgIndex."logo1.webp" ?> alt=""style="height:auto;witdh:100%" ></a>
                
             </div>
 
@@ -183,7 +183,7 @@ li{
                             <div class="dropdown" id= "ic-notuser" >
                                 <a href="#" class="nav-link " id="order"> 
                                     <i class="fa fa-user" aria-hidden="true"  style="color: #5c64b4;"></i>
-                                    <strong style="font-size:25px">USER</strong>
+                                    <strong style="    font-family: cursive;font-size:25px">USER</strong>
                                 </a>
                                 <div class="dropdown-content" >
                                     <a href="./login.php" class ="menu-dropdown">Đăng nhập</a>

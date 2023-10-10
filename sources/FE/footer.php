@@ -14,7 +14,7 @@
     <style>
         #footer{
             margin: 20px 0px;
-            background-image: linear-gradient(to bottom, #4f4d4d, #313133);
+            background-image: linear-gradient(to bottom, #6f6f6f, #26262f);
         }
         a{
             text-decoration: none;
