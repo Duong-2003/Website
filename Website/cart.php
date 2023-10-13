@@ -19,7 +19,7 @@
     <?php
     session_start();
     include($linkFE.'header.php');
-    include($linkFE.'menu.php');
+    // include($linkFE.'menu.php');
 
     
     include_once($linkconnWebsite);

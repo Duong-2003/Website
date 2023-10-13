@@ -31,7 +31,7 @@
   <?php
 
   include($linkFE . 'header.php');
-  include($linkFE . 'menu.php');
+  // include($linkFE . 'menu.php');
 
   ?>
 
@@ -52,7 +52,7 @@
 
 
   <div id="main_login" >
-    <div class="container">
+    <div class="container py-4">
       <div class="row">
         <div class="col-lg-6 " >
           <img src=<?= $linkImgIndex . "img404.png"  ?> width="100%" alt="">

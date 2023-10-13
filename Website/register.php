@@ -20,7 +20,7 @@
 
   <?php
   include($linkFE . 'header.php');
-  include($linkFE . 'menu.php');
+  // include($linkFE . 'menu.php');
 
   ?>
 
@@ -41,13 +41,11 @@
 
 
 
-  <div class="container">
+  <div class="container py-4">
     <div class="row">
       <div class="col-lg-6 ">
-        <img src=<?= $linkImgIndex . "img-login1.webp" ?> width="100%"  alt="">
+        <img src=<?= $linkImgIndex . "img-login1.webp" ?> width="100%" alt="">
       </div>
-
-
 
       <div class="col-lg-6 py-2" id="font-register">
         <h2 style="text-align:center; color: #da7070;">ĐĂNG KÝ TÀI KHOẢN</h2>
@@ -56,40 +54,37 @@
           <p name="error" id="error_register" class="text-danger"><?= isset($_GET["error"]) ? $_GET["error"] : '' ?></p>
         </div>
 
-
         <form action=<?= $linkBE . "register_process.php" ?> method="post">
           <div class="form-group">
-          <strong>Email:</strong> 
-            
-              
-              <input id="email" placeholder="Email để lấy lại mật khẩu" type="text" class="form-control" name="email" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            
+            <strong>Email:</strong>
+
+
+            <input id="email" placeholder="Email để lấy lại mật khẩu" type="text" class="form-control" name="email" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+
           </div>
           <div class="form-group">
-          <strong>Tài khoản: </strong> 
-            
-              <input id="account" placeholder="Tài khoản bạn muốn đăng ký" type="text" class="form-control" name="username" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            
+            <strong>Tài khoản: </strong>
+
+            <input id="account" placeholder="Tài khoản bạn muốn đăng ký" type="text" class="form-control" name="username" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+
           </div>
           <div class="form-group">
-          <strong>Nhập mật khẩu:</strong> 
-            
-              
-              <input id="password" placeholder="Nhập mật khẩu" type="password" name="password" autocomplete="new-password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            
+            <strong>Nhập mật khẩu:</strong>
+            <input id="password" placeholder="Nhập mật khẩu" type="password" name="password" autocomplete="new-password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+
           </div>
 
           <div class="form-group">
-           
-          <strong>Nhập lại mật khẩu:</strong> 
-              
-              <input name="rePass" placeholder="Nhập lại mật khẩu" id="rePass" type="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-            
+
+            <strong>Nhập lại mật khẩu:</strong>
+
+            <input name="rePass" placeholder="Nhập lại mật khẩu" id="rePass" type="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+
           </div>
-          
+
           <div class="text-center p-3">
             <button type="submit" name="submit" id="reg_submit" class="btn btn-primary">Đăng ký</button>
-           
+
             <a class="btn btn-primary" href="./login.php">Đăng nhập</a>
             <a class="btn btn-primary" href="./resetpass.php">Quên mật khẩu</a>
           </div>
@@ -101,7 +96,7 @@
 
 
 
-  <div class="modal fade" id="regSucc" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <!-- <div class="modal fade" id="regSucc" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -119,7 +114,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
   <?php

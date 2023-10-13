@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,64 +8,52 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <title>Document</title>
+  <title>Document</title> -->
   <style>
-    .content a {
-      text-decoration: none;
+  .content a {
+    text-decoration: none;
+  }
+
+  .card img {
+    /* height: 200px; */
+
+
+  }
+
+  .card {
+    box-shadow: 0 0 5px 0px;
+    color: #999;
+  }
+
+
+  div.card :hover a {
+    box-shadow: 0 0 20px 5px;
+    color: white;
+  }
+
+  #font-card:hover {
+    box-shadow: 0 0 20px 5px;
+    color: #c7a5a5;
+    border-radius: 20px;
+  }
+
+  @media screen and (max-width: 456px) {
+    #menu {
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+
+    }
+  }
+
+  @media screen and (max-width: 1190px) {
+    #menu {
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+
     }
 
-    .card img {
-      height: 200px;
-      
-      
-    }
-
-    .card {
-      box-shadow: 0 0 5px 0px;
-      color: #999;
-    }
-
-
-    div.card :hover a {
-      box-shadow: 0 0 20px 5px;
-      color:   white;
-    }
-    
-
-    #font-card:hover {
-      box-shadow: 0 0 20px 5px;
-      color:  #c7a5a5;
-      border-radius: 20px;
-    }
-
-    @media screen and (max-width: 456px) {
-      #menu {
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-
-      }
-      .card img{
-        height: 200px;
-      }
-    }
-    @media screen and (min-width: 768px ) and (max-width:1024px) {
-      
-      .card img{
-      
-        height: 150px;
-      }
-    }
-
-
-    @media screen and  (min-width: 1024px )and (max-width: 1366px) {
-      #menu {
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-
-      }
-      
-    }
-  </style>
+  }
+</style>
 
 </head>
 
@@ -151,7 +139,7 @@
       document.addEventListener("DOMContentLoaded", myFunction);
     </script>
 
-    <div id="cardReplace" class="card" aria-hidden="true" style="display: none;">
+    <!-- <div id="cardReplace" class="card" aria-hidden="true" style="display: none;">
       <img src="#" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title placeholder-glow">
@@ -166,39 +154,93 @@
         </p>
         <a class="btn btn-primary disabled placeholder col-6" aria-disabled="true"></a>
       </div>
-    </div>
+    </div> -->
 
     <!-- ________________Show ther_____________________ -->
     <div class=" container text-center">
       <div class="row ">
 
+
+
+
+
+
         <div class=" col-lg-3 col-md-4 col-sm-6 py-2" id="font-card">
-          <div id='card1' class="card">
+          <div id='card3' class="card">
             <img src="<?= $duongdanimg . $data[0]['sp_img'] ?>" class="card-img-top" alt="...">
             <div class="card-body">
-              <div>
-                <p class="card-title">Tên sản phẩm:<?= $data[0]['sp_ten'] ?></p>
-                <p class="card-text">Giá sản phẩm:<?= $data[0]['sp_gia'] ?></p>
-                <a href="./product.php?sp_ma=<?= $data[0]['sp_ma'] ?>" class="btn btn-primary">Xem</a>
-              </div>
+              <p class="card-title">Tên sản phẩm:<?= $data[0]['sp_ten'] ?></p>
+              <p class="card-text">Giá sản phẩm:<?= $data[0]['sp_gia'] ?></p>
+              <a href="./product.php?sp_ma=<?= $data[0]['sp_ma'] ?>" class="btn btn-primary">Xem</a>
+            </div>
+          </div>
+        </div>
+
+        <div class=" col-lg-3 col-md-4 col-sm-6 py-2" id="font-card">
+          <div id='card3' class="card">
+            <img src="<?= $duongdanimg . $data[1]['sp_img'] ?>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-title">Tên sản phẩm:<?= $data[1]['sp_ten'] ?></p>
+              <p class="card-text">Giá sản phẩm:<?= $data[1]['sp_gia'] ?></p>
+              <a href="./product.php?sp_ma=<?= $data[1]['sp_ma'] ?>" class="btn btn-primary">Xem</a>
             </div>
           </div>
         </div>
 
 
         <div class=" col-lg-3 col-md-4 col-sm-6 py-2" id="font-card">
-          <div id='card2' class="card">
-            <img src="<?= $duongdanimg . $data[0]['sp_img'] ?>" class="card-img-top" alt="...">
+          <div id='card3' class="card">
+            <img src="<?= $duongdanimg . $data[1]['sp_img'] ?>" class="card-img-top" alt="...">
             <div class="card-body">
-              <div>
-                <p class="card-title">Tên sản phẩm:<?= $data[0]['sp_ten'] ?></p>
-                <p class="card-text">Giá sản phẩm:<?= $data[0]['sp_gia'] ?></p>
-                <a href="./product.php?sp_ma=<?= $data[0]['sp_ma'] ?>" class="btn btn-primary">Xem</a>
-              </div>
+              <p class="card-title">Tên sản phẩm:<?= $data[1]['sp_ten'] ?></p>
+              <p class="card-text">Giá sản phẩm:<?= $data[1]['sp_gia'] ?></p>
+              <a href="./product.php?sp_ma=<?= $data[1]['sp_ma'] ?>" class="btn btn-primary">Xem</a>
             </div>
           </div>
         </div>
 
+        <div class=" col-lg-3 col-md-4 col-sm-6 py-2" id="font-card">
+          <div id='card3' class="card">
+            <img src="<?= $duongdanimg . $data[1]['sp_img'] ?>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-title">Tên sản phẩm:<?= $data[1]['sp_ten'] ?></p>
+              <p class="card-text">Giá sản phẩm:<?= $data[1]['sp_gia'] ?></p>
+              <a href="./product.php?sp_ma=<?= $data[1]['sp_ma'] ?>" class="btn btn-primary">Xem</a>
+            </div>
+          </div>
+        </div>
+
+        <div class=" col-lg-3 col-md-4 col-sm-6 py-2" id="font-card">
+          <div id='card3' class="card">
+            <img src="<?= $duongdanimg . $data[1]['sp_img'] ?>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-title">Tên sản phẩm:<?= $data[1]['sp_ten'] ?></p>
+              <p class="card-text">Giá sản phẩm:<?= $data[1]['sp_gia'] ?></p>
+              <a href="./product.php?sp_ma=<?= $data[1]['sp_ma'] ?>" class="btn btn-primary">Xem</a>
+            </div>
+          </div>
+        </div>
+        <div class=" col-lg-3 col-md-4 col-sm-6 py-2" id="font-card">
+          <div id='card3' class="card">
+            <img src="<?= $duongdanimg . $data[1]['sp_img'] ?>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-title">Tên sản phẩm:<?= $data[1]['sp_ten'] ?></p>
+              <p class="card-text">Giá sản phẩm:<?= $data[1]['sp_gia'] ?></p>
+              <a href="./product.php?sp_ma=<?= $data[1]['sp_ma'] ?>" class="btn btn-primary">Xem</a>
+            </div>
+          </div>
+        </div>
+
+        <div class=" col-lg-3 col-md-4 col-sm-6 py-2" id="font-card">
+          <div id='card3' class="card">
+            <img src="<?= $duongdanimg . $data[1]['sp_img'] ?>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-title">Tên sản phẩm:<?= $data[1]['sp_ten'] ?></p>
+              <p class="card-text">Giá sản phẩm:<?= $data[1]['sp_gia'] ?></p>
+              <a href="./product.php?sp_ma=<?= $data[1]['sp_ma'] ?>" class="btn btn-primary">Xem</a>
+            </div>
+          </div>
+        </div>
 
         <div class=" col-lg-3 col-md-4 col-sm-6 py-2" id="font-card">
           <div id='card3' class="card">
@@ -210,66 +252,18 @@
             </div>
           </div>
         </div>
+        
 
 
 
-        <div class=" col-lg-3 col-md-4 col-sm-6 py-2" id="font-card">
-          <div id='card4' class="card">
-            <img src="<?= $duongdanimg . $data[3]['sp_img'] ?>" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-title">Tên sản phẩm:<?= $data[3]['sp_ten'] ?></p>
-              <p class="card-text">Giá sản phẩm:<?= $data[3]['sp_gia'] ?></p>
-              <a href="./product.php?sp_ma=<?= $data[3]['sp_ma'] ?>" class="btn btn-primary">Xem</a>
-            </div>
-          </div>
-        </div>
+       
 
-
-        <div class=" col-lg-3 col-md-4 col-sm-6 py-2" id="font-card">
-          <div id='card5' class="card">
-            <img src="<?= $duongdanimg . $data[4]['sp_img'] ?>" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-title">Tên sản phẩm:<?= $data[4]['sp_ten'] ?></p>
-              <p class="card-text">Giá sản phẩm:<?= $data[4]['sp_gia'] ?></p>
-              <a href="./product.php?sp_ma=<?= $data[4]['sp_ma'] ?>" class="btn btn-primary">Xem</a>
-            </div>
-          </div>
-        </div>
+      
 
 
 
-        <div class=" col-lg-3 col-md-4 col-sm-6 py-2" id="font-card">
-          <div id='card6' class="card">
-            <img src="<?= $duongdanimg . $data[5]['sp_img'] ?>" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-title">Tên sản phẩm:<?= $data[5]['sp_ten'] ?></p>
-              <p class="card-text">Giá sản phẩm:<?= $data[5]['sp_gia'] ?></p>
-              <a href="./product.php?sp_ma=<?= $data[5]['sp_ma'] ?>" class="btn btn-primary">Xem</a>
-            </div>
-          </div>
-        </div>
 
-        <div class=" col-lg-3 col-md-4 col-sm-6 py-2" id="font-card">
-          <div id='card7' class="card">
-            <img src="<?= $duongdanimg . $data[4]['sp_img'] ?>" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-title">Tên sản phẩm:<?= $data[4]['sp_ten'] ?></p>
-              <p class="card-text">Giá sản phẩm:<?= $data[4]['sp_gia'] ?></p>
-              <a href="./product.php?sp_ma=<?= $data[4]['sp_ma'] ?>" class="btn btn-primary">Xem</a>
-            </div>
-          </div>
-        </div>
 
-        <div class=" col-lg-3 col-md-4 col-sm-6 py-2" id="font-card">
-          <div id='card8' class="card">
-            <img src="<?= $duongdanimg . $data[5]['sp_img'] ?>" class="card-img-top" alt="...">
-            <div class="card-body">
-              <p class="card-title">Tên sản phẩm:<?= $data[5]['sp_ten'] ?></p>
-              <p class="card-text">Giá sản phẩm:<?= $data[5]['sp_gia'] ?></p>
-              <a href="./product.php?sp_ma=<?= $data[5]['sp_ma'] ?>" class="btn btn-primary">Xem</a>
-            </div>
-          </div>
-        </div>
 
 
 

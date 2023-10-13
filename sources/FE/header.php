@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,89 +9,102 @@
    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Document</title>
-    <!-- form ->post url -Get -->
-    <style>
+     -->
+     <style>
+    li {
+        list-style: none;
 
-li{
-    list-style: none;
-    
-}
- #home ul{
-   display: flex;
-   justify-content: flex-start;
-    padding-top: 10px;
-  
-
-
-
-    
-}
-#home li:hover a {
-    color: #d2d2e1 !important;;
-
-}
-
-#home a{
-    color: #3d3d64;
-    text-decoration: none;
-}
-#home li{
-    padding: 5px 5px;
-    
-}
-
-
-#header {
-    background-image: linear-gradient(to bottom, #bfa4a4, #9b9be1);
-}
-
-
-#menu-header{
-    font-size: 25px;
-}
-
-#home :hover a {
-    border-radius: 5px;
-   
-    box-shadow: 0 0 20px 3px;
-}
-
-
-
-
-
-
-
-
-
-
-@media  screen and (max-width: 456px) {
-    #menu-header{
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    
-}
-}
-@media  screen and (max-width: 1200px) {
-    #menu-header{
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    
-}
-}
-@media  screen and (max-width: 990px) {
-    #home ul{
-    /* display: none; */
-    padding: 0px;
-   margin-top: -10px;
-   justify-content: center;
-    
-}
-.header-input{
-        padding: 0px 90px;
     }
 
+    #header{
+    z-index: 10000;
+    top: 0;
+    position: sticky;
 }
+   
+
+    #home ul {
+        display: flex;
+        justify-content: space-evenly;
+        padding-top: 10px;
+
+
+
+
+
+    }
+
+    #home li:hover a {
+        color: #d2d2e1 !important;
+        ;
+
+    }
+
+    #home a {
+        color: #3d3d64;
+        text-decoration: none;
+    }
+
+    #home li {
+        padding: 5px 5px;
+
+    }
+
+
+    #header {
+        background-image: linear-gradient(to bottom, #bfa4a4, #9b9be1);
+    }
+
+
+    #menu-header {
+        font-size: 20px;
+    }
+
+    /* #home :hover a  {
+        border-radius: 5px;
+
+        box-shadow: 0 0 20px 3px;
+    } */
+
+
+
+
+
+
+
+
+
+
+    @media screen and (max-width: 456px) {
+        #menu-header {
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        #menu-header {
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+        }
+    }
+
+    @media screen and (max-width: 990px) {
+        #home ul {
+            /* display: none; */
+            padding: 0px;
+            margin-top: -10px;
+            justify-content: center;
+
+        }
+
+        .header-input {
+            padding: 0px 90px;
+        }
+
+    }
 
 
 
@@ -103,119 +116,135 @@ li{
 
 
 
-/* Style The Dropdown Button */
-.dropbtn {
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
+    /* Style The Dropdown Button */
+    .dropbtn {
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
 
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+        position: relative;
+        /* display: inline-block; */
+    }
 
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px px rgba(0,0,0,0.2);
-  z-index: 100;
-}
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        min-width: 160px;
+        /* box-shadow: 0px 8px 16px px rgba(0, 0, 0, 0.2); */
+        z-index: 100;
+    }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-    background-color: #7070a7;
-    padding: 10px 0;
-    text-decoration: none;
-    display: block;
-}
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        background-color: #7070a7;
+        padding: 10px 0;
+        text-decoration: none;
+        display: block;
+    }
 
-/* Change color of dropdown links on hover */
-/* .dropdown-content a:hover {background-color: #f1f1f1} */
+    /* Change color of dropdown links on hover */
+    /* .dropdown-content a:hover {background-color: #f1f1f1} */
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
-
-
-    </style>
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    .dropdown-content :hover a{
+        color:red;
+    }
+</style>
 
 </head>
+
 <body>
-<?php
+    <?php
 
 
-?>
-<div class="" id="header">
-        <div class="container" >
+    ?>
+    <div class="" id="header">
+        <div class="container">
             <div class="row py-2 " style="text-align: center;">
                 <!-- ------logo-------- -->
                 <div class="col-lg-3 col-md-12" id="logo" style="padding:5px 5px">
-                <a href="./website.php"><img src=<?=$linkImgIndex."logo1.webp" ?> alt=""style="height:auto;witdh:100%" ></a>
-               
-            </div>
+                    <a href="./website.php"><img src=<?= $linkImgIndex . "logo1.webp" ?> alt="" style="height:auto;witdh:100%"></a>
 
-            <div class="col-lg-6 col-md-12 text-white " style="text-align:center;padding: 8px 0;">
+                </div>
+
+                <div class="col-lg-3 col-md-12 text-white " style="text-align:center;padding: 8px 0;">
                     <div class="input-group mb-3 " id="header-input" style="padding:5px 5px">
-                            <input type="text" class="form-control" placeholder="Nhấn để tìm kiếm" >
-                            <span  class="input-group-text" style="background-color:#9fa3fe;">
+                        <input type="text" class="form-control" placeholder="Nhấn để tìm kiếm">
+                        <span class="input-group-text" style="background-color:#9fa3fe;">
                             <a href="">
-                            
-                            
-                            <i class="fa fa-search" aria-hidden="true"></i></a>
-                          </div>
 
 
-                    </div>
-
-                <div class="col-lg-3 col-md-12 " id="home">
-                    
-                        <ul id="menu-header">
-                        <li>
-                            <div class="dropdown" id= "ic-notuser" >
-                                <a href="#" class="nav-link " id="order"> 
-                                    <i class="fa fa-user" aria-hidden="true"  style="color: #5c64b4;"></i>
-                                    <strong style="    font-family: cursive;font-size:25px">USER</strong>
-                                </a>
-                                <div class="dropdown-content" >
-                                    <a href="./login.php" class ="menu-dropdown">Đăng nhập</a>
-                                    <a href="./register.php" class ="menu-dropdown">Đăng ký</a>
-                                </div>
-                             
-                            
-                            </li>
-                            
-                        </ul>
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </a>
                     </div>
 
 
                 </div>
 
-               
-                
-                
-                
-            
+                <div class="col-lg-6 col-md-12 " id="home">
+
+                    <ul id="menu-header">
+
+                        <li>
+                            <div class="">
+                                <a href="website.php" class="nav-link " id="order">
+                                    <i class="fa fa-home" aria-hidden="true" style="font-size:24px;color: #5c64b4;"></i>
+                                    <strong style=" font-family: cursive;font-size:25px">HOME</strong>
+                                </a>
 
 
 
+                        </li>
+                        <li>
+                            <div class="">
+                                <a href="./cart.php" class="nav-link " id="order">
+                                    <i class="fa fa-shopping-cart" aria-hidden="true" style="font-size:24px;color: #5c64b4;"></i>
+                                    <strong style=" font-family: cursive;font-size:25px">CART</strong>
+                                </a>
 
 
 
+                        </li>
+                        <li>
+                            <div class="dropdown" id="ic-notuser">
+                                <a href="#" class="nav-link " id="order">
+                                    <i class="fa-solid fa-circle-user" style="font-size:25px;color: #5c64b4;"></i>
+                                    <strong style=" font-family: cursive;font-size:25px">USER</strong>
+                                </a>
+                                <div class="dropdown-content">
+                                    <a href="./login.php" class="menu-dropdown">Đăng nhập</a>
+                                    <a href="./register.php" class="menu-dropdown">Đăng ký</a>
+                                </div>
 
+
+                        </li>
+
+
+                    </ul>
+                </div>
 
 
             </div>
+
+
+
+
+
         </div>
     </div>
-   
+    </div>
+
 </body>
+
 </html>

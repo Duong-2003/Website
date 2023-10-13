@@ -19,7 +19,7 @@
 
   include($linkFE . 'header.php');
 
-  include($linkFE . 'menu.php');
+  // include($linkFE . 'menu.php');
 
   ?>
 
