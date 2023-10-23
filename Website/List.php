@@ -15,52 +15,14 @@
     ?>
 
 </head>
-<style>
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    
-    max-width: 100%;
-}
-li{
-    list-style: none;
-    
-}
-a{
-    text-decoration: none;
-}
 
-
-
-
-
-
-
-    
-
-/* ________________________________________ */
-
-
-</style>
-
-
-<script>
-           
-
-
-</script>
 <body>
     <?php
     session_start();
     include($linkFE.'header.php');
-    // include($linkFE.'menu.php');
-    include($linkFE.'slide.php');
-    include($linkFE.'content.php');
+    include($linkFE.'listProduct.php');
     include($linkFE.'footer.php');
 
     
     ?>
 </body>
-    

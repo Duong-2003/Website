@@ -62,10 +62,7 @@
             <hr>Sản phẩm mới nhất
             <hr>
           </a>
-
         </div>
-
-
       </div>
     </div>
 
@@ -87,13 +84,13 @@
     $connect->close();
 
     ?>
-   
+
     <!-- ________________Show thẻ_____________________ -->
     <div class="container text-center">
       <div class="row">
 
         <?php foreach ($dataArray as $data) : ?>
-         
+
           <div class="col-lg-3 col-md-4 col-sm-6 py-2" id="font-card">
             <div id="card<?= $i ?>" class="card">
               <img src="<?= $duongdanimg . $data['sp_img'] ?>" class="card-img-top" alt="...">
@@ -111,7 +108,7 @@
 
 
     <div class="text-center p-3">
-      <a class="btn btn-primary" href="./resetpass.php">Xem thêm</a>
+      <a class="btn btn-primary" href="./List.php?page=1">Xem thêm</a>
     </div>
   </div>
 
