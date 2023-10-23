@@ -67,19 +67,19 @@
           <p name="error" class="text-danger"><?= isset($_GET["error"]) ? $_GET["error"] : '' ?></p>
         </div>
           <div class="form-group">
-            <strong>Tài khoản:</strong>
+            <strong>Tài khoản: <span style="color: red;">*</span></strong>
 
             <input placeholder="Tài khoản của bạn" id="account" type="text" class="form-control" name="account" aria-label="Default" aria-describedby="inputGroup-sizing-default">
 
           </div>
           <div class="form-group">
-            <strong>Email</strong>
+            <strong>Email: <span style="color: red;">*</span></strong>
 
             <input id="email" placeholder="Email của bạn" type="text" class="form-control" name="email" aria-label="Default" aria-describedby="inputGroup-sizing-default">
          
       </div>
       <div class="form-group">
-        <strong>Mật khẩu mới</strong>
+        <strong>Mật khẩu mới: <span style="color: red;">*</span></strong>
 
         <input type="password" placeholder="Mật khẩu mới" id="passwordReset" class="form-control" name="passwordReset" aria-label="Default" aria-describedby="inputGroup-sizing-default">
      
@@ -88,9 +88,9 @@
     <div class="text-center p-3">
       <button type="submit" id="loginSubmit" name="submit" class="btn btn-primary">Thay đổi</button>
 
-      <button type="submit" name="submit" id="reg_submit" class="btn btn-primary">Đăng ký</button>
+      <!-- <button type="submit" name="submit" id="reg_submit" class="btn btn-primary">Đăng ký</button> -->
 
-      <a class="btn btn-primary" href="./login.php">Đăng nhập</a>
+      <!-- <a class="btn btn-primary" href="./login.php">Đăng nhập</a> -->
 
 
 

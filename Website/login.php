@@ -48,14 +48,16 @@
 
       <div class="col-lg-6  py-3" id="font-login">
         <h2 style="text-align:center; color: #da7070;">ĐĂNG NHẬP TÀI KHOẢN</h2>
+
         <div class="error">
           <p name="notifi" id="notifi_log" class="text-primary"><?= isset($_GET["notifi"]) ? $_GET["notifi"] : '' ?></p>
           <p name="error" id="error_log" class="text-danger"><?= isset($_GET["error"]) ? $_GET["error"] : '' ?></p>
         </div>
+
         <form action=<?= $linkBE . "login_process.php" ?> method="post">
           <div class="form-group">
 
-            <strong>Tài khoản:</strong>
+            <strong>Tài khoản:  <span style="color: red;">*</span></strong>
 
 
 
@@ -63,7 +65,7 @@
 
           </div>
           <div class="form-group">
-            <strong>Mật khẩu:</strong>
+            <strong>Mật khẩu:  <span style="color: red;">*</span></strong>
 
 
             <input type="password" placeholder="Nhập mật khẩu" id="password" class="form-control" name="password" aria-label="Default" aria-describedby="inputGroup-sizing-default">
@@ -72,9 +74,10 @@
 
           <div class="text-center p-3" >
             <button type="submit" id="loginSubmit" name="submit" class="btn btn-primary">Đăng nhập</button>
-            <a class="btn btn-primary" href="./register.php">Đăng ký</a>
+            <!-- <a class="btn btn-primary" href="./register.php">Đăng ký</a> -->
             <a class="btn btn-primary" href="./resetpass.php">Quên mật khẩu</a>
           </div>
+          
         </form>
       </div>
     </div>

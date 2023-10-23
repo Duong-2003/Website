@@ -10,18 +10,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Document</title>
      -->
-     <style>
+<style>
     li {
         list-style: none;
 
     }
 
-    #header{
-    z-index: 10000;
-    top: 0;
-    position: sticky;
-}
-   
+    #header {
+        z-index: 10000;
+        top: 0;
+        position: sticky;
+    }
+
 
     #home ul {
         display: flex;
@@ -157,8 +157,8 @@
     }
 
     /* Change the background color of the dropdown button when the dropdown content is shown */
-    .dropdown-content :hover a{
-        color:red;
+    .dropdown-content :hover a {
+        color: red;
     }
 </style>
 
@@ -166,10 +166,48 @@
 
 <body>
     <?php
-
-
+    // Kiểm tra xem người dùng đã đăng nhập chưa
+    if (isset($_SESSION['username'])) {
+        // Sử dụng thông tin đăng nhập từ session
+        $loggedInUsername = $_SESSION['username'];
+    } 
     ?>
+    <script>
+        var username = <?php echo isset($loggedInUsername) ? json_encode($loggedInUsername) : 'null'; ?>;
+
+        // Xử lý thay đổi icone user
+        function myFunction() {
+            console.log(username);
+            if (typeof username !== 'undefined' && username !== null) {
+                console.log("Đăng nhập: " + username);
+                var newElement = document.getElementById("ic-user");
+                var oldElement = document.getElementById("ic-notuser");
+                if (newElement && oldElement) {
+                    var clonedElement = newElement.cloneNode(true);
+                    clonedElement.style.display = 'block';
+                    oldElement.parentNode.replaceChild(clonedElement, oldElement);
+                }
+            } else {
+                console.log("Chưa đăng nhập");
+            }
+        }
+        document.addEventListener("DOMContentLoaded", myFunction);
+    </script>
+
+    <div class="dropdown" id="ic-user" style="display: none;">
+        <a href="#">
+            <img src="https://avatars.githubusercontent.com/u/125018793?s=400&u=d66a7dc1d555eb23d223fe07b638e9701a5735be&v=4" alt="" width="32" height="32" class="rounded-circle me-2">
+            <strong><?= $loggedInUsername ?></strong>
+        </a>
+        <div class="dropdown-content">
+            <a href="#" class="menu-dropdown">Thông tin</a>
+            <a href=<?= $linkBE . "logout_process.php" ?> class="menu-dropdown">Đăng xuất</a>
+        </div>
+    </div>
+
+
     <div class="" id="header">
+
         <div class="container">
             <div class="row py-2 " style="text-align: center;">
                 <!-- ------logo-------- -->
@@ -244,6 +282,7 @@
         </div>
     </div>
     </div>
+
 
 </body>
 

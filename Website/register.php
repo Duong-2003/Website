@@ -56,27 +56,27 @@
 
         <form action=<?= $linkBE . "register_process.php" ?> method="post">
           <div class="form-group">
-            <strong>Email:</strong>
+            <strong>Email: </strong>
 
 
             <input id="email" placeholder="Email để lấy lại mật khẩu" type="text" class="form-control" name="email" aria-label="Default" aria-describedby="inputGroup-sizing-default">
 
           </div>
           <div class="form-group">
-            <strong>Tài khoản: </strong>
+            <strong>Tài khoản: <span style="color: red;">*</span></strong>
 
             <input id="account" placeholder="Tài khoản bạn muốn đăng ký" type="text" class="form-control" name="username" aria-label="Default" aria-describedby="inputGroup-sizing-default">
 
           </div>
           <div class="form-group">
-            <strong>Nhập mật khẩu:</strong>
+            <strong>Nhập mật khẩu:  <span style="color: red;">*</span></strong>
             <input id="password" placeholder="Nhập mật khẩu" type="password" name="password" autocomplete="new-password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
 
           </div>
 
           <div class="form-group">
 
-            <strong>Nhập lại mật khẩu:</strong>
+            <strong>Nhập lại mật khẩu:  <span style="color: red;">*</span></strong>
 
             <input name="rePass" placeholder="Nhập lại mật khẩu" id="rePass" type="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
 
@@ -85,8 +85,8 @@
           <div class="text-center p-3">
             <button type="submit" name="submit" id="reg_submit" class="btn btn-primary">Đăng ký</button>
 
-            <a class="btn btn-primary" href="./login.php">Đăng nhập</a>
-            <a class="btn btn-primary" href="./resetpass.php">Quên mật khẩu</a>
+            <!-- <a class="btn btn-primary" href="./login.php">Đăng nhập</a> -->
+            <!-- <a class="btn btn-primary" href="./resetpass.php">Quên mật khẩu</a> -->
           </div>
         </form>
       </div>
