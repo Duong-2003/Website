@@ -28,8 +28,9 @@
       font-size: 20px;
       text-align: center;
       font-weight: 600;
-    }
 
+    }
+   
     #font-login {
       border: 1px solid;
       color: #ac7d7d;
@@ -50,8 +51,13 @@
         <h2 style="text-align:center; color: #da7070;">ĐĂNG NHẬP TÀI KHOẢN</h2>
 
         <div class="error">
-          <p name="notifi" id="notifi_log" class="text-primary"><?= isset($_GET["notifi"]) ? $_GET["notifi"] : '' ?></p>
-          <p name="error" id="error_log" class="text-danger"><?= isset($_GET["error"]) ? $_GET["error"] : '' ?></p>
+          <?php
+           $error =  isset($_GET["error"]) ? $_GET["error"] : '';
+           $notifi = isset($_GET["notifi"]) ? $_GET["notifi"] : '';
+          ?>
+           
+          <p name="notifi" id="notifi_log" class="text-primary"><?=$notifi?></p>
+          <p name="error" id="error_log" class="text-danger"><?=$error?></p>
         </div>
 
         <form action=<?= $linkBE . "login_process.php" ?> method="post">

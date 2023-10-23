@@ -1,8 +1,11 @@
-<body>
-    <div>
-        Sắp xếp
-    </div>
+<style>
+    .dropdown-content>a {
+        background-color: #6c757d;
+        color: aliceblue;
+    }
+</style>
 
+<body>
     <?php
 
     include_once($linkconnWebsite);
@@ -15,10 +18,15 @@
         echo "ERROR: Không nhận được trang";
         exit();
     }
-    $page = $_GET['page'];
+    $arrange = isset($_GET['arrange']) ? $_GET['arrange'] : "";
     $minShow = $valueCartShow * ($page - 1);
 
-    $sql = "SELECT * FROM sanpham LIMIT $minShow,$valueCartShow";
+    if ($arrange == "") {
+        $sql = "SELECT * FROM sanpham LIMIT $minShow,$valueCartShow";
+    } else if ($arrange == "price") {
+        $sql = "SELECT * FROM sanpham ORDER BY sp_gia DESC LIMIT $minShow,$valueCartShow";
+    }
+
     $result = $connect->query($sql);
     $duongdanimg = $linkImgSp;
 
@@ -30,6 +38,36 @@
     }
 
     ?>
+
+
+
+    <div>
+        <div class="dropdown ">
+            <a class="btn btn-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Sắp Xếp
+            </a>
+            <div class="dropdown-content">
+                <a href="./List.php?page=1&&arrange=price" class="menu-dropdown" id="menuprice">Theo giá</a>
+                <a href="#" class="menu-dropdown" id="menu-dr-reviews">Theo đánh giá</a>
+                <!-- <a  href="./List.php?page=1&&arrange=reviews" class="menu-dropdown" id ="menu-dr-reviews">Theo đánh giá</a>  -->
+            </div>
+        </div>
+
+        <script>
+            var arrange = "<?php echo $arrange ?>";
+            var element;
+            if (arrange == "price") {
+                element = document.getElementById("menuprice");
+
+                console.log(element + " testt");
+            } else if (arrange == "reviews") {
+                element = document.getElementById("menu-dr-reviews");
+            }
+            element.style.backgroundColor = "red";
+        </script>
+    </div>
+
+
 
     <div class="container text-center">
         <div class="row">
@@ -69,10 +107,10 @@
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
-                <?php for ($i =1; $i<= $pagination ;$i++) : ?>
-                    <li class="page-item"><a class="page-link" href="./List.php?page=<?=$i?>" > <?=$i?></a> </li>
+                <?php for ($i = 1; $i <= $pagination; $i++) : ?>
+                    <li class="page-item"><a class="page-link" href="./List.php?page=<?= $i ?>"> <?= $i ?></a> </li>
                 <?php endfor; ?>
-                <li class="page-item"> 
+                <li class="page-item">
                     <a class="page-link" href="#" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>

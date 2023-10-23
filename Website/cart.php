@@ -18,8 +18,7 @@
 <body>
     <?php
     session_start();
-    include($linkFE.'header.php');
-    // include($linkFE.'menu.php');
+    // include($linkFE.'header.php');
 
     
     include_once($linkconnWebsite);
@@ -27,7 +26,8 @@
             $name = $_SESSION['username'];
         } else {
             $connect->close();
-            header("location:./login.php?error='Vui lòng đăng nhập để vào giỏ hàng'");
+            $notifi = "Vui lòng đăng nhập để vào giỏ hàng";
+            header("location:./login.php?notifi=".$notifi);
             exit();
         }
 
