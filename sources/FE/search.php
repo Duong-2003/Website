@@ -6,53 +6,50 @@
 </style>
 
 <body>
+
     <?php
+    include($linkconnWebsite);
+    $search = strtolower($_GET['search']);
+$arrange = isset($_GET['arrange']) ? $_GET['arrange'] : "";
+// Sử dụng Prepared Statements để tránh lỗ hổng SQL Injection
+if($arrange == "price") {
+    $query = "SELECT * FROM sanpham WHERE LOWER(sp_ten) LIKE ? ORDER BY sp_gia DESC";
+}
+else {
+    $query = "SELECT * FROM sanpham WHERE LOWER(sp_ten) LIKE ?";
+}
 
-    include_once($linkconnWebsite);
+$stmt = $connect->prepare($query);
+// Bắt đầu binding parameters và thực hiện truy vấn
+$searchParam = "%" . $search . "%";
+$stmt->bind_param("s", $searchParam);
+$stmt->execute();
+$result = $stmt->get_result();
 
-    $valueCartShow = 20;
-    $page;
-    if ($_GET['page'] != '' || $_GET['page'] != null) {
-        $page = $_GET['page'];
-    } else {
-        echo "ERROR: Không nhận được trang";
-        exit();
-    }
-    $arrange = isset($_GET['arrange']) ? $_GET['arrange'] : "";
-    $minShow = $valueCartShow * ($page - 1);
+if ($result->num_rows == 0) {
+    echo '<span style="color: red;font-size: 30px;">Không có sản phẩm nào có từ khóa: ' . htmlspecialchars($search) . '</span>';
+    exit();
+}
 
-    if ($arrange == "") {
-        $sql = "SELECT * FROM sanpham LIMIT $minShow,$valueCartShow";
-    } else if ($arrange == "price") {
-        $sql = "SELECT * FROM sanpham ORDER BY sp_gia DESC LIMIT $minShow,$valueCartShow";
-    }
-
-    $result = $connect->query($sql);
-    $duongdanimg = $linkImgSp;
-
-    $dataArray = array();
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            $dataArray[] = $row;
-        }
-    }
+$name = [];
+while ($row = $result->fetch_assoc()) {
+    $name[] = $row;
+}
 
     ?>
-
-
-
     <div>
-        <div class="dropdown ">
-            <a class="btn btn-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Sắp Xếp
-            </a>
-            <div class="dropdown-content">
-                <a style="cursor: pointer;" class="menu-dropdown" id="menu-dr-price">Theo giá</a>
-                <a style="cursor: pointer;" class="menu-dropdown" id="menu-dr-reviews">Theo đánh giá</a>
-                <!-- <a  href="./List.php?page=1&&arrange=reviews" class="menu-dropdown" id ="menu-dr-reviews">Theo đánh giá</a>  -->
-            </div>
+    <div class="dropdown ">
+        <a class="btn btn-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Sắp Xếp
+        </a>
+        <div class="dropdown-content">
+            <a style="cursor: pointer;" class="menu-dropdown" id="menu-dr-price">Theo giá</a>
+            <a style="cursor: pointer;" class="menu-dropdown" id="menu-dr-reviews">Theo đánh giá</a>
+            <!-- <a  href="./List.php?page=1&&arrange=reviews" class="menu-dropdown" id ="menu-dr-reviews">Theo đánh giá</a>  -->
         </div>
-        <script>
+    </div>
+
+    <script>
             var arrange = "<?php echo $arrange ?>";
             var element;
             if (arrange == "price") {
@@ -67,9 +64,9 @@
 
             document.getElementById("menu-dr-price").addEventListener("click", function() {
                 if (arrange == "price")
-                    window.location.href = "./List.php?page=1";
+                    window.location.href = "./ListSearch.php?search=<?=$search?>&&page=1";
                 else {
-                    window.location.href = "./List.php?page=1&&arrange=price";
+                    window.location.href = "./ListSearch.php?search=<?=$search?>&&page=1&&arrange=price";
                 }
             });
         </script>
@@ -79,7 +76,7 @@
 
     <div class="container text-center">
         <div class="row">
-            <?php foreach ($dataArray as $data) : ?>
+            <?php foreach ($name as $data) : ?>
                 <div class="col-lg-3 col-md-4 col-sm-6 py-2" id="font-card">
                     <div id="card<?= $i ?>" class="card">
                         <img src="<?= $duongdanimg . $data['sp_img'] ?>" class="card-img-top" alt="...">
@@ -103,7 +100,7 @@
             $row = $result->fetch_assoc();
             $total = $row['total'];
         }
-        $pagination = ceil($total / $valueCartShow);
+        $pagination = ceil($total / 20);
         // Đóng kết nối
         $connect->close();
         ?>
