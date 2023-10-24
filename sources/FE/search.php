@@ -48,7 +48,6 @@ while ($row = $result->fetch_assoc()) {
             <!-- <a  href="./List.php?page=1&&arrange=reviews" class="menu-dropdown" id ="menu-dr-reviews">Theo đánh giá</a>  -->
         </div>
     </div>
-
     <script>
             var arrange = "<?php echo $arrange ?>";
             var element;

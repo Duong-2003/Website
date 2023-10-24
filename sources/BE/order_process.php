@@ -7,6 +7,7 @@ if (isset($_POST['submit']) && $_POST['donhang_soluongsp'] != '' && $_POST['sp_m
     if (!isset($_SESSION['username'])) {
         $connect->close();
         $error = 'Vui lòng đăng nhập để đặt hàng';
+        $notifi;
         header("location:".$linkWebsite."login.php?error=".$error);
     }
 
@@ -35,12 +36,15 @@ if (isset($_POST['submit']) && $_POST['donhang_soluongsp'] != '' && $_POST['sp_m
 
 
             if ($stmt->execute()) {
-                echo "Thành công";
+                $notifi = "Đặt hàng thành công";
+                header("location:".$linkWebsite."product.php?notifi=".$notifi."&&sp_ma=".$sp_ma);
             } else {
-                echo 'Lỗi đặt hàng !' . $stmt->error;
+                $error = 'Lỗi đặt hàng !' . $stmt->error;
+                header("location:".$linkWebsite."product.php?error=".$error."&&sp_ma=".$sp_ma);
             }
         } else {
-            echo "Không có sản phẩm";
+            $error = "Không có sản phẩm";
+            header("location:".$linkWebsite."product.php?error=".$error."&&sp_ma=".$sp_ma);
         }
 
         $stmt->close();
