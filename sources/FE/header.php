@@ -156,7 +156,7 @@
 <script>
     window.onscroll = function() {
         var header = document.getElementById("header");
-<<<<<<< HEAD
+
 
         if (window.pageYOffset > 100) {
             header.classList.add("hidden-header");
@@ -174,8 +174,7 @@
         }
     };
 
-=======
->>>>>>> 8f46e13b587aab697e12be15eaf4321de0409e31
+
         if (window.pageYOffset >= 100) {
             header.classList.add("hidden-header");
         } else {
@@ -201,8 +200,7 @@
         });
     }
 
-<<<<<<< HEAD
-=======
+
     //Xử lý ảnh lỗi 
     function yourFunction() {
         var images = document.querySelectorAll('img');
@@ -216,8 +214,7 @@
     }
     document.addEventListener('DOMContentLoaded', function() {
         yourFunction();
-    });
->>>>>>> 8f46e13b587aab697e12be15eaf4321de0409e31
+    })
 </script>
 
 <body>

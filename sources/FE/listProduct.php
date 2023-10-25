@@ -3,6 +3,7 @@
         background-color: #6c757d;
         color: aliceblue;
     }
+    
 
     
 </style>
@@ -78,7 +79,7 @@
             element = document.getElementById("menu-dr-reviews");
         }
         if (element)
-            element.style.backgroundColor = "red";
+            element.style.backgroundColor = "#6464d8";
 
         document.getElementById("menu-dr-price").addEventListener("click", function() {
             if (arrange == "price")
