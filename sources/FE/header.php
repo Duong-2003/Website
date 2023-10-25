@@ -12,8 +12,6 @@
 
 
     }
-
-
     #home ul {
         display: flex;
         justify-content: space-evenly;
@@ -156,19 +154,9 @@
     }
 </style>
 <script>
-    //     var prevScrollpos = window.pageYOffset;
-
-    // window.onscroll = function() {
-    //   var currentScrollPos = window.pageYOffset;
-    //   if (prevScrollpos > currentScrollPos) {
-    //     document.getElementById("header").classList.remove("hidden-header");
-    //   } else {
-    //     document.getElementById("header").classList.add("hidden-header");
-    //   }
-    //   prevScrollpos = currentScrollPos;
-    // }
     window.onscroll = function() {
         var header = document.getElementById("header");
+<<<<<<< HEAD
 
         if (window.pageYOffset > 100) {
             header.classList.add("hidden-header");
@@ -186,12 +174,12 @@
         }
     };
 
+=======
+>>>>>>> 8f46e13b587aab697e12be15eaf4321de0409e31
         if (window.pageYOffset >= 100) {
             header.classList.add("hidden-header");
-
         } else {
             handleScrollDirection();
-            // header.classList.remove("hidden-header");
         }
     ;
 
@@ -206,7 +194,6 @@
                 header.classList.add("hidden-header");
             } else {
                 // Hành động khi người dùng cuộn chuột lên
-                
                 header.classList.remove("hidden-header");
             }
 
@@ -214,6 +201,23 @@
         });
     }
 
+<<<<<<< HEAD
+=======
+    //Xử lý ảnh lỗi 
+    function yourFunction() {
+        var images = document.querySelectorAll('img');
+        images.forEach(function(img) {
+            img.addEventListener('error', function() {
+                this.onerror = null; 
+                var linkImg = '<?php echo $linkImgIndex; ?>nope-not-here.webp';
+                this.src = linkImg;
+            });
+        });
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        yourFunction();
+    });
+>>>>>>> 8f46e13b587aab697e12be15eaf4321de0409e31
 </script>
 
 <body>
