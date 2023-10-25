@@ -39,7 +39,7 @@
     }
   </style>
 
-  <div class="container">
+  <div class="container py-4">
     <div class="row">
       <div class="col-lg-6 ">
         <img src=<?= $linkImgIndex . "img-login2.jpg"  ?> width="100%"  alt="">

@@ -82,7 +82,7 @@ if ($danhsachdonhang): ?>
         ?>
 
         <li>
-            <div class="card mb-3" style="max-width: 540px; max-height: 200px;">
+            <div class="card mb-3 " style="max-width: 540px; max-height: 200px;">
                 <div class="row g-0">
                     <div class="col-md-4">
                         <img src="<?= $linkImgSp . $sp['sp_img'] ?>" class="img-fluid rounded-start" alt="...">

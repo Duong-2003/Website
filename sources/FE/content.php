@@ -57,8 +57,8 @@
   <div class="product-list mb-3 p-2 ">
     <div class="container">
       <div class="row">
-        <div class="col-md-12 fs-2 ">
-          <a href="" style="color:red;text-decoration:none">
+        <div class="col-md-12  ">
+          <a href="" style="color:red;text-decoration:none;font-size:30px">
             <hr>Sản phẩm mới nhất
             <hr>
           </a>
