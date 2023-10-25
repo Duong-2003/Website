@@ -8,7 +8,11 @@
         z-index: 10000;
         top: 0;
         position: sticky;
+<<<<<<< HEAD
         transition: 0.5s;
+=======
+
+>>>>>>> 81aec0f15bc24ff480c22d8e7071e578a251a93d
     }
 
 
@@ -167,6 +171,7 @@
     // }
     window.onscroll = function() {
         var header = document.getElementById("header");
+<<<<<<< HEAD
         if (window.pageYOffset > 100) {
             header.classList.add("hidden-header");
         } else {
@@ -182,6 +187,35 @@
             header.classList.add("hidden-header");
         }
     };
+=======
+        if (window.pageYOffset >= 100) {
+            header.classList.add("hidden-header");
+
+        } else {
+            handleScrollDirection();
+            // header.classList.remove("hidden-header");
+        }
+    };
+
+    function handleScrollDirection() {
+        var lastScrollTop = 0;
+
+        window.addEventListener("scroll", function() {
+            var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                // Hành động khi người dùng cuộn chuột xuống
+                header.classList.add("hidden-header");
+            } else {
+                // Hành động khi người dùng cuộn chuột lên
+                
+                header.classList.remove("hidden-header");
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Đảm bảo giá trị không âm
+        });
+    }
+>>>>>>> 81aec0f15bc24ff480c22d8e7071e578a251a93d
 </script>
 
 <body>
