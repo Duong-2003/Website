@@ -8,10 +8,10 @@
         z-index: 10000;
         top: 0;
         position: sticky;
+        transition: 0.5s;
+
 
     }
-
-
     #home ul {
         display: flex;
         justify-content: space-evenly;
@@ -180,6 +180,7 @@
             lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Đảm bảo giá trị không âm
         });
     }
+
     //Xử lý ảnh lỗi 
     function yourFunction() {
         var images = document.querySelectorAll('img');
