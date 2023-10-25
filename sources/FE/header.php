@@ -8,7 +8,7 @@
         z-index: 10000;
         top: 0;
         position: sticky;
-       
+
     }
 
 
@@ -56,10 +56,10 @@
     } */
 
 
-.hidden-header {
-    /* display: none; */
-    opacity: 0;
-}
+    .hidden-header {
+        /* display: none; */
+        opacity: 0;
+    }
 
 
 
@@ -154,25 +154,46 @@
     }
 </style>
 <script>
-//     var prevScrollpos = window.pageYOffset;
+    //     var prevScrollpos = window.pageYOffset;
 
-// window.onscroll = function() {
-//   var currentScrollPos = window.pageYOffset;
-//   if (prevScrollpos > currentScrollPos) {
-//     document.getElementById("header").classList.remove("hidden-header");
-//   } else {
-//     document.getElementById("header").classList.add("hidden-header");
-//   }
-//   prevScrollpos = currentScrollPos;
-// }
-window.onscroll = function() {
-    var header = document.getElementById("header");
-    if (window.pageYOffset > 100) {
-      header.classList.add("hidden-header");
-    } else {
-      header.classList.remove("hidden-header");
+    // window.onscroll = function() {
+    //   var currentScrollPos = window.pageYOffset;
+    //   if (prevScrollpos > currentScrollPos) {
+    //     document.getElementById("header").classList.remove("hidden-header");
+    //   } else {
+    //     document.getElementById("header").classList.add("hidden-header");
+    //   }
+    //   prevScrollpos = currentScrollPos;
+    // }
+    window.onscroll = function() {
+        var header = document.getElementById("header");
+        if (window.pageYOffset >= 100) {
+            header.classList.add("hidden-header");
+
+        } else {
+            handleScrollDirection();
+            // header.classList.remove("hidden-header");
+        }
+    };
+
+    function handleScrollDirection() {
+        var lastScrollTop = 0;
+
+        window.addEventListener("scroll", function() {
+            var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                // Hành động khi người dùng cuộn chuột xuống
+                header.classList.add("hidden-header");
+            } else {
+                // Hành động khi người dùng cuộn chuột lên
+                
+                header.classList.remove("hidden-header");
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Đảm bảo giá trị không âm
+        });
     }
-  };
 </script>
 
 <body>
