@@ -3,9 +3,6 @@
         background-color: #6c757d;
         color: aliceblue;
     }
-    
-
-    
 </style>
 
 <body>
@@ -13,7 +10,7 @@
 
     include_once($linkconnWebsite);
 
-    $valueCartShow = 20;
+    $productValueShow = 20;
     $page;
     if ($_GET['page'] != '' || $_GET['page'] != null) {
         $page = $_GET['page'];
@@ -22,12 +19,12 @@
         exit();
     }
     $arrange = isset($_GET['arrange']) ? $_GET['arrange'] : "";
-    $minShow = $valueCartShow * ($page - 1);
+    $minShow = $productValueShow * ($page - 1);
 
     if ($arrange == "") {
-        $sql = "SELECT * FROM sanpham LIMIT $minShow,$valueCartShow";
+        $sql = "SELECT * FROM sanpham LIMIT $minShow,$productValueShow";
     } else if ($arrange == "price") {
-        $sql = "SELECT * FROM sanpham ORDER BY sp_gia DESC LIMIT $minShow,$valueCartShow";
+        $sql = "SELECT * FROM sanpham ORDER BY sp_gia DESC LIMIT $minShow,$productValueShow";
     }
 
     $result = $connect->query($sql);
@@ -119,7 +116,7 @@
             $row = $result->fetch_assoc();
             $total = $row['total'];
         }
-        $pagination = ceil($total / $valueCartShow);
+        $pagination = ceil($total / $productValueShow);
         // Đóng kết nối
         $connect->close();
         ?>

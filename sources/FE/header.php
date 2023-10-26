@@ -310,7 +310,7 @@
                         </li>
                         <li>
                             <div class="">
-                                <a href="./cart.php" class="nav-link " id="order">
+                                <a href="./cart.php?page=1" class="nav-link " id="order">
                                     <i class="fa fa-shopping-cart" aria-hidden="true" style="font-size:24px;color: #5c64b4;"></i>
                                     <strong style=" font-family: cursive;font-size:25px">CART</strong>
                                 </a>
