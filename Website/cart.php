@@ -19,8 +19,9 @@
 <body>
     <?php
     session_start();
+    ob_start();
     include($linkFE . 'header.php');
-
+    ob_end_flush();
 
     include_once($linkconnWebsite);
     if (isset($_SESSION['username'])) {
@@ -28,7 +29,7 @@
     } else {
         $connect->close();
         $notifi = "Vui lòng đăng nhập để vào giỏ hàng";
-        header("location:./login.php?notifi=" . $notifi);
+        echo "<script>window.location.href = './login.php?notifi=" . $notifi . "';</script>";
         exit();
     }
 
