@@ -201,7 +201,10 @@
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="staticBackdropLabel">Thêm sản phẩm</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
       </div>
+      <div id="error-message" class="text-danger" style="text-align:center ;font-size:25px" ></div>
+      <div id="success-message" class="text-success" style="text-align:center ;font-size:25px"></div>
       <div class="modal-body">
       <div class="menu-content  " >
       <form action=<?= $linkBE . "Add_product.php" ?> method="post" enctype="multipart/form-data">
@@ -239,7 +242,7 @@
           <span class="input-group-text" id="inputGroup-sizing-default">Số lượng<span style="color: red;">*</span></span>
           <input name="sp_soluong" type="number" min='0' value="1" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>
-        
+
         <button type="submit" name="submit" type="button" class="btn btn-dark">Thêm</button>
         
       </form>
@@ -250,3 +253,44 @@
     </div>
   </div>
 </div>
+
+<script>
+  // Lấy form và nút "Thêm"
+  const form = document.querySelector("form");
+  const submitButton = document.querySelector('button[name="submit"]');
+
+  // Xử lý sự kiện khi form được gửi
+  form.addEventListener("submit", function(event) {
+    // Kiểm tra các trường nhập liệu
+    const productName = document.querySelector('input[name="sp_ten"]').value;
+    const productType = document.querySelector('select[name="productType"]').value;
+    const productPrice = document.querySelector('input[name="sp_gia"]').value;
+    const productDescription = document.querySelector('textarea[name="sp_mota"]').value;
+    const productDetail = document.querySelector('textarea[name="sp_motachitiet"]').value;
+    const productImage = document.querySelector('input[name="sp_img"]').value;
+    const productQuantity = document.querySelector('input[name="sp_soluong"]').value;
+
+    if (
+      productName.trim() === "" ||
+      productType.trim() === "" ||
+      productPrice.trim() === "" ||
+      productDescription.trim() === "" ||
+      productDetail.trim() === "" ||
+      productImage.trim() === "" ||
+      productQuantity.trim() === ""
+    ) {
+      // Hiển thị thông báo lỗi
+      document.getElementById("error-message").textContent = "Vui lòng nhập đầy đủ thông tin.";
+      event.preventDefault(); // Ngăn chặn gửi form
+    } else {
+      // Hiển thị thông báo thành công
+      document.getElementById("success-message").textContent = "Thêm sản phẩm thành công.";
+    }
+  });
+
+  // Xóa thông báo lỗi và thành công khi người dùng bắt đầu nhập liệu
+  form.addEventListener("input", function() {
+    document.getElementById("error-message").textContent = "";
+    document.getElementById("success-message").textContent = "";
+  });
+</script>
