@@ -18,22 +18,16 @@
   </script>
 
   <?php
-  // Kiểm tra xem có tham số "error" trong query string hay không
+  //Mở modal khi eror
   if (isset($_GET['error'])) {
-    $error = $_GET['error'];
-    // Thêm mã JavaScript vào trang
-    echo "<script>
-            window.onload = function() {
-                // Lấy vị trí của thẻ có id là 'error'
-                var errorElement = document.getElementById('error');
-
-                // Nếu thẻ tồn tại, cuộn đến vị trí của nó
-                if (errorElement) {
-                    errorElement.scrollIntoView({ behavior: 'smooth' });
-                }
-            };
-          </script>";
-  }
+ 
+    echo '<script >
+            $(document).ready(function(){
+                $("#staticBackdrop").modal("show");
+            });
+          </script>';
+}
+?>
   ?>
   <div class=" container content">
     <hr style="color:aqua">
