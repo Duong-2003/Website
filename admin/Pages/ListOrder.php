@@ -1,5 +1,3 @@
-<!doctype html>
-<html lang="en">
 
 <head>
   <meta charset="utf-8">
@@ -43,7 +41,7 @@
 
     // var_dump(($danhsachSP));
     ?>
-    <table id="danhsach" class=" table table-striped table-bordered table-hover">
+    <table id="danhsach" class=" table table-striped table-hover table-secondary table-bordered table-hover">
       <thead>
         <tr>
           <th>Mã đơn hàng</th>

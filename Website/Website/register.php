@@ -89,11 +89,11 @@
    </span>
  </div>
           <div class="text-center p-3">
-            <button type="submit" name="submit" id="reg_submit" class="btn btn-primary" style="margin-top:15px">Đăng ký</button>
+            <button type="submit" name="submit" id="reg_submit" class="btn btn-primary" >Đăng ký</button>
 
             <!-- <a class="btn btn-primary" href="./login.php">Đăng nhập</a> -->
             <!-- <a class="btn btn-primary" href="./resetpass.php">Quên mật khẩu</a> -->
-            <button type="submit" id="loginSubmit" name="submit" class="btn btn-primary" style="margin-top:15px">Đăng nhập</button>
+            <button type="submit" id="loginSubmit" name="submit" class="btn btn-primary" >Đăng nhập</button>
           </div>
 
          

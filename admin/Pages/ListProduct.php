@@ -99,7 +99,7 @@
         <?php endforeach;
         ?>
       </tbody>
-    </table>
+    <!-- </table>
 
     <span class="log_heading text-dark mb-3">
       <hr>
@@ -153,7 +153,7 @@
       </form>
     </div>
   </div>
-  </div>
+  </div> -->
 
   <script>
     $(document).ready(function() {
@@ -163,3 +163,68 @@
 </body>
 
 </html>
+
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+ Thêm sản phẩm
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Thêm sản phẩm</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <div class="menu-content  " >
+      <form action=<?= $linkBE . "Add_product.php" ?> method="post" enctype="multipart/form-data">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Tên sp<span style="color: red;">*</span></span>
+          <input name="sp_ten" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Tên Loại sp<span style="color: red;">*</span></span>
+          <select name="productType" class="form-select" aria-label="Default select example">
+            <?php
+            foreach ($danhsachLSP as $Lsp) : ?>
+              <option value="<?= $Lsp['loaisp_ten'] ?>"><?= $Lsp['loaisp_ten'] ?></option>
+            <?php endforeach;
+            ?>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Giá sp<span style="color: red;">*</span></span>
+          <input name="sp_gia" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Mô tả sp</label>
+          <textarea name="sp_mota" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Mô tả sp chi tiết<span style="color: red;">*</span></span></label>
+          <textarea name="sp_motachitiet" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Img<span style="color: red;">*</span></span>
+          <input name="sp_img" type="file" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="inputGroup-sizing-default">Số lượng<span style="color: red;">*</span></span>
+          <input name="sp_soluong" type="number" min='0' value="1" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>
+        
+        <button type="submit" name="submit" type="button" class="btn btn-dark">Thêm</button>
+        
+      </form>
+      
+    </div>
+  </div>
+     
+    </div>
+  </div>
+</div>

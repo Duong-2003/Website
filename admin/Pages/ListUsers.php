@@ -34,7 +34,7 @@
     }
     
     ?>
-    <table id="danhsach" class = "table table-striped table-bordered table-hover">
+    <table id="danhsach" class = "table table-striped table-hover table-secondary table-bordered table-hover">
       <thead>
         <tr>
           <th>Tên đăng nhập</th>
