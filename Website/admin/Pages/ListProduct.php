@@ -53,7 +53,7 @@
     // var_dump(($danhsachSP));
     ?>
 
-    <table id="danhsach" class="table table-striped table-success table-bordered table-hover">
+    <table id="danhsach" class="table table-striped table-bordered table-hover">
       <thead>
         <tr style="border:1px solid;text-align:center">
           <th>Mã sp</th>
@@ -88,7 +88,7 @@
                       </a></div>
                   </div>
                   <div class="col">
-                    <div class="p-2"><a href="./Edit_product.php?key=sp_ma&table=sanpham&datakey=<?= $sp['sp_ma'] ?>">
+                    <div class="p-2"><a href="./Alter_product.php?key=sp_ma&table=sanpham&datakey=<?= $sp['sp_ma'] ?>">
                         <button type="submit" name="submit" type="button" class="btn btn-dark">Sửa</button>
                       </a></div>
                   </div>

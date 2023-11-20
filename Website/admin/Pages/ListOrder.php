@@ -18,15 +18,8 @@
     myDiv.classList.add("active");
   </script>
 
-<<<<<<< Updated upstream
   <div class="content" style="padding: 0 30px;">
     <h1>Danh sách loại sản phẩm</h1>
-=======
-
-  <div class="content" style="padding: 100px 30px;">
-    <h1>Danh sách đơn hàng</h1>
-
->>>>>>> Stashed changes
     <?php
     include_once($linkconnPages);
     $sql =  "SELECT * FROM donhang";

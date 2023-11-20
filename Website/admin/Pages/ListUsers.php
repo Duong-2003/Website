@@ -17,7 +17,7 @@
   myDiv.classList.add("active");
 </script>
 
-  <div class="content" style="padding: 100px 30px;">
+  <div class="content" style="padding: 0 30px;">
     <h1>Danh sách người dùng</h1>
     <?php
     include_once($linkconnPages);
