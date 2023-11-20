@@ -18,7 +18,7 @@
 </script>
 
   <div class="content" style="padding: 0 30px;">
-    <h1>Danh sách nguời dùng</h1>
+    <h1>Danh sách người dùng</h1>
     <?php
     include_once($linkconnPages);
     $sql =  "SELECT * FROM users";
@@ -33,7 +33,6 @@
             );
     }
     
-    // var_dump(($danhsachSP));
     ?>
     <table id="danhsach" class = "table table-striped table-bordered table-hover">
       <thead>
