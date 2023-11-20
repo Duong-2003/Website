@@ -1,5 +1,4 @@
-<!doctype html>
-<html lang="en">
+
 
 <head>
   <meta charset="utf-8">
@@ -28,7 +27,7 @@
           </script>';
 }
 ?>
-  ?>
+  
   <div class=" container content">
     <hr style="color:aqua">
     <h1 style="text-align: center; padding-top:40px">Danh mục sản phẩm</h1>
@@ -79,13 +78,15 @@
           <th>Mô tả chi tiết</th>
           <th>Image</th>
           <th>Số lượng</th>
+          <th>Check</th>
           <th>Thao tác</th>
+          
         </tr>
       </thead>
       <tbody>
         <?php
         foreach ($danhsachSP as $sp) : ?>
-          <!-- <tr style="border:1px solid ;text-align:center">
+          <tr style="border:1px solid ;text-align:center">
             <td><?= $sp['sp_ma'] ?></td>
             <td><?= $sp['sp_ten'] ?></td>
             <td><?= $sp['loaisp_ten'] ?></td>
@@ -94,6 +95,7 @@
             <td><?= $sp['sp_motachitiet'] ?></td>
             <td><?= $sp['sp_img'] ?></td>
             <td><?= $sp['sp_soluong'] ?></td>
+            <td><input type="checkbox" name="selectedProducts[]" value="<?= $sp['sp_ma'] ?>"></td>
             <td>
               <div class="container text-center">
                 <div class="row gx-2">
@@ -105,52 +107,21 @@
                   <div class="col">
                     <div class="p-2"><a href="./Edit_product.php?key=sp_ma&table=sanpham&datakey=<?= $sp['sp_ma'] ?>">
                         <button type="submit" name="submit" type="button" class="btn btn-dark">Sửa</button>
-                      </a></div>
+                      </a>
+                    </div>
                   </div>
                 </div>
+                
               </div>
             </td>
-          </tr> -->
+          </tr>
         <?php endforeach;
         ?>
       </tbody>
 
 
-      <tbody>
-  <?php foreach ($danhsachSP as $sp) : ?>
-    <tr style="border:1px solid; text-align:center">
-      <td><input type="checkbox" name="selectedProducts[]" value="<?= $sp['sp_ma'] ?>"></td>
-      <td><?= $sp['sp_ma'] ?></td>
-      <td><?= $sp['sp_ten'] ?></td>
-      <td><?= $sp['loaisp_ten'] ?></td>
-      <td><?= number_format($sp['sp_gia'], 0, '.', ',') ?></td>
-      <td><?= $sp['sp_mota'] ?></td>
-      <td><?= $sp['sp_motachitiet'] ?></td>
-      <td><?= $sp['sp_img'] ?></td>
-      <td><?= $sp['sp_soluong'] ?></td>
-      <td colspan="2"> <!-- Thêm thuộc tính colspan=2 cho ô này -->
-        <div class="container text-center">
-          <div class="row gx-2">
-            <div class="col">
-              <div class="p-2">
-                <a href="<?= $linkBE . "DeleteSQL.php?key=sp_ma&table=sanpham&datakey=" . $sp['sp_ma'] ?>">
-                  <button type="submit" name="submit" type="button" class="btn btn-dark">Xóa</button>
-                </a>
-              </div>
-            </div>
-            <div class="col">
-              <div class="p-2">
-                <a href="./Edit_product.php?key=sp_ma&table=sanpham&datakey=<?= $sp['sp_ma'] ?>">
-                  <button type="submit" name="submit" type="button" class="btn btn-dark">Sửa</button>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </td>
-    </tr>
-  <?php endforeach; ?>
-</tbody>
+     
+
     <!-- </table>
 
     <span class="log_heading text-dark mb-3">
