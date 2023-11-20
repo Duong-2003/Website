@@ -9,9 +9,11 @@
         top: 0;
         position: sticky;
         transition: 0.5s;
+        box-shadow: 0px 6px 4px rgba(0,0,0,0.3);
 
 
     }
+   
     #home ul {
         display: flex;
         justify-content: space-evenly;
