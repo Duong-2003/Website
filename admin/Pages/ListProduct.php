@@ -85,7 +85,7 @@
       <tbody>
         <?php
         foreach ($danhsachSP as $sp) : ?>
-          <tr style="border:1px solid ;text-align:center">
+          <!-- <tr style="border:1px solid ;text-align:center">
             <td><?= $sp['sp_ma'] ?></td>
             <td><?= $sp['sp_ten'] ?></td>
             <td><?= $sp['loaisp_ten'] ?></td>
@@ -110,10 +110,47 @@
                 </div>
               </div>
             </td>
-          </tr>
+          </tr> -->
         <?php endforeach;
         ?>
       </tbody>
+
+
+      <tbody>
+  <?php foreach ($danhsachSP as $sp) : ?>
+    <tr style="border:1px solid; text-align:center">
+      <td><input type="checkbox" name="selectedProducts[]" value="<?= $sp['sp_ma'] ?>"></td>
+      <td><?= $sp['sp_ma'] ?></td>
+      <td><?= $sp['sp_ten'] ?></td>
+      <td><?= $sp['loaisp_ten'] ?></td>
+      <td><?= number_format($sp['sp_gia'], 0, '.', ',') ?></td>
+      <td><?= $sp['sp_mota'] ?></td>
+      <td><?= $sp['sp_motachitiet'] ?></td>
+      <td><?= $sp['sp_img'] ?></td>
+      <td><?= $sp['sp_soluong'] ?></td>
+      <td colspan="2"> <!-- Thêm thuộc tính colspan=2 cho ô này -->
+        <div class="container text-center">
+          <div class="row gx-2">
+            <div class="col">
+              <div class="p-2">
+                <a href="<?= $linkBE . "DeleteSQL.php?key=sp_ma&table=sanpham&datakey=" . $sp['sp_ma'] ?>">
+                  <button type="submit" name="submit" type="button" class="btn btn-dark">Xóa</button>
+                </a>
+              </div>
+            </div>
+            <div class="col">
+              <div class="p-2">
+                <a href="./Edit_product.php?key=sp_ma&table=sanpham&datakey=<?= $sp['sp_ma'] ?>">
+                  <button type="submit" name="submit" type="button" class="btn btn-dark">Sửa</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <?php endforeach; ?>
+</tbody>
     <!-- </table>
 
     <span class="log_heading text-dark mb-3">
@@ -180,7 +217,29 @@
 
 </html>
 
+<button type="button" id="deleteMultipleButton" class="btn btn-danger">Xóa nhiều</button>
+<script>
+  // Lấy nút "Xóa nhiều" và danh sách các checkbox
+  const deleteMultipleButton = document.getElementById("deleteMultipleButton");
+  const checkboxes = document.querySelectorAll('input[name="selectedProducts[]"]');
 
+  // Xử lý sự kiện khi nút "Xóa nhiều" được nhấp
+  deleteMultipleButton.addEventListener("click", function() {
+    const selectedProducts = Array.from(checkboxes)
+      .filter(checkbox => checkbox.checked)
+      .map(checkbox => checkbox.value);
+
+    if (selectedProducts.length > 0) {
+      // Gửi yêu cầu xóa các sản phẩm đã chọn lên máy chủ
+      // Thực hiện xử lý xóa trên phía máy chủ
+
+      // Sau khi xóa thành công, có thể hiển thị thông báo hoặc làm các thao tác khác
+      alert(`Đã xóa ${selectedProducts.length} sản phẩm.`);
+    } else {
+      alert("Vui lòng chọn ít nhất một sản phẩm để xóa.");
+    }
+  });
+</script>
 
 
 <!-- Button trigger modal -->
