@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+  <!-- <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> -->
   <title>Register</title>
 
   <?php
@@ -48,13 +46,13 @@
       </div>
 
       <div class="col-lg-6 py-2" id="font-register">
-        <h2 style="text-align:center; color: #da7070;">ĐĂNG KÝ TÀI KHOẢN</h2>
+        <h2 style="text-align:center; color: #da7070;     padding-top: 20px;">ĐĂNG KÝ TÀI KHOẢN</h2>
         <div class="error">
           <p name="notifi" id="notifi_register" class="text-primary"><?= isset($_GET["notifi"]) ? $_GET["notifi"] : '' ?></p>
           <p name="error" id="error_register" class="text-danger"><?= isset($_GET["error"]) ? $_GET["error"] : '' ?></p>
         </div>
 
-        <form action=<?= $linkBE . "register_process.php" ?> method="post">
+        <form action=<?= $linkBE . "register_process.php" ?> method="post" >
           <div class="form-group">
             <strong>Email: </strong>
 
@@ -81,13 +79,25 @@
             <input name="rePass" placeholder="Nhập lại mật khẩu" id="rePass" type="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
 
           </div>
+          <div class="flex-row"   style=" margin: 20px 5px;" > 
+   
+     
+   
+   <span class="span"> <a class="" href="./resetpass.php" >Quên mật khẩu?</a>
 
+   
+   </span>
+ </div>
           <div class="text-center p-3">
-            <button type="submit" name="submit" id="reg_submit" class="btn btn-primary">Đăng ký</button>
+            <button type="submit" name="submit" id="reg_submit" class="btn btn-primary" style="margin-top:15px">Đăng ký</button>
 
             <!-- <a class="btn btn-primary" href="./login.php">Đăng nhập</a> -->
             <!-- <a class="btn btn-primary" href="./resetpass.php">Quên mật khẩu</a> -->
+            <button type="submit" id="loginSubmit" name="submit" class="btn btn-primary" style="margin-top:15px">Đăng nhập</button>
           </div>
+
+         
+          
         </form>
       </div>
     </div>
