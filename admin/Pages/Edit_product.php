@@ -16,7 +16,7 @@
   myDiv.classList.add("active");
 </script>
 
-  <div class="content" style="padding: 0 30px;">
+  <div class="content" style="padding: 100px 30px;">
     <?php
    include_once($linkconnPages);
     $sqlLSP =  "SELECT * FROM loaisp";
@@ -69,7 +69,7 @@
     </table>
     <div >
     <span class="log_heading text-dark mb-3"><h5>Sửa sản phẩm</h5></span>
-      <form action="./Add_product.php"   method="post">
+      <form action="Edit_product.php"   method="post">
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Tên sp<span style="color: red;">*</span></span>
           <input value="<?=$sp['sp_ten'] ?>" name="sp_ten" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
