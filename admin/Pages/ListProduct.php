@@ -17,10 +17,31 @@
     myDiv.classList.add("active");
   </script>
 
-  <div class=" container content" style="">
+  <?php
+  // Kiểm tra xem có tham số "error" trong query string hay không
+  if (isset($_GET['error'])) {
+    $error = $_GET['error'];
+    // Thêm mã JavaScript vào trang
+    echo "<script>
+            window.onload = function() {
+                // Lấy vị trí của thẻ có id là 'error'
+                var errorElement = document.getElementById('error');
+
+                // Nếu thẻ tồn tại, cuộn đến vị trí của nó
+                if (errorElement) {
+                    errorElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            };
+          </script>";
+  }
+  ?>
+  <div class=" container content">
     <hr style="color:aqua">
     <h1 style="text-align: center; padding-top:40px">Danh mục sản phẩm</h1>
     <hr style="color:red">
+
+    <div> <?= isset($_GET["notifi"]) ? $_GET["notifi"] : '' ?></div>
+
     <?php
     include_once($linkconnPages);
     $sqlLSP =  "SELECT * FROM loaisp";
@@ -112,6 +133,7 @@
       <h1 style="text-align:center">Thêm sản phẩm</h1>
     </span>
     <hr>
+    <div id ="error"> <?= isset($_GET["error"]) ? $_GET["error"] : '' ?></div>
 
     <div class="menu-content  " style="margin: 0 150px;">
       <form action=<?= $linkBE . "Add_product.php" ?> method="post" enctype="multipart/form-data">

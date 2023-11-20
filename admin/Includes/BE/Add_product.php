@@ -13,7 +13,7 @@ if (isset($_POST['submit']) && $_FILES['sp_img'] != null && $_POST['sp_motachiti
     $img = basename($_FILES['sp_img']['name']);
 
     $target_img = '../../../Assets/img/SanPham/'.$img ;
-
+    $error ='';
     if (is_string($price)) {
         $price = (float) str_replace(',', '', $price);
     }
@@ -25,14 +25,16 @@ if (isset($_POST['submit']) && $_FILES['sp_img'] != null && $_POST['sp_motachiti
         VALUES ('$name', '$price',NULL,'$describeDetail','$quantity','$type','$img')";
     }
     if ($connect->query($query) === TRUE && move_uploaded_file($_FILES['sp_img']['tmp_name'],$target_img)) {
-        header("location:" . $linkPages . "ListProduct.php");
+        $connect->close();
+        header("location:" . $linkPages . "ListProduct.php?notifi=Thêm thành công");
     } else {
-        echo "Lỗi không thêm được sản phẩm: " . $connect->error;
+        $connect->close();
+        $error ="?error=Lỗi không thêm được sản phẩm ." . $connect->error;
+        header("location:" . $linkPages . "ListProduct.php".$error);
     }
-    $connect->close();
+    
 } else {
     $connect->close();
-    // header("location:./adminIndex.php");
-    echo ("chưa nhập toàn bộ ");
-    exit();
+    $error="?error=Chưa nhập toàn bộ ";
+    header("location:" . $linkPages . "ListProduct.php".$error);
 }
