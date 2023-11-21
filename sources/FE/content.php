@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <title>Document</title> -->
 <style>
+  img.card-img-top {
+    height: 350px;
+}
   .content a {
     text-decoration: none;
   }
@@ -18,18 +21,19 @@
   .card {
     box-shadow: 0 0 5px 0px;
     color: #999;
+
   }
 
 
   div.card :hover a {
-    box-shadow: 0 0 20px 5px;
-    color: white;
+    /* box-shadow: 0 0 20px 5px;
+    color: white; */
   }
 
   #font-card:hover {
-    box-shadow: 0 0 20px 5px;
+    /* box-shadow: 0 0 20px 5px;
     color: #c7a5a5;
-    border-radius: 20px;
+    border-radius: 20px; */
   }
 
   @media screen and (max-width: 456px) {
@@ -114,3 +118,5 @@
 
 
 </body>
+
+

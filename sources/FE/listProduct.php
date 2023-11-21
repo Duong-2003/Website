@@ -96,7 +96,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 py-2" id="font-card">
                     <div id="card<?= $i ?>" class="card">
                         <img src="<?= $duongdanimg . $data['sp_img'] ?>" class="card-img-top" alt="...">
-                        <div class="card-body">
+                        <div class="card-body"> 
                             <p class="card-title">Tên sản phẩm:<?= $data['sp_ten'] ?></p>
                             <p class="card-text">Giá sản phẩm:<?= $data['sp_gia'] ?></p>
                             <a href="./product.php?sp_ma=<?= $data['sp_ma'] ?>" class="btn btn-primary">Xem</a>

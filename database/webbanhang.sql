@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th9 17, 2023 lúc 04:41 AM
--- Phiên bản máy phục vụ: 10.4.28-MariaDB
--- Phiên bản PHP: 8.1.17
+-- Host: 127.0.0.1
+-- Generation Time: Nov 21, 2023 at 01:25 PM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `webbanhang`
+-- Database: `webbanhang`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `donhang`
+-- Table structure for table `donhang`
 --
 
 CREATE TABLE `donhang` (
@@ -37,22 +37,10 @@ CREATE TABLE `donhang` (
   `donhang_soluongsp` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Đang đổ dữ liệu cho bảng `donhang`
---
-
-INSERT INTO `donhang` (`donhang_ma`, `sp_ma`, `name`, `timeorder`, `donhang_trangthai`, `donhang_gia`, `donhang_soluongsp`) VALUES
-(1, 19, 'ndd', '0000-00-00', 'Chờ xác nhận', '10000000', 1),
-(2, 23, 'ndd', '0000-00-00', 'Chờ xác nhận', '119995000', 5),
-(3, 18, 'ndd', '2023-09-16', 'Chờ xác nhận', '12000000', 1),
-(5, 24, '1', '2023-09-17', 'Chờ xác nhận', '10000000', 1),
-(6, 23, 'ndd', '2023-09-17', 'Chờ xác nhận', '23999000', 1),
-(7, 19, 'ndd', '2023-09-17', 'Chờ xác nhận', '30000000', 3);
-
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `loaisp`
+-- Table structure for table `loaisp`
 --
 
 CREATE TABLE `loaisp` (
@@ -60,7 +48,7 @@ CREATE TABLE `loaisp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `loaisp`
+-- Dumping data for table `loaisp`
 --
 
 INSERT INTO `loaisp` (`loaisp_ten`) VALUES
@@ -70,7 +58,7 @@ INSERT INTO `loaisp` (`loaisp_ten`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `sanpham`
+-- Table structure for table `sanpham`
 --
 
 CREATE TABLE `sanpham` (
@@ -85,22 +73,24 @@ CREATE TABLE `sanpham` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `sanpham`
+-- Dumping data for table `sanpham`
 --
 
 INSERT INTO `sanpham` (`sp_ma`, `loaisp_ten`, `sp_ten`, `sp_gia`, `sp_mota`, `sp_motachitiet`, `sp_img`, `sp_soluong`) VALUES
-(18, 'Điện thoại', 'Iphone 7', '12000000', 'Iphone 7 ', '- Màu : đủ màu\r\n- 128 ,64 GB', 'ip6.jpg', 10),
-(19, 'Điện thoại', 'Iphone 6', '10000000', 'Iphone 6', '-Màu :trắng ,đen\r\n- 64Gb\r\n-Máy cũ 90% pin', 'ip6.jpg', 3),
-(20, 'Điện thoại', 'Iphone 11', '20000000', 'Iphone 11', '-Màu :All\r\n-Gb :All', 'iphone11-tim.jpg', 3),
-(21, 'Điện thoại', 'Iphone 15 pro', '25000000', 'Iphone 15 pro', '-Màu :All\r\n-Gb : All', 'ip15-pro.jpg', 1),
-(22, 'Điện thoại', 'Iphone 11', '22400000', 'Iphone 11', '-Màu :Tím\r\n-Gb : 128', 'iphone11-tim.jpg', 15),
-(23, 'Điện thoại', 'Iphone 12', '23999000', 'Iphone 12', '-Màu :Tím\r\n-GB :128 , 64', 'iphone12-tim.jpg', 30),
-(24, 'Khác', 'Iphone 7', '10000000', 'Iphone 7', 'Iphone 7', 'ip7.png', 1);
+(68, 'Điện thoại', 'IP !4 PRO MAX', '20', 'điện thoại promax siêu promax', 'điện thoại promax siêu promax', 'iphone-14-pro-max.webp', 100),
+(70, 'Điện thoại', 'IP 12 PRO MAX', '20000', 'ip 12 PRO MAX 64GB', 'ip 12 PRO MAX 64GB', 'iphone-12-64gb-chinh-hang-vn-a1.webp', 1),
+(74, 'Điện thoại', 'IP 11 PRO MAX', '20000', 'cũ', 'cũ', 'iphone-11-pro-max-64gb-chinh-hang-vna-1.webp', 2),
+(78, 'Điện thoại', 'IP !4 PRO MAX', '20000', 'a', 'a', 'ip12', 1),
+(80, 'Điện thoại', 'SAMSUNG GALAXY Z FLIP 5 256GB', '300000', 'SAMSUNG GALAXY Z FLIP 5 256GB', 'SAMSUNG GALAXY Z FLIP 5 256GB', 'samsung galaxy z flip 5 -256GB', 6),
+(81, 'Điện thoại', 'SAMSUNG GALAXY A53', '333432', '128GB BẢN CHÍNH HÃNG', '128GB BẢN CHÍNH HÃNG', 'samsung galaxy A53 5G 8GB 128GB chính hãng', 1),
+(82, 'Điện thoại', 'XIAOMI REDMI NOTE 12 PRO MAX MAX MAX', '20000', '64GB 128GB BẢN CHÍNH HÃNG', '64GB 128GB BẢN CHÍNH HÃNG', 'Xiaomi Redmi note 12 Pro 6GB 128GB trắng', 1),
+(83, 'Điện thoại', 'SAMSUNG GALAXY Z FLIP 5 512GB', '20000', '512GB BẢN CHÍNH HÃNG', '512GB BẢN CHÍNH HÃNG', 'samsung galaxy z flip 5 -256GB', 1),
+(84, 'Điện thoại', 'IP XS PRO MAX 64GB', '20000', 'CHẤT LƯỢNG CŨ', 'CHẤT LƯỢNG CŨ', 'iphone-xs-cu-64gb-nguyen-ban-dep', 1);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `trangthaidonhang`
+-- Table structure for table `trangthaidonhang`
 --
 
 CREATE TABLE `trangthaidonhang` (
@@ -110,7 +100,7 @@ CREATE TABLE `trangthaidonhang` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -122,7 +112,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`name`, `pass`, `email`, `address`, `role`) VALUES
@@ -133,11 +123,11 @@ INSERT INTO `users` (`name`, `pass`, `email`, `address`, `role`) VALUES
 ('ndd145', '$2y$10$.MwpRxvVuzYQ2sCSyIZ3AOoQasD/hcPvJWlb1yPXPSvq08mAFVpIa', NULL, NULL, 0);
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `donhang`
+-- Indexes for table `donhang`
 --
 ALTER TABLE `donhang`
   ADD PRIMARY KEY (`donhang_ma`),
@@ -145,59 +135,59 @@ ALTER TABLE `donhang`
   ADD KEY `name` (`name`);
 
 --
--- Chỉ mục cho bảng `loaisp`
+-- Indexes for table `loaisp`
 --
 ALTER TABLE `loaisp`
   ADD PRIMARY KEY (`loaisp_ten`);
 
 --
--- Chỉ mục cho bảng `sanpham`
+-- Indexes for table `sanpham`
 --
 ALTER TABLE `sanpham`
   ADD PRIMARY KEY (`sp_ma`),
   ADD KEY `loaisp_ten` (`loaisp_ten`);
 
 --
--- Chỉ mục cho bảng `trangthaidonhang`
+-- Indexes for table `trangthaidonhang`
 --
 ALTER TABLE `trangthaidonhang`
   ADD PRIMARY KEY (`donhang_trangthai`);
 
 --
--- Chỉ mục cho bảng `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`name`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `donhang`
+-- AUTO_INCREMENT for table `donhang`
 --
 ALTER TABLE `donhang`
   MODIFY `donhang_ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT cho bảng `sanpham`
+-- AUTO_INCREMENT for table `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `sp_ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `sp_ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `donhang`
+-- Constraints for table `donhang`
 --
 ALTER TABLE `donhang`
   ADD CONSTRAINT `donhang_ibfk_1` FOREIGN KEY (`sp_ma`) REFERENCES `sanpham` (`sp_ma`),
   ADD CONSTRAINT `donhang_ibfk_2` FOREIGN KEY (`name`) REFERENCES `users` (`name`);
 
 --
--- Các ràng buộc cho bảng `sanpham`
+-- Constraints for table `sanpham`
 --
 ALTER TABLE `sanpham`
   ADD CONSTRAINT `sanpham_ibfk_1` FOREIGN KEY (`loaisp_ten`) REFERENCES `loaisp` (`loaisp_ten`);

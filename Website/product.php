@@ -68,7 +68,7 @@
     <form method="post" action=<?= $linkBE . "order_process.php" ?>>
         <div class="container py-4">
             <div class="row">
-                <div class="col-lg-7 col-md-7 py-3">
+                <div class="col-lg-7 col-md-7 py-3 " >
                     <img src="<?= $duongdanimg . $sp['sp_img'] ?>" alt="" style="width: 100%; height:100%;border-radius:15px">
                 </div>
                 <div class="col-lg-5 col-md-5 " style="    border-radius: 15px; box-shadow: 0 0 10px 0px;">
