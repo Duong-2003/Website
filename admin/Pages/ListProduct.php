@@ -67,7 +67,7 @@
     // var_dump(($danhsachSP));
     ?>
 
-    <table id="danhsach" class="table table-striped table-success table-bordered table-hover">
+    <table id="danhsach" class="table table-striped table-secondary stable-bordered table-hover">
       <thead>
         <tr style="border:1px solid;text-align:center">
           <th>Mã sp</th>
@@ -78,8 +78,9 @@
           <th>Mô tả chi tiết</th>
           <th>Image</th>
           <th>Số lượng</th>
-          <th>Check</th>
+          
           <th>Thao tác</th>
+          <th>Check</th>
           
         </tr>
       </thead>
@@ -95,7 +96,7 @@
             <td><?= $sp['sp_motachitiet'] ?></td>
             <td><?= $sp['sp_img'] ?></td>
             <td><?= $sp['sp_soluong'] ?></td>
-            <td><input type="checkbox" name="selectedProducts[]" value="<?= $sp['sp_ma'] ?>"></td>
+           
             <td>
               <div class="container text-center">
                 <div class="row gx-2">
@@ -114,6 +115,8 @@
                 
               </div>
             </td>
+            <td>
+  <input type="checkbox" style="width: 20px; height: 20px;" name="selectedProducts[]" value="<?= $sp['sp_ma'] ?>"></td>
           </tr>
         <?php endforeach;
         ?>
