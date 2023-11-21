@@ -72,7 +72,7 @@
                   <div class="col">
                   </div>
                   <div class="col">
-                    <div class="p-2"><a href="">Sửa</a></div>
+                    <div class="p-2"><a href="./Edit_Order.php?datakey=<?= $donhang['donhang_ma'] ?>">Sửa</a></div>
                   </div>
                 </div>
               </div>
@@ -82,24 +82,11 @@
         ?>
       </tbody>
     </table>
-    <!-- <div >
-        <span class="log_heading text-dark mb-3"><h5>Danh sách đơn hàng</h5></span>
-        <form action=<?= $linkBE . 'Add_productType.php' ?> method="post">
-            <div class="input-group mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-default">Tên loại sp<span style="color: red;">*</span></span>
-            <input name="loaisp" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-            </div>
-            
-            <button type="submit" name="submit" type="button" class="btn btn-dark">Thêm</button>
-        </form>
-    </div> -->
   </div>
-  </div>
+  
   <script>
     $(document).ready(function() {
       $('#danhsach').DataTable();
     });
   </script>
 </body>
-
-</html>

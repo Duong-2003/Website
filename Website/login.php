@@ -16,11 +16,7 @@
 
 <body>
   <?php
-
   include($linkFE . 'header.php');
-
-  // include($linkFE . 'menu.php');
-
   ?>
 
   <style>
@@ -30,7 +26,7 @@
       font-weight: 600;
 
     }
-   
+
     #font-login {
       border: 1px solid;
       color: #ac7d7d;
@@ -42,7 +38,7 @@
   <div class="container py-4">
     <div class="row">
       <div class="col-lg-6 ">
-        <img src=<?= $linkImgIndex . "img-login2.jpg"  ?> width="100%"  alt="">
+        <img src=<?= $linkImgIndex . "img-login2.jpg"  ?> width="100%" alt="">
       </div>
 
 
@@ -52,38 +48,30 @@
 
         <div class="error">
           <?php
-           $error =  isset($_GET["error"]) ? $_GET["error"] : '';
-           $notifi = isset($_GET["notifi"]) ? $_GET["notifi"] : '';
+          $error =  isset($_GET["error"]) ? $_GET["error"] : '';
+          $notifi = isset($_GET["notifi"]) ? $_GET["notifi"] : '';
           ?>
-           
-          <p name="notifi" id="notifi_log" class="text-primary"><?=$notifi?></p>
-          <p name="error" id="error_log" class="text-danger"><?=$error?></p>
+
+          <p name="notifi" id="notifi_log" class="text-primary"><?= $notifi ?></p>
+          <p name="error" id="error_log" class="text-danger"><?= $error ?></p>
         </div>
 
         <form action=<?= $linkBE . "login_process.php" ?> method="post">
           <div class="form-group">
-
-            <strong>Tài khoản:  <span style="color: red;">*</span></strong>
-
-
-
+            <strong>Tài khoản: <span style="color: red;">*</span></strong>
             <input id="account" placeholder="Nhập tài khoản" type="text" class="form-control" name="account" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-
           </div>
+
           <div class="form-group">
-            <strong>Mật khẩu:  <span style="color: red;">*</span></strong>
-
-
+            <strong>Mật khẩu: <span style="color: red;">*</span></strong>
             <input type="password" placeholder="Nhập mật khẩu" id="password" class="form-control" name="password" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-
           </div>
 
-          <div class="text-center p-3" >
+          <div class="text-center p-3">
             <button type="submit" id="loginSubmit" name="submit" class="btn btn-primary">Đăng nhập</button>
-            <!-- <a class="btn btn-primary" href="./register.php">Đăng ký</a> -->
             <a class="btn btn-primary" href="./resetpass.php">Quên mật khẩu</a>
           </div>
-          
+
         </form>
       </div>
     </div>
