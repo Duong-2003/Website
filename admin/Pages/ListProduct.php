@@ -96,7 +96,7 @@
                       </a></div>
                   </div>
                   <div class="col">
-                    <div class="p-2"><a href="./Edit_product.php?datakey=<?= $sp['sp_ma'] ?>">
+                    <div class="p-2"><a href=<?= $linkBE . "Edit_product.php?sp_ma=" . $sp['sp_ma'] ?>>
                         <button type="submit" name="submit" type="button"  class="btn btn-dark">Sửa</button>
                       </a>
                     </div>
@@ -122,6 +122,14 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
 
 <button type="button" id="deleteMultipleButton" class="btn btn-danger">Xóa nhiều</button>
 <script>

@@ -97,7 +97,9 @@
                     <div id="card<?= $i ?>" class="card">
                         <img src="<?= $duongdanimg . $data['sp_img'] ?>" class="card-img-top" alt="...">
                         <div class="card-body"> 
-                            <p class="card-title">Tên sản phẩm:<?= $data['sp_ten'] ?></p>
+                            <p class="card-title">
+                                <!-- Tên sản phẩm: -->
+                                <?= $data['sp_ten'] ?></p>
                             <p class="card-text">Giá sản phẩm:<?= $data['sp_gia'] ?></p>
                             <a href="./product.php?sp_ma=<?= $data['sp_ma'] ?>" class="btn btn-primary">Xem</a>
                         </div>
@@ -121,22 +123,27 @@
         $connect->close();
         ?>
 
-        <nav aria-label="Page navigation example" style="display: flex;justify-content: center;">
-            <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true" style="font-weight: bold;font-size: 30px;">&laquo;</span>
-                    </a>
-                </li>
-                <?php for ($i = 1; $i <= $pagination; $i++) : ?>
-                    <li class="page-item"><a class="page-link" href="./List.php?page=<?= $i ?>" style="font-weight: bold;font-size: 30px;"> <?= $i ?></a> </li>
-                <?php endfor; ?>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true" style="font-weight: bold;font-size: 30px;">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</body>
+<nav aria-label="Page navigation example" style="display: flex; justify-content: center;">
+    <ul class="pagination">
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true" style="font-weight: bold; font-size: 30px;">&laquo;</span>
+            </a>
+        </li>
+        <?php for ($i = 1; $i <= $pagination; $i++) : ?>
+            <li class="page-item">
+                <a class="page-link" href="./List.php?page=<?= $i ?>" style="font-weight: bold; font-size: 30px;">
+                    <?= $i ?>
+                </a>
+            </li>
+        <?php endfor; ?>
+        <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true" style="font-weight: bold; font-size: 30px;">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
+

@@ -34,7 +34,5 @@ if (isset($_POST['submit']) && $_FILES['sp_img'] != null && $_POST['sp_motachiti
     }
     
 } else {
-    $connect->close();
-    $error="?error=Chưa nhập toàn bộ ";
-    header("location:" . $linkPages . "ListProduct.php".$error);
+  
 }

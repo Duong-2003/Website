@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2023 at 01:25 PM
+-- Generation Time: Nov 21, 2023 at 02:23 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -85,7 +85,9 @@ INSERT INTO `sanpham` (`sp_ma`, `loaisp_ten`, `sp_ten`, `sp_gia`, `sp_mota`, `sp
 (81, 'Điện thoại', 'SAMSUNG GALAXY A53', '333432', '128GB BẢN CHÍNH HÃNG', '128GB BẢN CHÍNH HÃNG', 'samsung galaxy A53 5G 8GB 128GB chính hãng', 1),
 (82, 'Điện thoại', 'XIAOMI REDMI NOTE 12 PRO MAX MAX MAX', '20000', '64GB 128GB BẢN CHÍNH HÃNG', '64GB 128GB BẢN CHÍNH HÃNG', 'Xiaomi Redmi note 12 Pro 6GB 128GB trắng', 1),
 (83, 'Điện thoại', 'SAMSUNG GALAXY Z FLIP 5 512GB', '20000', '512GB BẢN CHÍNH HÃNG', '512GB BẢN CHÍNH HÃNG', 'samsung galaxy z flip 5 -256GB', 1),
-(84, 'Điện thoại', 'IP XS PRO MAX 64GB', '20000', 'CHẤT LƯỢNG CŨ', 'CHẤT LƯỢNG CŨ', 'iphone-xs-cu-64gb-nguyen-ban-dep', 1);
+(84, 'Điện thoại', 'IP XS PRO MAX 64GB', '20000', 'CHẤT LƯỢNG CŨ', 'CHẤT LƯỢNG CŨ', 'iphone-xs-cu-64gb-nguyen-ban-dep', 1),
+(85, 'Điện thoại', 'XIAOMI REDMI K60', '20000', '8GB 128GB BẢN CHÍNH HÃNG', '8GB 128GB BẢN CHÍNH HÃNG', 'Xiaomi redmi K60 pro 5g 8gb 128gb.webp', 1),
+(86, 'Điện thoại', 'REDMI NOTE 12 TURBO ', '20000', '256GB ', '256GB ', 'redmi-note-12-turbo-8gb-256gb-ch.webp', 1);
 
 -- --------------------------------------------------------
 
@@ -173,7 +175,7 @@ ALTER TABLE `donhang`
 -- AUTO_INCREMENT for table `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `sp_ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `sp_ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
 
 --
 -- Constraints for dumped tables
