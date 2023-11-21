@@ -7,7 +7,6 @@
 
       </div>
       <div id="error-message" class="text-danger" style="text-align:center ;font-size:25px" ></div>
-      <div id="success-message" class="text-success" style="text-align:center ;font-size:25px"></div>
       <div class="modal-body">
       <div class="menu-content  " >
       <form action=<?= $linkBE . "Add_product.php" ?> method="post" enctype="multipart/form-data">
@@ -85,15 +84,11 @@
       // Hiển thị thông báo lỗi
       document.getElementById("error-message").textContent = "Vui lòng nhập đầy đủ thông tin.";
       event.preventDefault(); // Ngăn chặn gửi form
-    } else {
-      // Hiển thị thông báo thành công
-      document.getElementById("success-message").textContent = "Thêm sản phẩm thành công.";
-    }
+    } 
   });
 
   // Xóa thông báo lỗi và thành công khi người dùng bắt đầu nhập liệu
   form.addEventListener("input", function() {
     document.getElementById("error-message").textContent = "";
-    document.getElementById("success-message").textContent = "";
   });
 </script>
