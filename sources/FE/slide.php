@@ -10,7 +10,7 @@
     <title>Document</title> -->
 
     <style>
-  @media screen and (max-width: 990px) {
+  /* @media screen and (max-width: 990px) {
 
     #slide2 img {
 
@@ -23,7 +23,7 @@
 
     }
 
-  }
+  } */
 </style>
 </head>
 
@@ -33,7 +33,7 @@
 
   <div class="container py-3">
     <div class="row">
-      <div class="col-lg-8 col-md-12 col-sm-12 ">
+      <div class="col-lg-12 col-md-12 col-sm-12 ">
 
 
 
@@ -46,17 +46,17 @@
   </div>
   <div class="carousel-inner" id="carouselInner">
     <div class="carousel-item active">
-    <img id="slide"  src=<?= $linkImgIndex . "slide_1.webp" ?> class="d-block w-100" alt="...">
+    <img id="slide"  src=<?= $linkImgIndex . "slide10.png" ?> class="d-block w-100" alt="...">
     <!-- <img id="slide" onclick="changeimg()" src=<?= $linkImgIndex . "slide_1.webp" ?> class="d-block w-100" alt="..."> -->
     </div>
     <div class="carousel-item">
-    <img id="slide"  src=<?= $linkImgIndex . "slide_1.webp" ?> class="d-block w-100" alt="...">
+    <img id="slide"  src=<?= $linkImgIndex . "slide11.jfif" ?> class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-    <img id="slide"   src=<?= $linkImgIndex . "slide_3.webp" ?> class="d-block w-100" alt="...">
+    <img id="slide"   src=<?= $linkImgIndex . "slide12.png" ?> class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-    <img id="slide" src=<?= $linkImgIndex . "slide_4.webp" ?> class="d-block w-100" alt="...">
+    <img id="slide" src=<?= $linkImgIndex . "slide13.jfif" ?> class="d-block w-100" alt="...">
     </div>
   </div>
 
@@ -80,7 +80,7 @@
 
 
 
-      <div class=" slide2 col-sm-4">
+      <!-- <div class=" slide2 col-sm-4">
 
         <div class="col " id="slide2">
           <img src=<?= $linkImgIndex . "slide_6.webp" ?> alt="">
@@ -89,7 +89,7 @@
         <div class="col " id="slide3" style="padding-top: 18px;">
           <img src=<?= $linkImgIndex . "slide_4.webp" ?> alt="">
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 
