@@ -34,8 +34,8 @@
   #font-card:hover {
     /* box-shadow: 0 0 20px 5px;
     color: #c7a5a5;
-    border-radius: 20px; */
-   
+    border-radius: 20px;
+    */
   }
   
 
