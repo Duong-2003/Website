@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2023 at 02:23 PM
+-- Generation Time: Nov 22, 2023 at 10:19 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -53,6 +53,7 @@ CREATE TABLE `loaisp` (
 
 INSERT INTO `loaisp` (`loaisp_ten`) VALUES
 ('Khác'),
+('Ốp lưng điện thoại'),
 ('Điện thoại');
 
 -- --------------------------------------------------------
