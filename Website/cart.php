@@ -57,7 +57,7 @@
     <h1 style="color:red">Giỏ hàng</h1>
     <hr style="color:red">
     
-    <ul>
+    <ul style="display:flex;justify-content: space-between; ">
         <?php
         $cartValueShow = 10;
         $pagination = ceil(count($danhsachdonhang) / $cartValueShow);
@@ -100,12 +100,15 @@
                 ?>
 
                 <li>
+
+                
                     <div class="card mb-3 " style="max-width: 540px; max-height: 200px;">
                         <div class="row g-0">
-                            <div class="col-md-4">
+                            <div class="col-md-4 col-4">
                                 <img src="<?= $linkImgSp . $sp['sp_img'] ?>" class="img-fluid rounded-start" alt="...">
                             </div>
-                            <div class="col-md-8">
+
+                            <div class="col-md-6 col-6">
                                 <div class="card-body">
                                     <h5 class="card-title">
                                         <a style="text-decoration:none" href="./product.php?sp_ma=<?= $sp['sp_ma'] ?>"><?= $sp['sp_ten'] ?></a>
@@ -116,11 +119,20 @@
                                     <p class="card-text <?php echo ($donhang['donhang_trangthai'] == 'Đã hủy') ? 'text-danger' : ''; ?>">
                                         Trạng thái: <?= $donhang['donhang_trangthai'] ?>
                                     </p>
-                                    <p class="card-text"><small class="text-body-secondary">Ngày đặt: <?= $donhang['timeorder'] ?></small></p>
+                                    
+                                    <p class="card-text"><small class="text-body-secondary">Ngày đặt: <?= $donhang['timeorder'] ?></small>
+                             
+                                   
+                                    
                                 </div>
                             </div>
+
+                            
+
+                            
                         </div>
                     </div>
+
                     <?php if ($donhang['donhang_trangthai'] != 'Đã hủy') : ?>
                         <div class="p-1">
                             <div class="d-grid gap-2 col-6 mx-auto py-4">
@@ -154,6 +166,13 @@
 
     </ul>
 
+
+
+
+
+
+
+    
     <nav aria-label="Page navigation example" style="display: flex;justify-content: center;">
         <ul class="cartValueShow$cartValueShow">
             <li class="page-item">
