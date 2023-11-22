@@ -46,17 +46,17 @@
   </div>
   <div class="carousel-inner" id="carouselInner">
     <div class="carousel-item active">
-    <img id="slide"  src=<?= $linkImgIndex . "slide10.png" ?> class="d-block w-100" alt="...">
+    <a href=""><img id="slide"  src=<?= $linkImgIndex . "slide10.png" ?> class="d-block w-100" alt="..."></a>
     <!-- <img id="slide" onclick="changeimg()" src=<?= $linkImgIndex . "slide_1.webp" ?> class="d-block w-100" alt="..."> -->
     </div>
     <div class="carousel-item">
-    <img id="slide"  src=<?= $linkImgIndex . "slide11.jfif" ?> class="d-block w-100" alt="...">
+   <a href=""> <img id="slide"  src=<?= $linkImgIndex . "slide11.jfif" ?> class="d-block w-100" alt="..."></a>
     </div>
     <div class="carousel-item">
-    <img id="slide"   src=<?= $linkImgIndex . "slide12.png" ?> class="d-block w-100" alt="...">
+    <a href=""><img id="slide"   src=<?= $linkImgIndex . "slide12.png" ?> class="d-block w-100" alt="..."></a>
     </div>
     <div class="carousel-item">
-    <img id="slide" src=<?= $linkImgIndex . "slide13.jfif" ?> class="d-block w-100" alt="...">
+    <a href=""><img id="slide" src=<?= $linkImgIndex . "slide13.jfif" ?> class="d-block w-100" alt="..."></a>
     </div>
   </div>
 

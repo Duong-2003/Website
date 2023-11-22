@@ -48,19 +48,40 @@ ul.list-inline.top-social {
      
       opacity: 0;
       transform: translateY(30px);
-      animation: fadeUp 3s ease-out forwards;
+      /* animation: fadeUp 3s ease-out forwards;
+	  animation: glow 3s ease-out forwards; */
     }
 
     @keyframes fadeUp {
       0% {
         opacity: 0;
-        transform: translateY(40px);
+        transform: translateY(30px);
       }
       100% {
         opacity: 1;
         transform: translateY(0);
       }
     }
+
+	@keyframes glow {
+  0% {
+    text-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+  }
+  100% {
+    text-shadow: 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+
+.top-slogan {
+  font-size: 20px;
+  opacity: 0;
+  animation: fadeUp 1s ease-out forwards, glow 2s ease-in-out infinite;
+}
+
     </style>
 </head>
 <body>
