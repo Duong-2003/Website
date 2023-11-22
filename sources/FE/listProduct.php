@@ -3,6 +3,15 @@
         background-color: #6c757d;
         color: aliceblue;
     }
+    .card {
+        transition: transform 0.3s;
+        margin-bottom: 20px;
+    }
+
+    .card:hover {
+        transform: scale(1.1);
+    }
+
 </style>
 
 <body>
