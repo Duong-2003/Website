@@ -5,7 +5,7 @@
 //Pages dùng
 $linkBE = "../Includes/BE/";
 $linkFE = '../Includes/FE/';
-
+$linkJs = '../Includes/Js/';
 //Include Dùng
 $linkPages ='../../Pages/';
 
