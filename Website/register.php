@@ -84,9 +84,6 @@
 
           <div class="text-center p-3">
             <button type="submit" name="submit" id="reg_submit" class="btn btn-primary">Đăng ký</button>
-
-            <!-- <a class="btn btn-primary" href="./login.php">Đăng nhập</a> -->
-            <!-- <a class="btn btn-primary" href="./resetpass.php">Quên mật khẩu</a> -->
           </div>
         </form>
       </div>
@@ -94,34 +91,8 @@
   </div>
 
 
-
-
-  <!-- <div class="modal fade" id="regSucc" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Đăng kí thành công</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <p class="mt-2 mb-2">Bạn có muốn chuyển hướng tới trang đăng nhập ?</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Không</button>
-          <a type="button" href="./login.php" class="btn btn-primary text-white">Đăng nhập</a>
-        </div>
-      </div>
-    </div>
-  </div> -->
-
-
   <?php
-
   include($linkFE . 'footer.php');
-
-
   ?>
 </body>
 

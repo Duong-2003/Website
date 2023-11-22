@@ -256,7 +256,7 @@
         <strong>admin</strong>
       </a>
       <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-        <li><a class="dropdown-item" href=".././Website/Website.php">View</a></li>
+        <li><a class="dropdown-item"  target="_blank" href="../../Website/Website.php">View</a></li>
         <li><hr class="dropdown-divider"></li>
         <li><a class="dropdown-item" href="#">Sign out</a></li>
       </ul>

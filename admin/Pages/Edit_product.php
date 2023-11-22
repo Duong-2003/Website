@@ -68,10 +68,10 @@
       <span class="log_heading text-dark mb-3">
         <h5>Sửa sản phẩm</h5>
       </span>
-      <div id="error-message" class="text-danger" style="text-align:center ;font-size:25px"><</div>
-      <div id="error" class="text-danger" style="text-align:center ;font-size:25px">
-      <?=isset($_GET['error']) ? $_GET['error'] : ''?>
-    </div>
+      <div id="error-message" class="text-danger" style="text-align:center ;font-size:25px"></div>
+      <div class="text-danger" style="text-align:center ;font-size:25px">
+        <?= isset($_GET['error']) ? $_GET['error'] : '' ?>
+      </div>
       <form action="<?= $linkBE ?>Edit_product.php" method="post" enctype="multipart/form-data">
         <!-- Trường ẩn hidden -->
         <input type="hidden" name="sp_ma" value="<?= $sp['sp_ma'] ?>">
@@ -127,7 +127,7 @@
       });
     }
   }
-  // Lấy form và nút "Thêm"
+  // Lấy form và nút "Sửa"
   const form = document.querySelector("form");
   const submitButton = document.querySelector('button[name="submit"]');
 
@@ -154,7 +154,7 @@
       MoveToError();
       event.preventDefault(); // Ngăn chặn gửi form
 
-    } 
+    }
   });
 
   // Xóa thông báo lỗi và thành công khi người dùng bắt đầu nhập liệu

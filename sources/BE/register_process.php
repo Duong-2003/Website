@@ -18,6 +18,12 @@ if(isset($_POST['submit']) && $_POST['username'] != '' && $_POST['password'] != 
         $error = 'Nhập lại mật khẩu sai';
         header("location:".$linkWebsite."register.php?error=".$error);
     }
+    $checkQuery = "SELECT * FROM users WHERE name = '$username'";
+    $result = $connect->query($checkQuery);
+    if ($result->num_rows > 0) {
+        $error = 'Tên đăng nhập đã tồn tại';
+        header("location:".$linkWebsite."register.php?error=".$error);
+    }
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     if($email != ''){
         $hashed_email = password_hash($email, PASSWORD_DEFAULT);

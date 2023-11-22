@@ -56,6 +56,7 @@
         $cartValueShow = 10;
         $pagination = ceil(count($danhsachdonhang) / $cartValueShow);
         $page = isset($_GET['page']) ? $_GET['page'] : 1;
+        
         if ($danhsachdonhang) : ?>
             <?php
             $firstPage = ($page - 1) * $cartValueShow;
@@ -110,6 +111,7 @@
                             </div>
                         </div>
                     </div>
+                    <button type="submit" name="submit" type="button" class="btn btn-dark">Hủy đơn hàng</button>
                 </li>
             <?php endfor; ?>
         <?php endif; ?>
