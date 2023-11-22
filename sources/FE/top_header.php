@@ -43,6 +43,24 @@ ul.list-inline.top-social {
 .top-header .top-slogan strong {
     color: #fff;
 }
+.top-slogan {
+      font-size: 20px;
+     
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 3s ease-out forwards;
+    }
+
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
     </style>
 </head>
 <body>
