@@ -16,7 +16,7 @@
    
 
     <style>
-        .b-example-divider {
+        /* .b-example-divider {
           width: 100%;
           height: 3rem;
           background-color: rgba(0, 0, 0, .1);
@@ -29,7 +29,7 @@
           flex-shrink: 0;
           width: 1.5rem;
           height: 100vh;
-        }
+        } */
 
         /* .bi {
           vertical-align: -.125em;
@@ -65,14 +65,14 @@
 
 
     
-<!-- <nav class="navbar navbar-dark bg-dark fixed-left">
+<nav class="navbar navbar-dark bg-dark fixed-left">
   <div class="container-fluid">
    
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-      <div class="offcanvas-header"> -->
+      <div class="offcanvas-header">
 
         <!-- <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">LIST </h5> -->
        
