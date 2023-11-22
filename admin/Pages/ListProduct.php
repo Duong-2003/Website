@@ -9,12 +9,9 @@
 
   <?php
   include('./MenuAdmin.php');
+  include($linkJs . "Product.js");
   ?>
 
-  <script>
-    var myDiv = document.getElementById("product");
-    myDiv.classList.add("active");
-  </script>
 
   <div class=" container content">
     <hr style="color:aqua">
@@ -114,7 +111,6 @@
 
 
   <script>
-    //In dậm trong menu table
     $(document).ready(function() {
       $('#danhsach').DataTable();
     });
