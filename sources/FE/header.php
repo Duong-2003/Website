@@ -373,4 +373,23 @@
 
 
 
+<header>
+<div>
+    <nav>
+                    <div class="menu">
+                        <div class="logo">
+                        <a href=""></a>
+                        </div>
 
+
+                        <ul>
+                        <li>HOME</li>
+                        <li>SERVER</li>
+                        <li>DA</li>
+                        <li>BA</li>
+                        <li>LA</li>
+                        </ul>
+                    </div>
+    </nav>
+</div>
+</header>
