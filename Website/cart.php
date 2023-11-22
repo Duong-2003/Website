@@ -57,7 +57,7 @@
     <h1 style="color:red">Giỏ hàng</h1>
     <hr style="color:red">
     
-    <ul style="display:flex;justify-content: space-between; ">
+    <ul >
         <?php
         $cartValueShow = 10;
         $pagination = ceil(count($danhsachdonhang) / $cartValueShow);
@@ -102,7 +102,7 @@
                 <li>
 
                 
-                    <div class="card mb-3 " style="max-width: 540px; max-height: 200px;">
+                    <div class="card mb-3 " style="max-width: 540px; ">
                         <div class="row g-0">
                             <div class="col-md-4 col-4">
                                 <img src="<?= $linkImgSp . $sp['sp_img'] ?>" class="img-fluid rounded-start" alt="...">
@@ -122,7 +122,11 @@
                                     
                                     <p class="card-text"><small class="text-body-secondary">Ngày đặt: <?= $donhang['timeorder'] ?></small>
                              
-                                   
+                                    <div class="d-grid gap-2 col-6 mx-auto ">
+                                 <button id="btnModal" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                   Hủy
+                                </button>
+                            </div>
                                     
                                 </div>
                             </div>
@@ -134,13 +138,13 @@
                     </div>
 
                     <?php if ($donhang['donhang_trangthai'] != 'Đã hủy') : ?>
-                        <div class="p-1">
+                        <!-- <div class="p-1">
                             <div class="d-grid gap-2 col-6 mx-auto py-4">
                                  <button id="btnModal" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                    Hủy
                                 </button>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog " >
                                 <div class="modal-content " style="margin-top: 45%;">

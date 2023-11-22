@@ -20,10 +20,9 @@
 			<div class="swiper-wrapper" style="">
 				<div class="swiper-slide swiper-slide-active" style="width: 286.5px; margin-right: 30px;">
 					<div class="item">
-						<div class="image py-2">
+						<div class="image py-2 " style="text-align: center;">
 							<img width="150" height="150" class="lazyload img-responsive loading" src="//bizweb.dktcdn.net/100/488/726/themes/911609/assets/image_service1.png?1700191277185" alt="Cảm kết chất lượng" data-was-processed="true">
-						</div>
-						<div class="text">
+						
 							<h3>
 								Cam kết chất lượng
 							</h3>
@@ -35,10 +34,9 @@
 				</div>
 				<div class="swiper-slide swiper-slide-next" style="width: 286.5px; margin-right: 30px;">
 					<div class="item">
-						<div class="image py-2">
+						<div class="image py-2 " style="text-align: center;">
 							<img width="150" height="150" class="lazyload img-responsive loading" src="//bizweb.dktcdn.net/100/488/726/themes/911609/assets/image_service2.png?1700191277185" alt="Đảm bảo vệ sinh ATTP" data-was-processed="true">
-						</div>
-						<div class="text">
+						
 							<h3>
 								Đảm bảo  chính hãng
 							</h3>
@@ -50,10 +48,9 @@
 				</div>
 				<div class="swiper-slide" style="width: 286.5px; margin-right: 30px;">
 					<div class="item">
-						<div class="image py-2">
+						<div class="image py-2 " style="text-align: center;">
 							<img width="150" height="150" class="lazyload img-responsive loading" src="//bizweb.dktcdn.net/100/488/726/themes/911609/assets/image_service3.png?1700191277185" alt="Đổi trả sản phẩm" data-was-processed="true">
-						</div>
-						<div class="text">
+						
 							<h3>
 								Đổi trả sản phẩm
 							</h3>
@@ -65,10 +62,9 @@
 				</div>
 				<div class="swiper-slide" style="width: 286.5px; margin-right: 30px;">
 					<div class="item">
-						<div class="image py-2">
+						<div class="image py-2 " style="text-align: center;">
 							<img width="150" height="150" class="lazyload img-responsive loading" src="//bizweb.dktcdn.net/100/488/726/themes/911609/assets/image_service4.png?1700191277185" alt="Giao hàng" data-was-processed="true">
-						</div>
-						<div class="text">
+						
 							<h3>
 								Giao hàng
 							</h3>
