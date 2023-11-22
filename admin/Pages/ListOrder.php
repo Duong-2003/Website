@@ -48,7 +48,7 @@
           <th>Người đặt</th>
           <th>Ngày đặt</th>
           <th>Trạng thái</th>
-          <th>Giá</th>
+          <th>Tiền thu</th>
           <th>Số lượng sản phẩm</th>
           <th>Thao tác</th>
         </tr>

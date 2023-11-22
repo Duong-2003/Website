@@ -26,7 +26,6 @@
             font-weight: 600;
 
         }
-        
     </style>
 </head>
 
@@ -34,7 +33,6 @@
     <?php
     session_start();
     include($linkFE . 'header.php');
-    // include($linkFE . 'menu.php');
     ?>
 
     <?php
@@ -69,10 +67,10 @@
     <form method="post" action=<?= $linkBE . "order_process.php" ?>>
         <div class="container py-4">
             <div class="row">
-                <div class="col-lg-7 col-md-7 py-3 " >
+                <div class="col-lg-7 col-md-7 py-3 ">
                     <img src="<?= $duongdanimg . $sp['sp_img'] ?>" alt="" style="width: 100%; height:100%;border-radius:15px">
                 </div>
-                <div class="col-lg-5 col-md-5 " style="    border-radius: 15px; box-shadow: 0 0 10px 0px;">
+                <div class="col-lg-5 col-md-5 " style="border-radius: 15px; box-shadow: 0 0 10px 0px;">
                     <div class="row gy-2">
 
                         <div>
@@ -101,7 +99,7 @@
                     <div>
                         <div class="p-1">
                             <strong>Số lượng còn lại:</strong>
-                            <?= $sp['sp_soluong'] ?>
+                            <?= $sp['sp_soluong'] != 0 ? $sp['sp_soluong'] : '<span class="text-danger">Hết hàng</span>' ?>
                         </div>
                     </div>
 
@@ -147,13 +145,16 @@
 
                         <div class="p-1">
                             <div class="d-grid gap-2 col-6 mx-auto">
-                                 <button id="btnModal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Mua
-                                </button>
+                                <?php if ($sp['sp_soluong'] != 0) : ?>
+                                    <button id="btnModal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Mua
+                                    </button>
+                                <?php endif; ?>
+
                             </div>
                         </div>
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog " >
+                            <div class="modal-dialog ">
                                 <div class="modal-content " style="margin-top: 45%;">
                                     <div class="modal-header">
                                         <h1 class="modal-title fs-5" id="exampleModalLabel">Xác nhận</h1>
