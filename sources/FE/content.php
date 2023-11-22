@@ -10,9 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <title>Document</title> -->
 <style>
-  img.card-img-top {
-    height: 350px;
-}
+  
   .content a {
     text-decoration: none;
   }
@@ -21,6 +19,7 @@
   .card {
     box-shadow: 0 0 5px 0px;
     color: #999;
+    margin-bottom: 20px;
 
   }
 
@@ -28,15 +27,27 @@
   div.card :hover a {
     /* box-shadow: 0 0 20px 5px;
     color: white; */
+   
+   
   }
 
   #font-card:hover {
     /* box-shadow: 0 0 20px 5px;
     color: #c7a5a5;
     border-radius: 20px; */
+   
   }
+  
 
-  @media screen and (max-width: 456px) {
+  .card {
+        transition: transform 0.3s;
+    }
+
+    .card:hover {
+        transform: scale(1.1);
+    }
+
+  /* @media screen and (max-width: 456px) {
     #menu {
       flex-wrap: wrap;
       justify-content: space-evenly;
@@ -51,7 +62,7 @@
 
     }
 
-  }
+  } */
 </style>
 
 </head>
@@ -90,7 +101,7 @@
     ?>
 
     <!-- ________________Show thẻ_____________________ -->
-    <div class="container text-center">
+    <div class="container text-center py-5">
       <div class="row">
 
         <?php foreach ($dataArray as $data) : ?>
