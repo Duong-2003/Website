@@ -369,3 +369,89 @@
 
 
 
+<!-- <div class="center-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3 col-sm-4 col-xs-12">
+					<div class="main-logo">
+						<a href="/" class="logo-wrapper ">					
+                        <a href="./website.php"><img src=<?= $linkImgIndex . "logo1.webp" ?> alt="" style="height:auto;witdh:100%"></a>					
+						</a>
+					</div>
+				</div>
+				<div class="col-md-5 col-sm-8 hidden-xs">
+					<div class="header-hotline">
+						<ul class="list-inline">
+							<li>
+								<img src="//bizweb.dktcdn.net/100/258/935/themes/591852/assets/hotline_header_1.svg?1688530246470" class="img-responsive" alt="Hỗ trợ trực tuyến">
+								<div class="header-hotline-text">
+									<span class="header-hotline-text-1">
+										Hỗ trợ trực tuyến
+									</span>
+									<span class="header-hotline-text-2">
+										Gọi: <a href="tel:19006750">1900 6750</a>
+									</span>
+								</div>
+							</li>
+							<li>
+								<img src="//bizweb.dktcdn.net/100/258/935/themes/591852/assets/hotline_header_12.svg?1688530246470" class="img-responsive" alt="T2 - T7 9.00 - 18.00">
+								<div class="header-hotline-text">
+									<span class="header-hotline-text-1">
+										T2 - T7 9.00 - 18.00
+									</span>
+									<span class="header-hotline-text-2">
+										Chủ nhật NGHỈ
+									</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-3 hidden-sm col-xs-12 hidden-xs">
+					<div class="header-search-account clearfix">
+						<div class="header-search">
+							<div class="i-search">
+								<i class="fa fa-search"></i>
+							</div>
+							<div class="header_search search_form">
+	<form class="input-group search-bar search_form has-validation-callback" action="/search" method="get" role="search">		
+		<input type="search" name="query" value="" placeholder="Tìm kiếm sản phẩm... " class="input-group-field st-default-search-input search-text" autocomplete="off">
+		<span class="input-group-btn">
+			<button class="btn icon-fallback-text">
+				<i class="fa fa-search"></i>
+			</button>
+		</span>
+	</form>
+	
+	<div id="search_suggestion" style="display: none;">
+	<div id="search_top">
+		<div id="product_results"></div>
+		<div id="article_results"></div>
+	</div>
+	<div id="search_bottom">
+		<a class="show_more" href="#">Hiển thị tất cả kết quả cho "<span></span>"</a>
+	</div>
+</div>
+
+
+
+	
+</div>
+						</div>
+						<div class="header-account">
+							<a href="/account" class="header-account-a">
+								<i class="fa fa-user-o" aria-hidden="true"></i>
+							</a>
+							<ul>
+								<li><a href="/account/login">Đăng nhập</a></li>
+								<li><a href="/account/register">Đăng ký</a></li>
+								<li>
+									<a class="js-wishlist-link" aria-label="Sản phẩm yêu thích" rel="nofollow" href="/san-pham-yeu-thich" title="Yêu thích">Yêu thích<span class="js-wishlist-count">0</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> -->

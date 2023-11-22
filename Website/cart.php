@@ -13,7 +13,9 @@
     <?php
     include('../sources/linkFIle.php');
     ?>
-
+<style>
+    
+</style>
 </head>
 
 <body>
@@ -50,7 +52,10 @@
         }
     }
     ?>
-    <h1>Giỏ hàng</h1>
+    <div class="container">
+    <hr style="color:red">
+    <h1 style="color:red">Giỏ hàng</h1>
+    <hr style="color:red">
     
     <ul>
         <?php
@@ -102,7 +107,9 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href="./product.php?sp_ma=<?= $sp['sp_ma'] ?>"><?= $sp['sp_ten'] ?></a></h5>
+                                    <h5 class="card-title">
+                                        <a style="text-decoration:none" href="./product.php?sp_ma=<?= $sp['sp_ma'] ?>"><?= $sp['sp_ten'] ?></a>
+                                    </h5>
                                     <p class="card-text">Mã đơn hàng: <?= $donhang['donhang_ma'] ?></p>
                                     <p class="card-text">Số lượng: <?= $donhang['donhang_soluongsp'] ?></p>
                                     <p class="card-text">Giá: <?= number_format($donhang['donhang_gia'], 0, '.', ',') ?> <sub>đ</sub></p>
@@ -116,9 +123,9 @@
                     </div>
                     <?php if ($donhang['donhang_trangthai'] != 'Đã hủy') : ?>
                         <div class="p-1">
-                            <div class="d-grid gap-2 col-6 mx-auto">
-                                 <button id="btnModal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Mua
+                            <div class="d-grid gap-2 col-6 mx-auto py-4">
+                                 <button id="btnModal" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                   Hủy
                                 </button>
                             </div>
                         </div>
@@ -134,7 +141,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary" name="submit" >Xác nhận</button>
+                                        <button type="submit" class="btn btn-danger" name="submit" >Xác nhận</button>
                                     </div>
                                 </div>
                             </div>
@@ -164,6 +171,7 @@
             </li>
         </ul>
     </nav>
+    </div>
 </body>
 
 </html>
