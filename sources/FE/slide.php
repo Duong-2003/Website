@@ -37,44 +37,41 @@
 
 
 
-        <div id="slideshow" class="carousel slide">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#slideshow" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#slideshow" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#slideshow" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#slideshow" data-bs-slide-to="3" aria-label="Slide 4"></button>
-          </div>
-          <div class="carousel-inner" id="slide1">
-            <div class="carousel-item active">
-              <img id="slide" onclick="changeimg()" src=<?= $linkImgIndex . "slide_1.webp" ?> class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item ">
-              <img id="slide"  src=<?= $linkImgIndex . "slide_1.webp" ?> class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
-              <img id="slide"   src=<?= $linkImgIndex . "slide_3.webp" ?> class="d-block w-100" alt="...">
-            </div>
-            <div class="carousel-item">
+      <div id="slideshow" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#slideshow" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#slideshow" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#slideshow" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#slideshow" data-bs-slide-to="3" aria-label="Slide 4"></button>
+  </div>
+  <div class="carousel-inner" id="carouselInner">
+    <div class="carousel-item active">
+    <img id="slide"  src=<?= $linkImgIndex . "slide_1.webp" ?> class="d-block w-100" alt="...">
+    <!-- <img id="slide" onclick="changeimg()" src=<?= $linkImgIndex . "slide_1.webp" ?> class="d-block w-100" alt="..."> -->
+    </div>
+    <div class="carousel-item">
+    <img id="slide"  src=<?= $linkImgIndex . "slide_1.webp" ?> class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+    <img id="slide"   src=<?= $linkImgIndex . "slide_3.webp" ?> class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+    <img id="slide" src=<?= $linkImgIndex . "slide_4.webp" ?> class="d-block w-100" alt="...">
+    </div>
+  </div>
 
-              <img id="slide" src=<?= $linkImgIndex . "slide_4.webp" ?> class="d-block w-100" alt="...">
-
-
-            </div>
-          </div>
-
-          <button class="carousel-control-prev" type="button" data-bs-target="#slideshow" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#slideshow" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#slideshow" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#slideshow" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div> 
 
 
       </div>
-
 
 
 
@@ -98,17 +95,55 @@
 
 </body>
 <script>
-  var index = 1;
-  changeimg = function() {
-    var imgs = ["<?= $linkImgIndex . "slide_1.webp" ?>",
-      "<?= $linkImgIndex . "slide_3.webp" ?>", "<?= $linkImgIndex . "slide_4.webp" ?>"
-    ];
-    document.getElementById('slide').src = imgs[index];
-    index++;
-    if (index == 3) {
-      index = 0;
-    }
+  // var index = 1;
+  // changeimg = function() {
+  //   var imgs = ["<?= $linkImgIndex . "slide_1.webp" ?>",
+  //     "<?= $linkImgIndex . "slide_3.webp" ?>", "<?= $linkImgIndex . "slide_4.webp" ?>"
+  //   ];
+  //   document.getElementById('slide').src = imgs[index];
+  //   index++;
+  //   if (index == 3) {
+  //     index = 0;
+  //   }
 
-  }
-  setInterval(changeimg, 2000)
+  // }
+  // setInterval(changeimg, 2000)
 </script>
+
+
+<script>
+    var carouselInner = document.getElementById("carouselInner");
+    var carouselItems = carouselInner.getElementsByClassName("carousel-item");
+    var indicators = document.getElementsByClassName("carousel-indicators")[0].getElementsByTagName("button");
+    var currentSlideIndex = 0;
+    var slideInterval = setInterval(changeSlide, 2000); // Chuyển slide sau mỗi 2 giây
+  
+    function changeSlide() {
+      currentSlideIndex++;
+      if (currentSlideIndex >= carouselItems.length) {
+        currentSlideIndex = 0;
+      }
+  
+      for (var i = 0; i < carouselItems.length; i++) {
+        carouselItems[i].classList.remove("active");
+        indicators[i].classList.remove("active");
+      }
+  
+      carouselItems[currentSlideIndex].classList.add("active");
+      indicators[currentSlideIndex].classList.add("active");
+    }
+  
+    var prevButton = document.querySelector(".carousel-control-prev");
+    prevButton.addEventListener("click", function() {
+      clearInterval(slideInterval); // Dừng chuyển slide tự động khi người dùng nhấp vào nút 'previous'
+      changeSlide();
+      slideInterval = setInterval(changeSlide, 2000); // Bắt đầu chuyển slide tự động sau khi người dùng nhấp vào nút 'previous'
+    });
+  
+    var nextButton = document.querySelector(".carousel-control-next");
+    nextButton.addEventListener("click", function() {
+      clearInterval(slideInterval); // Dừng chuyển slide tự động khi người dùng nhấp vào nút 'next'
+      changeSlide();
+      slideInterval = setInterval(changeSlide, 2000); // Bắt đầu chuyển slide tự động sau khi người dùng nhấp vào nút 'next'
+    });
+  </script>

@@ -12,6 +12,35 @@
     <?php
     include('../sources/linkFIle.php');
     ?>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    max-width: 100%;
+}
+li{
+    list-style: none;
+    
+}
+a{
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+    
+
+/* ________________________________________ */
+
+
+</style>
 
 </head>
 
@@ -19,6 +48,7 @@
     <?php
     session_start();
     include($linkFE.'header.php');
+    include($linkFE.'slide.php');
     include($linkFE.'listProduct.php');
     include($linkFE.'footer.php');
 
