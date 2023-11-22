@@ -136,14 +136,14 @@
     var prevButton = document.querySelector(".carousel-control-prev");
     prevButton.addEventListener("click", function() {
       clearInterval(slideInterval); // Dừng chuyển slide tự động khi người dùng nhấp vào nút 'previous'
-      changeSlide();
+      // changeSlide();
       slideInterval = setInterval(changeSlide, 2000); // Bắt đầu chuyển slide tự động sau khi người dùng nhấp vào nút 'previous'
     });
   
     var nextButton = document.querySelector(".carousel-control-next");
     nextButton.addEventListener("click", function() {
       clearInterval(slideInterval); // Dừng chuyển slide tự động khi người dùng nhấp vào nút 'next'
-      changeSlide();
+      // changeSlide();
       slideInterval = setInterval(changeSlide, 2000); // Bắt đầu chuyển slide tự động sau khi người dùng nhấp vào nút 'next'
     });
   </script>
