@@ -36,9 +36,8 @@ if (isset($_POST['submit']) && $_POST['donhang_soluongsp'] != '' && $_POST['sp_m
 
 
         if ($stmt->execute()) {
-            $newsp_soluong =$sp['sp_soluong'] - $donhang_soluongsp;
             $query = "UPDATE sanpham 
-                        SET sp_soluong = '$newsp_soluong'
+                        SET sp_soluong = sp_soluong - '$donhang_soluongsp'
                         WHERE sp_ma='$sp_ma'";
             $connect->query($query);       
             $notifi = "Đặt hàng thành công";
