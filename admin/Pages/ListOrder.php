@@ -1,4 +1,3 @@
-
 <head>
   <meta charset="utf-8">
   <title>Product List</title>
@@ -17,7 +16,7 @@
     myDiv.classList.add("active");
   </script>
 
- 
+
   <div class="content" style="padding: 100px 30px;">
     <h1>Danh sách đơn hàng</h1>
 
@@ -70,6 +69,7 @@
               <div class="container text-center">
                 <div class="row gx-5">
                   <div class="col">
+                    <div class=""><a href="./Edit_Order.php?datakey=<?= $donhang['donhang_ma'] ?>">Thông tin</a></div>
                   </div>
                   <div class="col">
                     <div class="p-2"><a href="./Edit_Order.php?datakey=<?= $donhang['donhang_ma'] ?>">Sửa</a></div>
@@ -83,7 +83,7 @@
       </tbody>
     </table>
   </div>
-  
+
   <script>
     $(document).ready(function() {
       $('#danhsach').DataTable();

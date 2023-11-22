@@ -51,12 +51,13 @@
     }
     ?>
     <h1>Giỏ hàng</h1>
+    
     <ul>
         <?php
         $cartValueShow = 10;
         $pagination = ceil(count($danhsachdonhang) / $cartValueShow);
         $page = isset($_GET['page']) ? $_GET['page'] : 1;
-        
+
         if ($danhsachdonhang) : ?>
             <?php
             $firstPage = ($page - 1) * $cartValueShow;
@@ -101,17 +102,44 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h5 class="card-title"><?= $sp['sp_ten'] ?></h5>
+                                    <h5 class="card-title"><a href="./product.php?sp_ma=<?= $sp['sp_ma'] ?>"><?= $sp['sp_ten'] ?></a></h5>
                                     <p class="card-text">Mã đơn hàng: <?= $donhang['donhang_ma'] ?></p>
                                     <p class="card-text">Số lượng: <?= $donhang['donhang_soluongsp'] ?></p>
                                     <p class="card-text">Giá: <?= number_format($donhang['donhang_gia'], 0, '.', ',') ?> <sub>đ</sub></p>
-                                    <p class="card-text">Trạng thái: <?= $donhang['donhang_trangthai'] ?></p>
+                                    <p class="card-text <?php echo ($donhang['donhang_trangthai'] == 'Đã hủy') ? 'text-danger' : ''; ?>">
+                                        Trạng thái: <?= $donhang['donhang_trangthai'] ?>
+                                    </p>
                                     <p class="card-text"><small class="text-body-secondary">Ngày đặt: <?= $donhang['timeorder'] ?></small></p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button type="submit" name="submit" type="button" class="btn btn-dark">Hủy đơn hàng</button>
+                    <?php if ($donhang['donhang_trangthai'] != 'Đã hủy') : ?>
+                        <div class="p-1">
+                            <div class="d-grid gap-2 col-6 mx-auto">
+                                 <button id="btnModal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    Mua
+                                </button>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog " >
+                                <div class="modal-content " style="margin-top: 45%;">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Đóng</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body" id="modal-content">
+                                        Bạn có chắc chắn muốn hủy đơn hàng <?= $sp['sp_ten'] ?>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary" name="submit" >Xác nhận</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endif; ?>
                 </li>
             <?php endfor; ?>
         <?php endif; ?>

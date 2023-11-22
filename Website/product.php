@@ -146,8 +146,7 @@
 
                         <div class="p-1">
                             <div class="d-grid gap-2 col-6 mx-auto">
-                                <!-- <button class="btn btn-primary" type="submit" name="submit" id="btn_dathang">Mua</button> -->
-                                <button id="btnModal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                 <button id="btnModal" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     Mua
                                 </button>
                             </div>
@@ -156,7 +155,7 @@
                             <div class="modal-dialog " >
                                 <div class="modal-content " style="margin-top: 45%;">
                                     <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Đóng</h1>
+                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Xác nhận</h1>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body" id="modal-content">
