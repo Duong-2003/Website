@@ -129,6 +129,12 @@
      </div>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
+    <li>
+        <a href= "./Ecom.php" class="nav-link text-white" id="productType">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+          Thống kê doanh số
+        </a>
+      </li>
       <li>
         <a href= "./ListProductType.php" class="nav-link text-white" id="productType">
           <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>

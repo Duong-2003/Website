@@ -101,7 +101,7 @@
 
                     <li>
 
-<<<<<<< HEAD
+
                 
                     <div class="card mb-3 " style="max-width: 80%; ">
                         <div class="row g-0">
@@ -129,13 +129,13 @@
                                 </button>
                             </div>
                                     
-=======
+
 
                         <div class="card mb-3 " style="max-width: 540px; ">
                             <div class="row g-0">
                                 <div class="col-md-4 col-4">
                                     <img src="<?= $linkImgSp . $sp['sp_img'] ?>" class="img-fluid rounded-start" alt="...">
->>>>>>> 8308bb5fe71991712184119226241898412519ca
+
                                 </div>
 
                                 <div class="col-md-6 col-6">

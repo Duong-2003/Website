@@ -47,6 +47,7 @@ a{
 <body>
     <?php
     session_start();
+    include($linkFE.'top_header.php');
     include($linkFE.'header.php');
     include($linkFE.'slide.php');
     include($linkFE.'listProduct.php');
