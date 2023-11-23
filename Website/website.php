@@ -56,6 +56,7 @@ a{
     session_start();
     include($linkFE.'top_header.php');
     include($linkFE.'header.php');
+    include($linkFE.'header1.php');
     
     // include($linkFE.'menu.php');
     include($linkFE.'slide.php');

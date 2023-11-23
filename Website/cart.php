@@ -102,7 +102,7 @@
                 <li>
 
                 
-                    <div class="card mb-3 " style="max-width: 540px; ">
+                    <div class="card mb-3 " style="max-width: 80%; ">
                         <div class="row g-0">
                             <div class="col-md-4 col-4">
                                 <img src="<?= $linkImgSp . $sp['sp_img'] ?>" class="img-fluid rounded-start" alt="...">
@@ -110,7 +110,7 @@
 
                             <div class="col-md-6 col-6">
                                 <div class="card-body">
-                                    <h5 class="card-title">
+                                    <h5 class="card-title" style="">
                                         <a style="text-decoration:none" href="./product.php?sp_ma=<?= $sp['sp_ma'] ?>"><?= $sp['sp_ten'] ?></a>
                                     </h5>
                                     <p class="card-text">Mã đơn hàng: <?= $donhang['donhang_ma'] ?></p>
