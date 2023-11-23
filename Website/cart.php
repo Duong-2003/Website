@@ -129,7 +129,7 @@
                                                     Hủy
                                                 </button>
                                             <?php endif; ?>
-                                            
+
                                         </div>
 
                                     </div>
@@ -153,16 +153,19 @@
                                 <div class="modal-dialog ">
                                     <div class="modal-content " style="margin-top: 45%;">
                                         <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Đóng</h1>
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Hủy đơn hàng</h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body" id="modal-content">
                                             Bạn có chắc chắn muốn hủy đơn hàng <?= $sp['sp_ten'] ?>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="submit" class="btn btn-danger" name="submit">Xác nhận</button>
-                                        </div>
+                                        <form action="<?= $linkBE ?>OrderCancel.php" method="post">
+                                            <input type="hidden" name="donhang_ma" value="<?= $donhang['donhang_ma'] ?>">
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-danger" name="submit">Xác nhận</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>

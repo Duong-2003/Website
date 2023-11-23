@@ -1,19 +1,12 @@
 <?php
     include_once($linkconnWebsite);
-    if ($loggedInUsername) {
+    if (isset($loggedInUsername)) {
         $name = $loggedInUsername;
         $sql =  "SELECT * FROM users WHERE name = '$name'";
         $result = $connect->query($sql);
         if ($result->num_rows >0) {
             $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
         }
-        else{
-            echo "ERROR: Không tìm thấy user";
-            exit();
-        }
-    } else {
-        echo "ERROR: Chưa đăng nhập";
-        exit();
     }
 
 ?>
