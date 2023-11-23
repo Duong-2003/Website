@@ -266,7 +266,7 @@
             <strong><?= $loggedInUsername ?></strong>
         </a>
         <div class="dropdown-content">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#User" class="menu-dropdown">Thông tin</a>
+            <a href="./User.php"  data-bs-target="#User" class="menu-dropdown">Thông tin</a>
             <a href=<?= $linkBE . "logout_process.php" ?> class="menu-dropdown">Đăng xuất</a>
         </div>
     </div>
@@ -359,7 +359,7 @@
         </div>
     </div>
     <?php
-        include_once("./User.php");
+        // include_once("./User.php");
     ?>
 
 </body>
