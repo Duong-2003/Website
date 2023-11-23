@@ -38,8 +38,10 @@
       );
     }
 
-    // var_dump(($danhsachSP));
+    
     ?>
+    <div> <?= isset($_GET["notifi"]) ? $_GET["notifi"] : '' ?></div>
+    <div> <?= isset($_GET["error"]) ? $_GET["error"] : '' ?></div>
     <table id="danhsach" class=" table table-striped table-hover table-secondary table-bordered table-hover">
       <thead>
         <tr>
@@ -74,6 +76,13 @@
                   <div class="col">
                     <div class="p-2"><a href="./Edit_Order.php?datakey=<?= $donhang['donhang_ma'] ?>">Sửa</a></div>
                   </div>
+                  <?php
+                  if ($donhang['donhang_trangthai'] != "Đã hủy") : ?>
+                    <div class="col">
+                      <div class="p-2"><a href="<?= $linkBE ?>OrderCancel.php?datakey=<?= $donhang['donhang_ma'] ?>">Huỷ đơn</a></div>
+                    </div>
+                  <?php endif;
+                  ?>
                 </div>
               </div>
             </td>

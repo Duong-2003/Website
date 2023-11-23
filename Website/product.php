@@ -171,7 +171,6 @@
                             </div>
                         </div>
                         <script>
-                            console.log("test");
                             const contentModal = document.getElementById('modal-content');
                             var buttonModal = document.getElementById('btnModal');
                             buttonModal.addEventListener("click", function() {

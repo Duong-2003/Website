@@ -62,7 +62,7 @@
                 <input type="hidden" name="donhang_ma" value="<?= $donhang['donhang_ma'] ?>">
                 <div class="input-group mb-3">
                     <?php
-                    $optionDonhang = ['Chưa xác nhận', 'Đã xác nhận', 'Đang giao', 'Hoàn thành', 'Đã hủy'];
+                    $optionDonhang = ['Chưa xác nhận', 'Đã xác nhận', 'Đang giao', 'Hoàn thành'];
                     ?>
                     <span class="input-group-text" id="inputGroup-sizing-default">Trạng thái<span style="color: red;">*</span></span>
                     <select name="donhang_trangthai" id="select_trangthai" class="form-select" aria-label="Default select example" onchange="showOtherInput(this.value)">
