@@ -1,172 +1,171 @@
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-   
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <title>Tech of World Shop</title> 
-   
-
-<style>
-    li {
-        list-style: none;
-
-    }
-
-    #header {
-        z-index: 10000;
-        top: 0;
-        position: sticky;
-        transition: 0.5s;
-        box-shadow: 0px 6px 4px rgba(0,0,0,0.3);
+    <title>Tech of World Shop</title>
 
 
-    }
-   
-    #home ul {
-        display: flex;
-        justify-content: space-evenly;
-        padding-top: 10px;
+    <style>
+        li {
+            list-style: none;
+
+        }
+
+        #header {
+            z-index: 10000;
+            top: 0;
+            position: sticky;
+            transition: 0.5s;
+            box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.3);
 
 
+        }
+
+        #home ul {
+            display: flex;
+            justify-content: space-evenly;
+            padding-top: 10px;
 
 
 
-    }
-
-    #home li:hover a {
-        color: #d2d2e1 !important;
-        ;
-
-    }
-
-    #home a {
-        color: #3d3d64;
-        text-decoration: none;
-    }
-
-    #home li {
-        padding: 5px 5px;
-
-    }
 
 
-    #header {
-        background-image: linear-gradient(to bottom, #bfa4a4, #9b9be1);
-    }
+        }
+
+        #home li:hover a {
+            color: #d2d2e1 !important;
+            ;
+
+        }
+
+        #home a {
+            color: #3d3d64;
+            text-decoration: none;
+        }
+
+        #home li {
+            padding: 5px 5px;
+
+        }
 
 
-    #menu-header {
-        font-size: 20px;
-    }
+        #header {
+            background-image: linear-gradient(to bottom, #bfa4a4, #9b9be1);
+        }
 
-    /* #home :hover a  {
+
+        #menu-header {
+            font-size: 20px;
+        }
+
+        /* #home :hover a  {
         border-radius: 5px;
 
         box-shadow: 0 0 20px 3px;
     } */
 
 
-    .hidden-header {
-        /* display: none; */
-        opacity: 0;
-    }
-
-
-
-
-
-
-
-    @media screen and (max-width: 456px) {
-        #menu-header {
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-
-        }
-    }
-
-    @media screen and (max-width: 1200px) {
-        #menu-header {
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-
-        }
-    }
-
-    @media screen and (max-width: 990px) {
-        #home ul {
+        .hidden-header {
             /* display: none; */
-            padding: 0px;
-            margin-top: -10px;
-            justify-content: center;
+            opacity: 0;
+        }
+
+
+
+
+
+
+
+        @media screen and (max-width: 456px) {
+            #menu-header {
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            #menu-header {
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+
+            }
+        }
+
+        @media screen and (max-width: 990px) {
+            #home ul {
+                /* display: none; */
+                padding: 0px;
+                margin-top: -10px;
+                justify-content: center;
+
+            }
+
+            .header-input {
+                padding: 0px 90px;
+            }
 
         }
 
-        .header-input {
-            padding: 0px 90px;
+
+
+
+
+
+
+
+
+
+
+        /* Style The Dropdown Button */
+        .dropbtn {
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
         }
 
-    }
+        /* The container <div> - needed to position the dropdown content */
+        .dropdown {
+            position: relative;
+            /* display: inline-block; */
+        }
 
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            min-width: 160px;
+            /* box-shadow: 0px 8px 16px px rgba(0, 0, 0, 0.2); */
+            z-index: 100;
+        }
 
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            background-color: #7070a7;
+            padding: 10px 0;
+            text-decoration: none;
+            display: block;
+        }
 
+        /* Change color of dropdown links on hover */
+        /* .dropdown-content a:hover {background-color: #f1f1f1} */
 
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
 
-
-
-
-
-
-
-    /* Style The Dropdown Button */
-    .dropbtn {
-        color: white;
-        padding: 16px;
-        font-size: 16px;
-        border: none;
-        cursor: pointer;
-    }
-
-    /* The container <div> - needed to position the dropdown content */
-    .dropdown {
-        position: relative;
-        /* display: inline-block; */
-    }
-
-    /* Dropdown Content (Hidden by Default) */
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        min-width: 160px;
-        /* box-shadow: 0px 8px 16px px rgba(0, 0, 0, 0.2); */
-        z-index: 100;
-    }
-
-    /* Links inside the dropdown */
-    .dropdown-content a {
-        background-color: #7070a7;
-        padding: 10px 0;
-        text-decoration: none;
-        display: block;
-    }
-
-    /* Change color of dropdown links on hover */
-    /* .dropdown-content a:hover {background-color: #f1f1f1} */
-
-    /* Show the dropdown menu on hover */
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    /* Change the background color of the dropdown button when the dropdown content is shown */
-    .dropdown-content :hover a {
-        color: red;
-    }
-</style>
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        .dropdown-content :hover a {
+            color: red;
+        }
+    </style>
 </head>
 <script>
     window.onscroll = function() {
@@ -190,12 +189,11 @@
     };
 
 
-        if (window.pageYOffset >= 100) {
-            header.classList.add("hidden-header");
-        } else {
-            handleScrollDirection();
-        }
-    ;
+    if (window.pageYOffset >= 100) {
+        header.classList.add("hidden-header");
+    } else {
+        handleScrollDirection();
+    };
 
     function handleScrollDirection() {
         var lastScrollTop = 0;
@@ -221,7 +219,7 @@
         var images = document.querySelectorAll('img');
         images.forEach(function(img) {
             img.addEventListener('error', function() {
-                this.onerror = null; 
+                this.onerror = null;
                 var linkImg = '<?php echo $linkImgIndex; ?>nope-not-here.webp';
                 this.src = linkImg;
             });
@@ -268,7 +266,7 @@
             <strong><?= $loggedInUsername ?></strong>
         </a>
         <div class="dropdown-content">
-            <a href="#" class="menu-dropdown">Thông tin</a>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#User" class="menu-dropdown">Thông tin</a>
             <a href=<?= $linkBE . "logout_process.php" ?> class="menu-dropdown">Đăng xuất</a>
         </div>
     </div>
@@ -360,13 +358,10 @@
 
         </div>
     </div>
-    </div>
-
+    <?php
+        include($linkWebsite."User.php");
+    ?>
 
 </body>
 
 </html>
-
-
-
-
