@@ -38,7 +38,6 @@
       );
     }
 
-    
     ?>
     <div> <?= isset($_GET["notifi"]) ? $_GET["notifi"] : '' ?></div>
     <div> <?= isset($_GET["error"]) ? $_GET["error"] : '' ?></div>
@@ -57,21 +56,22 @@
       </thead>
       <tbody>
         <?php
-        foreach ($danhsachdonhang as $donhang) : ?>
+        foreach ($danhsachdonhang as $donhang) :
+          $donhanggia =  number_format($donhang['donhang_gia'], 0, '.', ','); ?>
           <tr>
             <td><?= $donhang['donhang_ma'] ?></td>
             <td><?= $donhang['sp_ma'] ?></td>
             <td><?= $donhang['name'] ?></td>
             <td><?= $donhang['timeorder'] ?></td>
             <td><?= $donhang['donhang_trangthai'] ?></td>
-            <td><?= number_format($donhang['donhang_gia'], 0, '.', ',') ?></td>
+            <td><?= $donhanggia ?></td>
             <td><?= $donhang['donhang_soluongsp'] ?></td>
 
             <td>
               <div class="container text-center">
                 <div class="row gx-5">
                   <div class="col">
-                    <div class=""><a href="./Edit_Order.php?datakey=<?= $donhang['donhang_ma'] ?>">Thông tin</a></div>
+                    <div class=""><a data-bs-toggle="modal" data-bs-target="#infoOrder<?=$donhang['donhang_ma'] ?>" href="#">Thông tin</a></div>
                   </div>
                   <div class="col">
                     <div class="p-2"><a href="./Edit_Order.php?datakey=<?= $donhang['donhang_ma'] ?>">Sửa</a></div>
@@ -87,7 +87,8 @@
               </div>
             </td>
           </tr>
-        <?php endforeach;
+        <?php
+        endforeach;
         ?>
       </tbody>
     </table>
@@ -98,4 +99,9 @@
       $('#danhsach').DataTable();
     });
   </script>
+  <?php
+  foreach ($danhsachdonhang as $donhang) {
+    include($linkFE . "ModalInfoOrder.php");
+  }
+  ?>
 </body>

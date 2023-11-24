@@ -158,5 +158,5 @@
 </button>
 
 <?php
-  include($linkFE."ModalAddProduct.php");
+  include_once($linkFE."ModalAddProduct.php");
 ?>
