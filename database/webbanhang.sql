@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2023 at 10:19 AM
+-- Generation Time: Nov 27, 2023 at 03:57 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -81,11 +81,6 @@ INSERT INTO `sanpham` (`sp_ma`, `loaisp_ten`, `sp_ten`, `sp_gia`, `sp_mota`, `sp
 (68, 'Điện thoại', 'IP !4 PRO MAX', '20', 'điện thoại promax siêu promax', 'điện thoại promax siêu promax', 'iphone-14-pro-max.webp', 100),
 (70, 'Điện thoại', 'IP 12 PRO MAX', '20000', 'ip 12 PRO MAX 64GB', 'ip 12 PRO MAX 64GB', 'iphone-12-64gb-chinh-hang-vn-a1.webp', 1),
 (74, 'Điện thoại', 'IP 11 PRO MAX', '20000', 'cũ', 'cũ', 'iphone-11-pro-max-64gb-chinh-hang-vna-1.webp', 2),
-(78, 'Điện thoại', 'IP !4 PRO MAX', '20000', 'a', 'a', 'ip12', 1),
-(80, 'Điện thoại', 'SAMSUNG GALAXY Z FLIP 5 256GB', '300000', 'SAMSUNG GALAXY Z FLIP 5 256GB', 'SAMSUNG GALAXY Z FLIP 5 256GB', 'samsung galaxy z flip 5 -256GB', 6),
-(81, 'Điện thoại', 'SAMSUNG GALAXY A53', '333432', '128GB BẢN CHÍNH HÃNG', '128GB BẢN CHÍNH HÃNG', 'samsung galaxy A53 5G 8GB 128GB chính hãng', 1),
-(82, 'Điện thoại', 'XIAOMI REDMI NOTE 12 PRO MAX MAX MAX', '20000', '64GB 128GB BẢN CHÍNH HÃNG', '64GB 128GB BẢN CHÍNH HÃNG', 'Xiaomi Redmi note 12 Pro 6GB 128GB trắng', 1),
-(83, 'Điện thoại', 'SAMSUNG GALAXY Z FLIP 5 512GB', '20000', '512GB BẢN CHÍNH HÃNG', '512GB BẢN CHÍNH HÃNG', 'samsung galaxy z flip 5 -256GB', 1),
 (84, 'Điện thoại', 'IP XS PRO MAX 64GB', '20000', 'CHẤT LƯỢNG CŨ', 'CHẤT LƯỢNG CŨ', 'iphone-xs-cu-64gb-nguyen-ban-dep', 1),
 (85, 'Điện thoại', 'XIAOMI REDMI K60', '20000', '8GB 128GB BẢN CHÍNH HÃNG', '8GB 128GB BẢN CHÍNH HÃNG', 'Xiaomi redmi K60 pro 5g 8gb 128gb.webp', 1),
 (86, 'Điện thoại', 'REDMI NOTE 12 TURBO ', '20000', '256GB ', '256GB ', 'redmi-note-12-turbo-8gb-256gb-ch.webp', 1);
@@ -119,9 +114,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`name`, `pass`, `email`, `address`, `role`) VALUES
-('1', '$2y$10$lW4db93Kci/ve06U8tB0ZOx3Q29x9YD/UtFFpvGxUDiwGAtLsaCK2', '$2y$10$bWLYr/UxE/YazOZCkoV/ru4oqZi9TQ.SVIiLcX1WXzYaXfAflbA.y', NULL, 0),
 ('admin', '$2y$10$p4Avp8BrnI3K6tcQJnGP.u1Dlm1MVIIGhUQS1qKvd5wvELvzT/E0e', '$2y$10$tTVMPSgPmJIKBUGV2jWiBuArScbYWY3QFqu/gSxv7Bhw/wEcsQYMm', NULL, 1),
-('dasd', '$2y$10$bwvxZh7203z6z9JkIK9yxex8BT9hfF70MtdOKrxKvQo6GjEAidDkq', NULL, NULL, 0),
+('duong1234', '$2y$10$qazh61RtBa8tFmD2cB1whukerATkm74phj.kXvP0aSHZNgajKBSS2', '$2y$10$oB0IGoidgjoDCz793FtcLuYNyUB6TFJIeT7GNQi/jV20oEZoGGr7y', NULL, 0),
 ('ndd', '$2y$10$D4fbYB/.Ai0s.390KginFOnKedtHFCclxLumZWIMN7Hw/ihiCSIR2', '$2y$10$D2v6enpj1cmBD7w6EaczgOuCTYTZqOnbVut02CVJewvHpRA1xbqDm', NULL, 0),
 ('ndd145', '$2y$10$.MwpRxvVuzYQ2sCSyIZ3AOoQasD/hcPvJWlb1yPXPSvq08mAFVpIa', NULL, NULL, 0);
 
