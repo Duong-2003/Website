@@ -115,12 +115,6 @@
 
 
 
-
-
-
-
-
-
         /* Style The Dropdown Button */
         .dropbtn {
             color: white;
@@ -281,17 +275,21 @@
                     <a href="./website.php"><img src=<?= $linkImgIndex . "logo1.webp" ?> alt="" style="height:auto;witdh:100%"></a>
 
                 </div>
-
+              
                 <div class="col-lg-3 col-md-12 text-white " style="text-align:center;padding: 8px 0;">
+                <form action="search.php" method="GET">
                     <div class="input-group mb-3 " id="header-input" style="padding:5px 5px">
-                        <input id="searchInput" type="text" class="form-control" placeholder="Nhấn để tìm kiếm">
+                        <input  id="searchInput" type="text" class="form-control" placeholder="Nhấn để tìm kiếm" name="search">
                         <span class="input-group-text" style="background-color:#9fa3fe;">
-                            <a style="cursor: pointer;" id="searchClick">
+                            <a style="cursor: pointer;" id="searchClick" name="searchClick">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </a>
                         </span>
+                        </form>
                     </div>
+                   
                 </div>
+              
                 <script>
                     function getInputSearch() {
                         var input = document.getElementById('searchInput').value;

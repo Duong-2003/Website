@@ -81,9 +81,6 @@
 
 
 
-
-
-
   <?php
   include($linkFE . "footer.php");
 

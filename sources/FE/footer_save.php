@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
+
+ <style>
          
 .swiper-slide {
   display: inline-block; /* Hiển thị các phần tử trên cùng một hàng */
