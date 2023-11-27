@@ -117,6 +117,7 @@
     <div class="text-center p-3">
       <a class="btn btn-primary" href="./List.php?page=1">Xem thêm</a>
     </div>
+    <hr>
   </div>
 
 

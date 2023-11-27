@@ -114,7 +114,7 @@
                                 <?= $data['sp_ten'] ?>
                             </p>
                             <p class="card-text">Giá sản phẩm:<?= $data['sp_gia'] ?></p>
-                            <a href="./product.php?sp_ma=<?= $data['sp_ma'] ?>" class="btn btn-primary">Xem</a>
+                            <a href="./product.php?sp_ma=<?= $data['sp_ma'] ?>" class="btn btn-primary" id="">Xem</a>
                         </div>
                     </div>
                 </div>
