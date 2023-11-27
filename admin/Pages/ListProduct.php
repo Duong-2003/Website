@@ -14,7 +14,7 @@
 
 
   <div class=" content">
-    <hr style="color:aqua">
+   
     <h1 style="text-align: center; padding-top:40px;color:tomato">Danh mục sản phẩm</h1>
     <hr style="color:red">
 
@@ -51,10 +51,10 @@
 
     // var_dump(($danhsachSP));
     ?>
-<div class="" style="margin:0px 120px">
-    <table id="danhsach" class="table table-striped table-secondary stable-bordered table-hover">
-      <thead>
-        <tr style="border:1px solid;text-align:center">
+<div style="margin: 0px 120px">
+    <table id="danhsach" class="table table-striped table-secondary table-bordered  table-hover">
+        <thead>
+            <tr style="text-align:center; font-size: larger;">
           <th>Mã sp</th>
           <th>Tên sp</th>
           <th>Loại sp</th>
@@ -72,7 +72,7 @@
       <tbody>
         <?php
         foreach ($danhsachSP as $sp) : ?>
-          <tr style="border:1px solid ;text-align:center">
+          <tr style="text-align:center">
             <td><?= $sp['sp_ma'] ?></td>
             <td><?= $sp['sp_ten'] ?></td>
             <td><?= $sp['loaisp_ten'] ?></td>

@@ -30,11 +30,11 @@
         </div>
         <div class="mb-3">
           <label for="exampleFormControlTextarea1" class="form-label">Mô tả sp</label>
-          <textarea name="sp_mota" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <textarea name="sp_mota" class="form-control" id="" rows="3"></textarea>
         </div>
         <div class="mb-3">
           <label for="exampleFormControlTextarea1" class="form-label">Mô tả sp chi tiết<span style="color: red;">*</span></span></label>
-          <textarea name="sp_motachitiet" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <textarea name="sp_motachitiet" class="form-control" id="" rows="3"></textarea>
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Img<span style="color: red;">*</span></span>
