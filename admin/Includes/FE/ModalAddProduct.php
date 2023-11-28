@@ -1,6 +1,6 @@
 <div class="modal fade" id="AddProduct" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content" style="margin: 150px 0px;">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="staticBackdropLabel">Thêm sản phẩm</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -30,11 +30,11 @@
         </div>
         <div class="mb-3">
           <label for="exampleFormControlTextarea1" class="form-label">Mô tả sp</label>
-          <textarea name="sp_mota" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <textarea name="sp_mota" class="form-control" id="" rows="3"></textarea>
         </div>
         <div class="mb-3">
           <label for="exampleFormControlTextarea1" class="form-label">Mô tả sp chi tiết<span style="color: red;">*</span></span></label>
-          <textarea name="sp_motachitiet" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <textarea name="sp_motachitiet" class="form-control" id="" rows="3"></textarea>
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text" id="inputGroup-sizing-default">Img<span style="color: red;">*</span></span>

@@ -13,9 +13,9 @@
   ?>
 
 
-  <div class=" container content">
-    <hr style="color:aqua">
-    <h1 style="text-align: center; padding-top:40px">Danh mục sản phẩm</h1>
+  <div class=" content">
+   
+    <h1 style="text-align: center; padding-top:40px;color:tomato">Danh mục sản phẩm</h1>
     <hr style="color:red">
 
     <div> <?= isset($_GET["notifi"]) ? $_GET["notifi"] : '' ?></div>
@@ -51,10 +51,10 @@
 
     // var_dump(($danhsachSP));
     ?>
-
-    <table id="danhsach" class="table table-striped table-secondary stable-bordered table-hover">
-      <thead>
-        <tr style="border:1px solid;text-align:center">
+<div style="margin: 0px 120px">
+    <table id="danhsach" class="table table-striped table-secondary table-bordered  table-hover">
+        <thead>
+            <tr style="text-align:center; font-size: larger;">
           <th>Mã sp</th>
           <th>Tên sp</th>
           <th>Loại sp</th>
@@ -65,14 +65,14 @@
           <th>Số lượng</th>
           
           <th>Thao tác</th>
-          <th>Check</th>
+        
           
         </tr>
       </thead>
       <tbody>
         <?php
         foreach ($danhsachSP as $sp) : ?>
-          <tr style="border:1px solid ;text-align:center">
+          <tr style="text-align:center">
             <td><?= $sp['sp_ma'] ?></td>
             <td><?= $sp['sp_ten'] ?></td>
             <td><?= $sp['loaisp_ten'] ?></td>
@@ -102,14 +102,13 @@
                 
               </div>
             </td>
-            <td>
-  <input type="checkbox" style="width: 20px; height: 20px;" name="selectedProducts[]" value="<?= $sp['sp_ma'] ?>"></td>
+          
           </tr>
         <?php endforeach;
         ?>
       </tbody>
 
-
+      </div>
   <script>
     $(document).ready(function() {
       $('#danhsach').DataTable();
@@ -126,34 +125,8 @@
 
 
 
-
-<button type="button" id="deleteMultipleButton" class="btn btn-danger">Xóa nhiều</button>
-<script>
-  // Lấy nút "Xóa nhiều" và danh sách các checkbox
-  const deleteMultipleButton = document.getElementById("deleteMultipleButton");
-  const checkboxes = document.querySelectorAll('input[name="selectedProducts[]"]');
-
-  // Xử lý sự kiện khi nút "Xóa nhiều" được nhấp
-  deleteMultipleButton.addEventListener("click", function() {
-    const selectedProducts = Array.from(checkboxes)
-      .filter(checkbox => checkbox.checked)
-      .map(checkbox => checkbox.value);
-
-    if (selectedProducts.length > 0) {
-      // Gửi yêu cầu xóa các sản phẩm đã chọn lên máy chủ
-      // Thực hiện xử lý xóa trên phía máy chủ
-
-      // Sau khi xóa thành công, có thể hiển thị thông báo hoặc làm các thao tác khác
-      alert(`Đã xóa ${selectedProducts.length} sản phẩm.`);
-    } else {
-      alert("Vui lòng chọn ít nhất một sản phẩm để xóa.");
-    }
-  });
-</script>
-
-
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#AddProduct">
+<button type="button" class="btn btn-primary my-2" data-bs-toggle="modal" data-bs-target="#AddProduct">
  Thêm sản phẩm
 </button>
 

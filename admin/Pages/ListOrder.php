@@ -17,8 +17,10 @@
   </script>
 
 
-  <div class="content" style="padding: 100px 30px;">
-    <h1>Danh sách đơn hàng</h1>
+  <div class="content" >
+  <h1 style="text-align: center; padding-top:40px;color:tomato">Danh sách đơn hàng</h1>
+    <hr style="color:red">
+  
 
     <?php
     include_once($linkconnPages);
@@ -41,6 +43,8 @@
     ?>
     <div> <?= isset($_GET["notifi"]) ? $_GET["notifi"] : '' ?></div>
     <div> <?= isset($_GET["error"]) ? $_GET["error"] : '' ?></div>
+    <div class="container">
+      
     <table id="danhsach" class=" table table-striped table-hover table-secondary table-bordered table-hover">
       <thead>
         <tr>
@@ -93,7 +97,7 @@
       </tbody>
     </table>
   </div>
-
+  </div>
   <script>
     $(document).ready(function() {
       $('#danhsach').DataTable();

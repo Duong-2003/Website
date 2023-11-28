@@ -17,8 +17,13 @@
   myDiv.classList.add("active");
 </script>
 
-  <div class="content" style="padding: 100px 30px;">
-    <h1>Danh sách người dùng</h1>
+  <div class="content">
+
+
+    <h1 style="text-align: center; padding-top:40px;color:tomato">Danh sách người dùng</h1>
+    <hr style="color:red">
+
+   
     <?php
     include_once($linkconnPages);
     $sql =  "SELECT * FROM users";
@@ -34,6 +39,7 @@
     }
     
     ?>
+    <div class="container">
     <table id="danhsach" class = "table table-striped table-hover table-secondary table-bordered table-hover">
       <thead>
         <tr>
@@ -70,6 +76,7 @@
       </tbody>
     </table>
   </div>
+</div>
 </div>
 <script>
   $(document).ready(function(){
