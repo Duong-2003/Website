@@ -36,7 +36,7 @@
     if ($result->num_rows != 1) {
       echo ('ERROR');
     }
-    $sp = $result->fetch_assoc();
+    $user = $result->fetch_assoc();
     // var_dump(($danhsachSP));
     ?>
     <table class="table table-striped table-bordered table-hover">
@@ -51,8 +51,8 @@
         </tr>
       </thead>
       <tbody>
-      <?php
-          foreach($danhsachUsers as $user): ?>
+      
+        
             <tr>
             <td><?= $user['name'] ?></td>
             <td><?= $user['email'] ?></td>
@@ -62,7 +62,7 @@
               <td><?= ($user['role'] ? 'admin' : 'user') ?></td>
               <td>
                         
-            <?php endforeach; ?>
+          
         </tbody>
     </table>
 
