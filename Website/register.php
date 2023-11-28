@@ -59,18 +59,20 @@
             <strong>Email: </strong>
 
 
-            <input id="email" placeholder="Email để lấy lại mật khẩu" type="text" class="form-control" name="email" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <input id="email" placeholder="Email để lấy lại mật khẩu" type="text" class="form-control" name="email" >
 
           </div>
           <div class="form-group">
             <strong>Tài khoản: <span style="color: red;">*</span></strong>
 
-            <input id="account" placeholder="Tài khoản bạn muốn đăng ký" type="text" class="form-control" name="username" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <input id="account" placeholder="Tài khoản bạn muốn đăng ký" type="text" class="form-control" name="username" >
 
           </div>
+
+
           <div class="form-group">
             <strong>Nhập mật khẩu:  <span style="color: red;">*</span></strong>
-            <input id="password" placeholder="Nhập mật khẩu" type="password" name="password" autocomplete="new-password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <input id="password" placeholder="Nhập mật khẩu" type="password" name="password" autocomplete="new-password" class="form-control" >
 
           </div>
 
@@ -78,7 +80,13 @@
 
             <strong>Nhập lại mật khẩu:  <span style="color: red;">*</span></strong>
 
-            <input name="rePass" placeholder="Nhập lại mật khẩu" id="rePass" type="password" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <input name="rePass" placeholder="Nhập lại mật khẩu" id="rePass" type="password" class="form-control" >
+
+          </div>
+            <div class="form-group">
+            <strong> Địa chỉ: <span style="color: red;">*</span></strong>
+
+            <input id="address" placeholder="Địa chỉ bạn muốn đăng ký" type="text" class="form-control" name="address" >
 
           </div>
 
