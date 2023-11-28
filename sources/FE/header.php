@@ -16,7 +16,7 @@
         }
 
         #header {
-            z-index: 10000;
+            z-index: 1000;
             top: 0;
             position: sticky;
             transition: 0.5s;
@@ -170,8 +170,6 @@
 <script>
     window.onscroll = function() {
         var header = document.getElementById("header");
-
-
         if (window.pageYOffset > 100) {
             header.classList.add("hidden-header");
         } else {
@@ -266,7 +264,7 @@
             <strong><?= $loggedInUsername ?></strong>
         </a>
         <div class="dropdown-content">
-            <a href="./User.php"  data-bs-target="#User" class="menu-dropdown">Thông tin</a>
+            <a href="#" data-bs-toggle="modal"  data-bs-target="#User" class="menu-dropdown">Thông tin</a>
             <a href=<?= $linkBE . "logout_process.php" ?> class="menu-dropdown">Đăng xuất</a>
         </div>
     </div>
@@ -359,7 +357,7 @@
         </div>
     </div>
     <?php
-        // include_once("./User.php");
+        include_once($linkFE."User.php");
     ?>
 
 </body>

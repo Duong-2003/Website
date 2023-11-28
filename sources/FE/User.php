@@ -10,7 +10,7 @@
     }
 
 ?>
-<div class="modal fade" id="User" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div style="z-index: 10000;" class="modal fade" id="User" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

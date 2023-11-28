@@ -69,6 +69,11 @@ include_once('./MenuAdmin.php');
         white-space: nowrap !important;
     }
 </style>
+
+<script>
+    var myDiv = document.getElementById("Ecom");
+  myDiv.classList.add("active");
+</script>
 <div class="col-xl-5 col-lg-6">
     <div>Đơn hàng</div>
     <div class="row">

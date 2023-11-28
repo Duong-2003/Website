@@ -102,45 +102,16 @@
                     <li>
 
 
-                
-                    <div class="card mb-3 " style="max-width: 80%; ">
-                        <div class="row g-0">
-                            <div class="col-md-4 col-4">
-                                <img src="<?= $linkImgSp . $sp['sp_img'] ?>" class="img-fluid rounded-start" alt="...">
-                            </div>
 
-                            <div class="col-md-6 col-6">
-                                <div class="card-body">
-                                    <h5 class="card-title" style="">
-                                        <a style="text-decoration:none" href="./product.php?sp_ma=<?= $sp['sp_ma'] ?>"><?= $sp['sp_ten'] ?></a>
-                                    </h5>
-                                    <p class="card-text">Mã đơn hàng: <?= $donhang['donhang_ma'] ?></p>
-                                    <p class="card-text">Số lượng: <?= $donhang['donhang_soluongsp'] ?></p>
-                                    <p class="card-text">Giá: <?= number_format($donhang['donhang_gia'], 0, '.', ',') ?> <sub>đ</sub></p>
-                                    <p class="card-text <?php echo ($donhang['donhang_trangthai'] == 'Đã hủy') ? 'text-danger' : ''; ?>">
-                                        Trạng thái: <?= $donhang['donhang_trangthai'] ?>
-                                    </p>
-                                    
-                                    <p class="card-text"><small class="text-body-secondary">Ngày đặt: <?= $donhang['timeorder'] ?></small>
-                             
-                                    <div class="d-grid gap-2 col-6 mx-auto ">
-                                 <button id="btnModal" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                   Hủy
-                                </button>
-                            </div>
-                                    
-
-
-                        <div class="card mb-3 " style="max-width: 540px; ">
+                        <div class="card mb-3 " style="max-width: 80%; ">
                             <div class="row g-0">
                                 <div class="col-md-4 col-4">
                                     <img src="<?= $linkImgSp . $sp['sp_img'] ?>" class="img-fluid rounded-start" alt="...">
-
                                 </div>
 
                                 <div class="col-md-6 col-6">
                                     <div class="card-body">
-                                        <h5 class="card-title">
+                                        <h5 class="card-title" >
                                             <a style="text-decoration:none" href="./product.php?sp_ma=<?= $sp['sp_ma'] ?>"><?= $sp['sp_ten'] ?></a>
                                         </h5>
                                         <p class="card-text">Mã đơn hàng: <?= $donhang['donhang_ma'] ?></p>
@@ -153,53 +124,39 @@
                                         <p class="card-text"><small class="text-body-secondary">Ngày đặt: <?= $donhang['timeorder'] ?></small>
 
                                         <div class="d-grid gap-2 col-6 mx-auto ">
-                                            <?php
-                                            if ($donhang['donhang_trangthai'] != "Đã hủy") : ?>
+                                            <?php if ($donhang['donhang_trangthai'] != "Đã hủy") : ?>
                                                 <button id="btnModal" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                                     Hủy
                                                 </button>
                                             <?php endif; ?>
-
                                         </div>
 
+
+
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog ">
+                                                <div class="modal-content " style="margin-top: 45%;">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Hủy đơn hàng</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body" id="modal-content">
+                                                        Bạn có chắc chắn muốn hủy đơn hàng <?= $sp['sp_ten'] ?>
+                                                    </div>
+                                                    <form action="<?= $linkBE ?>OrderCancel.php" method="post">
+                                                        <input type="hidden" name="donhang_ma" value="<?= $donhang['donhang_ma'] ?>">
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-danger" name="submit">Xác nhận</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-
-
-
-
                             </div>
                         </div>
-
-                        <?php if ($donhang['donhang_trangthai'] != 'Đã hủy') : ?>
-                            <!-- <div class="p-1">
-                            <div class="d-grid gap-2 col-6 mx-auto py-4">
-                                 <button id="btnModal" type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                   Hủy
-                                </button>
-                            </div>
-                        </div> -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog ">
-                                    <div class="modal-content " style="margin-top: 45%;">
-                                        <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Hủy đơn hàng</h1>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body" id="modal-content">
-                                            Bạn có chắc chắn muốn hủy đơn hàng <?= $sp['sp_ten'] ?>
-                                        </div>
-                                        <form action="<?= $linkBE ?>OrderCancel.php" method="post">
-                                            <input type="hidden" name="donhang_ma" value="<?= $donhang['donhang_ma'] ?>">
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-danger" name="submit">Xác nhận</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php endif; ?>
                     </li>
                 <?php endfor; ?>
             <?php endif; ?>
