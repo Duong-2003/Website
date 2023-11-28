@@ -80,21 +80,21 @@
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="">Tên đăng nhập<span style="color: red;">*</span></span>
-          <input value="<?= $sp['name'] ?>" name="name" type="text" class="form-control" >
+          <input value="<?= $user['name'] ?>" name="name" type="text" class="form-control" >
         </div>
 
         <div class="input-group mb-3">
           <span class="input-group-text" id="email">Email<span style="color: red;">*</span></span>
-          <input value="<?= $sp['email'] ?>" email="email" type="text" class="form-control" >
+          <input value="<?= $user['email'] ?>" email="email" type="text" class="form-control" >
         </div>
         
         <div class="input-group mb-3">
           <span class="input-group-text" id="pass"> Mật khẩu<span style="color: red;">*</span></span>
-          <input value="<?= $sp['pass'] ?>" name="pass" type="pass" class="form-control" >
+          <input value="<?= $user['pass'] ?>" name="pass" type="pass" class="form-control" >
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text" id="address"> Address<span style="color: red;">*</span></span>
-          <input value="<?= $sp['address'] ?>" name="address" type="text" class="form-control" >
+          <input value="<?= $user['address'] ?>" name="address" type="text" class="form-control" >
         </div>
 
         <div class="input-group mb-3">
