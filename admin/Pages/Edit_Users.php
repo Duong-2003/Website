@@ -1,5 +1,4 @@
-<!doctype html>
-<html lang="en">
+
 
 <head>
   <meta charset="utf-8">
@@ -17,18 +16,22 @@
   <div class="content" style="padding: 100px 30px;">
     <?php
     include_once($linkconnPages);
-    $sqlLSP =  "SELECT * FROM loaisp";
-    $resultLSP = $connect->query($sqlLSP);
+    $sql =  "SELECT * FROM users ";
+    $result = $connect->query($sql);
 
-    $danhsachLSP = [];
-    while ($row =  mysqli_fetch_array($resultLSP, MYSQLI_ASSOC)) {
-      $danhsachLSP[] = array(
-        'loaisp_ten' => $row['loaisp_ten'],
+    $danhsachUsers = [];
+    while ($row =  mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+      $danhsachUsers[] = array(
+        'name' => $row['name'],
+                'address' => $row['address'],
+                'role' => $row['role'],
+                'email' => $row['email'],
+                'pass' => $row['pass'],
       );
     }
     $dataKey = $_GET['datakey'];
 
-    $sqlSP =  "SELECT * FROM sanpham WHERE sp_ma = '$dataKey'";
+    $sqlSP =  "SELECT * FROM users WHERE name = '$dataKey'";
     $result = $connect->query($sqlSP);
     if ($result->num_rows != 1) {
       echo ('ERROR');
@@ -39,76 +42,72 @@
     <table class="table table-striped table-bordered table-hover">
       <thead>
         <tr>
-          <th>Mã sp</th>
-          <th>Tên sp</th>
-          <th>Loại sp</th>
-          <th>Giá sp</th>
-          <th>Mô tả</th>
-          <th>Mô tả chi tiết</th>
-          <th>Image</th>
-          <th>Số lượng</th>
+        <th>Tên đăng nhập</th>
+        <th>Email</th>
+        <th>Mật khẩu</th>
+        <th>Địa chỉ</th>
+        <th>Quyền</th>
+                
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><?= $sp['sp_ma'] ?></td>
-          <td><?= $sp['sp_ten'] ?></td>
-          <td><?= $sp['loaisp_ten'] ?></td>
-          <td><?= number_format($sp['sp_gia'], 0, '.', ',') ?></td>
-          <td><?= $sp['sp_mota'] ?></td>
-          <td><?= $sp['sp_motachitiet'] ?></td>
-          <td><?= $sp['sp_img'] ?></td>
-          <td><?= $sp['sp_soluong'] ?></td>
-        </tr>
-
-      </tbody>
+      <?php
+          foreach($danhsachUsers as $user): ?>
+            <tr>
+            <td><?= $user['name'] ?></td>
+            <td><?= $user['email'] ?></td>
+            <td><?= $user['pass'] ?></td>
+            <td><?= $user['address'] ?></td>
+            
+              <td><?= ($user['role'] ? 'admin' : 'user') ?></td>
+              <td>
+                        
+            <?php endforeach; ?>
+        </tbody>
     </table>
 
     <div>
       <span class="log_heading text-dark mb-3">
-        <h5>Sửa sản phẩm</h5>
+        <h5>Sửa đăng nhập</h5>
       </span>
       <div id="error-message" class="text-danger" style="text-align:center ;font-size:25px"></div>
       <div class="text-danger" style="text-align:center ;font-size:25px">
         <?= isset($_GET['error']) ? $_GET['error'] : '' ?>
       </div>
-      <form action="<?= $linkBE ?>Edit_product.php" method="post" enctype="multipart/form-data">
+      <form action="<?= $linkBE ?>Edit_Users.php" method="post" enctype="multipart/form-data">
         <!-- Trường ẩn hidden -->
-        <input type="hidden" name="sp_ma" value="<?= $sp['sp_ma'] ?>">
+        <input type="hidden" name="name" value="<?= $sp['name'] ?>">
+
         <div class="input-group mb-3">
-          <span class="input-group-text" id="">Tên sp<span style="color: red;">*</span></span>
-          <input value="<?= $sp['sp_ten'] ?>" name="sp_ten" type="text" class="form-control" >
+          <span class="input-group-text" id="">Tên đăng nhập<span style="color: red;">*</span></span>
+          <input value="<?= $sp['name'] ?>" name="name" type="text" class="form-control" >
         </div>
+
         <div class="input-group mb-3">
-          <span class="input-group-text" id="">Tên Loại sp<span style="color: red;">*</span></span>
-          <select name="productType" class="form-select" aria-label="Default select example">
-            <?php
-            foreach ($danhsachLSP as $Lsp) : ?>
-              <option value="<?= $Lsp['loaisp_ten'] ?>"><?= $Lsp['loaisp_ten'] ?></option>
-            <?php endforeach;
-            ?>
-          </select>
+          <span class="input-group-text" id="email">Email<span style="color: red;">*</span></span>
+          <input value="<?= $sp['email'] ?>" email="email" type="text" class="form-control" >
         </div>
+        
         <div class="input-group mb-3">
-          <span class="input-group-text" id="">Giá sp<span style="color: red;">*</span></span>
-          <input value="<?= $sp['sp_gia'] ?>" name="sp_gia" type="text" class="form-control" >
-        </div>
-        <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label">Mô tả sp</label>
-          <textarea name="sp_mota" class="form-control" id="exampleFormControlTextarea1" rows="3"><?= $sp['sp_mota'] ?></textarea>
-        </div>
-        <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label">Mô tả sp chi tiết<span style="color: red;">*</span></span></label>
-          <textarea name="sp_motachitiet" class="form-control" id="exampleFormControlTextarea1" rows="3"><?= $sp['sp_motachitiet'] ?></textarea>
+          <span class="input-group-text" id="pass"> Mật khẩu<span style="color: red;">*</span></span>
+          <input value="<?= $sp['pass'] ?>" name="pass" type="pass" class="form-control" >
         </div>
         <div class="input-group mb-3">
-          <span class="input-group-text" id="">Img<span style="color: red;">*</span></span>
-          <input name="sp_img" type="file" class="form-control" >
+          <span class="input-group-text" id="address"> Address<span style="color: red;">*</span></span>
+          <input value="<?= $sp['address'] ?>" name="address" type="text" class="form-control" >
         </div>
+
         <div class="input-group mb-3">
-          <span class="input-group-text" id="">Số lượng<span style="color: red;">*</span></span>
-          <input value="<?= $sp['sp_soluong'] ?>" name="sp_soluong" type="number" min='0' value="1" class="form-control" >
-        </div>
+    <span class="input-group-text" id="role">Role<span style="color: red;">*</span></span>
+    <select name="role" class="form-select">
+        <?php foreach ($danhsachUsers as $User) : ?>
+            <option value="admin" <?php echo ($User['role'] == 'admin') ? 'selected' : ''; ?>>Admin</option>
+            <option value="user" <?php echo ($User['role'] == 'user') ? 'selected' : ''; ?>>User</option>
+        <?php endforeach; ?>
+    </select>
+</div>
+        
+        
         <button type="submit" name="submit" type="button" class="btn btn-dark">Sửa</button>
       </form>
     </div>

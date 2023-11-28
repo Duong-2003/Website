@@ -59,12 +59,12 @@
         <form action=<?= $linkBE . "login_process.php" ?> method="post">
           <div class="form-group">
             <strong>Tài khoản: <span style="color: red;">*</span></strong>
-            <input id="account" placeholder="Nhập tài khoản" type="text" class="form-control" name="account" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <input id="account" placeholder="Nhập tài khoản" type="text" class="form-control" name="account" >
           </div>
 
           <div class="form-group">
             <strong>Mật khẩu: <span style="color: red;">*</span></strong>
-            <input type="password" placeholder="Nhập mật khẩu" id="password" class="form-control" name="password" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <input type="password" placeholder="Nhập mật khẩu" id="password" class="form-control" name="password" >
           </div>
 
           <div class="text-center p-3">

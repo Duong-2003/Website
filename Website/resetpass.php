@@ -69,19 +69,19 @@
           <div class="form-group">
             <strong>Tài khoản: <span style="color: red;">*</span></strong>
 
-            <input placeholder="Tài khoản của bạn" id="account" type="text" class="form-control" name="account" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <input placeholder="Tài khoản của bạn" id="account" type="text" class="form-control" name="account" >
 
           </div>
           <div class="form-group">
             <strong>Email: <span style="color: red;">*</span></strong>
 
-            <input id="email" placeholder="Email của bạn" type="text" class="form-control" name="email" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <input id="email" placeholder="Email của bạn" type="text" class="form-control" name="email" >
          
       </div>
       <div class="form-group">
         <strong>Mật khẩu mới: <span style="color: red;">*</span></strong>
 
-        <input type="password" placeholder="Mật khẩu mới" id="passwordReset" class="form-control" name="passwordReset" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        <input type="password" placeholder="Mật khẩu mới" id="passwordReset" class="form-control" name="passwordReset" >
      
     </div>
 

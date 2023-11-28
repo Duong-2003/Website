@@ -71,7 +71,7 @@
                                     <div class="p-2"><a href=<?= $linkBE . "DeleteSQL.php?key=name&table=users&datakey=" . $user['name'] ?>>Xóa</a></div>
                                 </div>
                                 <div class="col">
-                                    <div class="p-2"><a href="">Sửa</a></div>
+                                <div class="p-2"><a href=<?="./Edit_Users.php?datakey=" . $user['name'] ?>>Sửa
                                 </div>
                             </div>
                         </div>
