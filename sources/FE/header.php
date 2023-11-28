@@ -258,7 +258,7 @@
             <strong><?= $loggedInUsername ?></strong>
         </a>
         <div class="dropdown-content">
-            <a href="#" data-bs-toggle="modal"  data-bs-target="#User" class="menu-dropdown">Thông tin</a>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#User" class="menu-dropdown">Thông tin</a>
             <a href=<?= $linkBE . "logout_process.php" ?> class="menu-dropdown">Đăng xuất</a>
         </div>
     </div>
@@ -273,89 +273,89 @@
                     <a href="./website.php"><img src=<?= $linkImgIndex . "logo1.webp" ?> alt="" style="height:auto;witdh:100%"></a>
 
                 </div>
-              
+
                 <div class="col-lg-3 col-md-12 text-white " style="text-align:center;padding: 8px 0;">
-                <form action="search.php" method="GET">
-                    <div class="input-group mb-3 " id="header-input" style="padding:5px 5px">
-                        <input  id="searchInput" type="text" class="form-control" placeholder="Nhấn để tìm kiếm" name="search">
-                        <span class="input-group-text" style="background-color:#9fa3fe;">
-                            <a style="cursor: pointer;" id="searchClick" name="searchClick">
-                                <i class="fa fa-search" aria-hidden="true"></i>
-                            </a>
-                        </span>
-                        </form>
-                    </div>
-                   
+                    <form action="./listSearch.php" method="GET">
+                        <div class="input-group mb-3 " id="header-input" style="padding:5px 5px">
+                            <input id="searchInput" type="text" class="form-control" placeholder="Nội dung tìm kiếm" name="search">
+                            <span class="input-group-text" style="background-color:#9fa3fe;">
+                                <a style="cursor: pointer;" id="searchClick" name="searchClick">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </a>
+                            </span>
+                    </form>
                 </div>
-              
-                <script>
-                    function getInputSearch() {
-                        var input = document.getElementById('searchInput').value;
-                        return input;
-                    }
-
-                    document.getElementById("searchClick").addEventListener("click", function() {
-                        var searchValue = getInputSearch();
-                        if (searchValue) {
-                            window.location.href = "./listSearch.php?search=" + searchValue;
-                        }
-                    });
-                </script>
-
-
-                <div class="col-lg-6 col-md-12 " id="home">
-
-                    <ul id="menu-header">
-
-                        <li>
-                            <div class="">
-                                <a href="website.php" class="nav-link " id="order">
-                                    <i class="fa fa-home" aria-hidden="true" style="font-size:24px;color: #5c64b4;"></i>
-                                    <strong style=" font-family: cursive;font-size:25px">HOME</strong>
-                                </a>
-
-
-
-                        </li>
-                        <li>
-                            <div class="">
-                                <a href="./cart.php?page=1" class="nav-link " id="order">
-                                    <i class="fa fa-shopping-cart" aria-hidden="true" style="font-size:24px;color: #5c64b4;"></i>
-                                    <strong style=" font-family: cursive;font-size:25px">CART</strong>
-                                </a>
-
-
-
-                        </li>
-                        <li>
-                            <div class="dropdown" id="ic-notuser">
-                                <a href="#" class="nav-link " id="order">
-                                    <i class="fa-solid fa-circle-user" style="font-size:25px;color: #5c64b4;"></i>
-                                    <strong style=" font-family: cursive;font-size:25px">USER</strong>
-                                </a>
-                                <div class="dropdown-content">
-                                    <a href="./login.php" class="menu-dropdown">Đăng nhập</a>
-                                    <a href="./register.php" class="menu-dropdown">Đăng ký</a>
-                                </div>
-
-
-                        </li>
-
-
-                    </ul>
-                </div>
-
 
             </div>
 
+            <script>
+                var inputSearch = document.getElementById('searchInput');
+               
+                document.getElementById("searchClick").addEventListener("click", function() {
+                    Search();
+                });
+                function Search(){
+                    var searchValue = inputSearch.value;
+                    if (searchValue) {
+                        window.location.href = "./listSearch.php?search=" + searchValue;
+                    }
+                }
+            </script>
 
 
+            <div class="col-lg-6 col-md-12 " id="home">
+
+                <ul id="menu-header">
+
+                    <li>
+                        <div class="">
+                            <a href="website.php" class="nav-link " id="order">
+                                <i class="fa fa-home" aria-hidden="true" style="font-size:24px;color: #5c64b4;"></i>
+                                <strong style=" font-family: cursive;font-size:25px">HOME</strong>
+                            </a>
+
+
+
+                    </li>
+                    <li>
+                        <div class="">
+                            <a href="./cart.php?page=1" class="nav-link " id="order">
+                                <i class="fa fa-shopping-cart" aria-hidden="true" style="font-size:24px;color: #5c64b4;"></i>
+                                <strong style=" font-family: cursive;font-size:25px">CART</strong>
+                            </a>
+
+
+
+                    </li>
+                    <li>
+                        <div class="dropdown" id="ic-notuser">
+                            <a href="#" class="nav-link " id="order">
+                                <i class="fa-solid fa-circle-user" style="font-size:25px;color: #5c64b4;"></i>
+                                <strong style=" font-family: cursive;font-size:25px">USER</strong>
+                            </a>
+                            <div class="dropdown-content">
+                                <a href="./login.php" class="menu-dropdown">Đăng nhập</a>
+                                <a href="./register.php" class="menu-dropdown">Đăng ký</a>
+                            </div>
+
+
+                    </li>
+
+
+                </ul>
+            </div>
 
 
         </div>
+
+
+
+
+
+    </div>
     </div>
     <?php
-        include_once($linkFE."User.php");
+    include_once($linkFE . "User.php");
     ?>
 
 </body>

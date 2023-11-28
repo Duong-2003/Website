@@ -84,7 +84,14 @@
                                 <strong>MSP:</strong>
                                 <?= $sp['sp_ma'] ?>
                             </div>
-                            <input style="display: none;" type="text" name="sp_ma" value="<?php echo $sp['sp_ma']; ?>">
+                            <inputtype="hidden" name="sp_ma" value="<?php echo $sp['sp_ma']; ?>">
+                        </div>
+                        <div>
+                            <div class="p-1">
+                                <strong>Loại sản phẩm:</strong>
+                                <?= $sp['loaisp_ten'] ?>
+                            </div>
+                            <input type="hidden" name="sp_ma" value="<?php echo $sp['sp_ma']; ?>">
                         </div>
                     </div>
 

@@ -9,48 +9,47 @@
 
     <?php
 
-    
+
     include($linkconnWebsite);
     $search = strtolower($_GET['search']);
-$arrange = isset($_GET['arrange']) ? $_GET['arrange'] : "";
-// Sử dụng Prepared Statements để tránh lỗ hổng SQL Injection
-if($arrange == "price") {
-    $query = "SELECT * FROM sanpham WHERE LOWER(sp_ten) LIKE ? ORDER BY sp_gia DESC";
-}
-else {
-    $query = "SELECT * FROM sanpham WHERE LOWER(sp_ten) LIKE ?";
-}
+    $arrange = isset($_GET['arrange']) ? $_GET['arrange'] : "";
+    // Sử dụng Prepared Statements để tránh lỗ hổng SQL Injection
+    if ($arrange == "price") {
+        $query = "SELECT * FROM sanpham WHERE LOWER(sp_ten) LIKE ? OR LOWER(loaisp_ten) LIKE ? ORDER BY sp_gia DESC";
+    } else {
+        $query = "SELECT * FROM sanpham WHERE LOWER(sp_ten) LIKE ? OR LOWER(loaisp_ten) LIKE ?";
+    }
 
-$stmt = $connect->prepare($query);
-// Bắt đầu binding parameters và thực hiện truy vấn
-$searchParam = "%" . $search . "%";
-$stmt->bind_param("s", $searchParam);
-$stmt->execute();
-$result = $stmt->get_result();
+    $stmt = $connect->prepare($query);
+    // Bắt đầu binding parameters và thực hiện truy vấn
+    $searchParam = "%" . $search . "%";
+    $stmt->bind_param("ss", $searchParam,$searchParam);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-if ($result->num_rows == 0) {
-    echo '<span style="color: red;font-size: 30px;">Không có sản phẩm nào có từ khóa: ' . htmlspecialchars($search) . '</span>';
-    exit();
-}
+    if ($result->num_rows == 0) {
+        echo '<span style="color: red;font-size: 30px;">Không có sản phẩm nào có từ khóa: ' . htmlspecialchars($search) . '</span>';
+        exit();
+    }
 
-$name = [];
-while ($row = $result->fetch_assoc()) {
-    $name[] = $row;
-}
+    $name = [];
+    while ($row = $result->fetch_assoc()) {
+        $name[] = $row;
+    }
 
     ?>
     <div>
-    <div class="dropdown ">
-        <a class="btn btn-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Sắp Xếp
-        </a>
-        <div class="dropdown-content">
-            <a style="cursor: pointer;" class="menu-dropdown" id="menu-dr-price">Theo giá</a>
-            <a style="cursor: pointer;" class="menu-dropdown" id="menu-dr-reviews">Theo đánh giá</a>
-            <!-- <a  href="./List.php?page=1&&arrange=reviews" class="menu-dropdown" id ="menu-dr-reviews">Theo đánh giá</a>  -->
+        <div class="dropdown ">
+            <a class="btn btn-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Sắp Xếp
+            </a>
+            <div class="dropdown-content">
+                <a style="cursor: pointer;" class="menu-dropdown" id="menu-dr-price">Theo giá</a>
+                <a style="cursor: pointer;" class="menu-dropdown" id="menu-dr-reviews">Theo đánh giá</a>
+                <!-- <a  href="./List.php?page=1&&arrange=reviews" class="menu-dropdown" id ="menu-dr-reviews">Theo đánh giá</a>  -->
+            </div>
         </div>
-    </div>
-    <script>
+        <script>
             var arrange = "<?php echo $arrange ?>";
             var element;
             if (arrange == "price") {
@@ -60,14 +59,14 @@ while ($row = $result->fetch_assoc()) {
             } else if (arrange == "reviews") {
                 element = document.getElementById("menu-dr-reviews");
             }
-            if(element)
-            element.style.backgroundColor = "red";
+            if (element)
+                element.style.backgroundColor = "red";
 
             document.getElementById("menu-dr-price").addEventListener("click", function() {
                 if (arrange == "price")
-                    window.location.href = "./ListSearch.php?search=<?=$search?>&&page=1";
+                    window.location.href = "./ListSearch.php?search=<?= $search ?>&&page=1";
                 else {
-                    window.location.href = "./ListSearch.php?search=<?=$search?>&&page=1&&arrange=price";
+                    window.location.href = "./ListSearch.php?search=<?= $search ?>&&page=1&&arrange=price";
                 }
             });
         </script>
@@ -125,9 +124,3 @@ while ($row = $result->fetch_assoc()) {
         </nav>
     </div>
 </body>
-
-
-
-
-
-
