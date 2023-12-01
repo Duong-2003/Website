@@ -311,7 +311,7 @@
                         <div class="">
                             <a href="website.php" class="nav-link " id="order">
                                 <i class="fa fa-home" aria-hidden="true" style="font-size:24px;color: #5c64b4;"></i>
-                                <strong style=" font-family: cursive;font-size:25px">HOME1</strong>
+                                <strong style=" font-family: cursive;font-size:25px">HOME</strong>
                             </a>
 
 
