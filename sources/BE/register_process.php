@@ -8,6 +8,7 @@ if(isset($_POST['submit']) && $_POST['username'] != '' && $_POST['password'] != 
     $password = $_POST['password'];
     $email = $_POST['email'];
     $rePass = $_POST['rePass'];
+    $address = $_POST['address'];
     $role = 0;
     $error = null;
     $notifi = null;
@@ -26,18 +27,18 @@ if(isset($_POST['submit']) && $_POST['username'] != '' && $_POST['password'] != 
     }
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     if($email != ''){
-        $hashed_email = password_hash($email, PASSWORD_DEFAULT);
-        $query = "INSERT INTO users (name, pass, role,email) VALUES ('$username', '$hashed_password','$role','$hashed_email')";
+        // $hashed_email = password_hash($email, PASSWORD_DEFAULT);
+        $query = "INSERT INTO users (name, pass, role,email,address) VALUES ('$username', '$hashed_password','$role','$email','$address')";
     }
     else{
-        $query = "INSERT INTO users (name, pass, role,email) VALUES ('$username', '$hashed_password','$role',NULL)";
+        $query = "INSERT INTO users (name, pass, role,email,address) VALUES ('$username', '$hashed_password','$role','$email','$address')";
     }
     if ($connect->query($query) === TRUE) {
         $connect->close();
         $notifi = 'Đăng ký thành công';
         header("location:".$linkWebsite."login.php?notifi=".$notifi);
     }else {
-        $error = 'Lỗi đăng ký !'. $conn->error;
+        $error = 'Lỗi đăng ký !'. $connect->error;
         $connect->close();
         header("location:".$linkWebsite."register.php?error=".$error);
     }
