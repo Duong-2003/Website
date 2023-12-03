@@ -102,8 +102,11 @@
               <div class="card-body">
                 <p class="card-title">
                   <!-- Tên sản phẩm: -->
-                  <?= $data['sp_ten'] ?></p>
-                <p class="card-text">Giá sản phẩm:<?= $data['sp_gia'] ?></p>
+                  <strong><?= $data['sp_ten'] ?></strong> 
+                </p>
+                <p class="card-text">Giá sản phẩm:
+                  <?= $data['sp_gia'] ?>
+                </p>
                 <a href="./product.php?sp_ma=<?= $data['sp_ma'] ?>" class="btn btn-primary">Xem</a>
               </div>
             </div>
