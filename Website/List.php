@@ -45,6 +45,7 @@ a{
     include($linkFE.'top_header.php');
     include($linkFE.'header.php');
     include($linkFE.'slide.php');
+    include($linkFE.'menu.php');
     include($linkFE.'listProduct.php');
     include($linkFE.'footer.php');
 
