@@ -31,15 +31,18 @@
         echo '<span style="color: red;font-size: 30px;">Không có sản phẩm nào có từ khóa: ' . htmlspecialchars($search) . '</span>';
         exit();
     }
-
-    $name = [];
-    while ($row = $result->fetch_assoc()) {
-        $name[] = $row;
+    $duongdanimg = $linkImgSp;
+    $dataArray = array();
+    if ($result->num_rows > 0) {
+      while ($row = $result->fetch_assoc()) {
+        $dataArray[] = $row;
+      }
     }
 
     ?>
-    <div>
-        <div class="dropdown ">
+    
+    <div class="container ">
+        <div class="dropdown py-3">
             <a class="btn btn-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Sắp Xếp
             </a>
@@ -76,10 +79,11 @@
 
     <div class="container text-center">
         <div class="row">
-            <?php foreach ($name as $data) : ?>
+        <?php foreach ($dataArray as $data) : ?>
+
                 <div class="col-lg-3 col-md-4 col-sm-6 py-2" id="font-card">
                     <div id="card<?= $i ?>" class="card">
-                        <img src="<?= $duongdanimg . $data['sp_img'] ?>" class="card-img-top" alt="...">
+                    <img src="<?= $duongdanimg . $data['sp_img'] ?>" class="card-img-top" alt="...">
                         <div class="card-body">
                             <p class="card-title">Tên sản phẩm:<?= $data['sp_ten'] ?></p>
                             <p class="card-text">Giá sản phẩm:<?= $data['sp_gia'] ?></p>
@@ -105,8 +109,8 @@
         $connect->close();
         ?>
 
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
+        <nav aria-label="Page navigation ">
+            <ul class="pagination py-2" style="place-content: center; ">
                 <li class="page-item">
                     <a class="page-link" href="#" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>

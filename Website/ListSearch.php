@@ -18,6 +18,7 @@
 <body>
     <?php
     session_start();
+    include($linkFE.'top_header.php');
     include($linkFE.'header.php');
     include($linkFE.'search.php');
     include($linkFE.'footer.php');

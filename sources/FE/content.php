@@ -37,7 +37,7 @@
         transform: scale(1.1);
     }
 
-  /* @media screen and (max-width: 456px) {
+  @media screen and (max-width: 456px) {
     #menu {
       flex-wrap: wrap;
       justify-content: space-evenly;
@@ -52,7 +52,7 @@
 
     }
 
-  } */
+  }
 </style>
 
 </head>
