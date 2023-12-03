@@ -110,11 +110,14 @@
                     <div id="card<?= $i ?>" class="card">
                         <img src="<?= $duongdanimg . $data['sp_img'] ?>" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <p class="card-title">
-                                <!-- Tên sản phẩm: -->
-                               <strong><?= $data['sp_ten'] ?></strong> 
-                            </p>
-                            <p class="card-text">Giá:<?= $data['sp_gia'] ?></p>
+                        <p class="card-title">
+                  <!-- Tên sản phẩm: -->
+                  <strong><?= $data['sp_ten'] ?></strong>
+                </p>
+                <strong style="color:#f30;font-size:25px">
+                    <?= number_format($data['sp_gia'], 0, '.', ','); ?>
+                    <sup>đ</sup>
+                  </strong></p>
                             <a href="./product.php?sp_ma=<?= $data['sp_ma'] ?>" class="btn btn-primary" id="">
                             <i class="fa-solid fa-cart-shopping"></i>
                             Mua</a>

@@ -1,6 +1,4 @@
-
 <style>
-  
   .content a {
     text-decoration: none;
   }
@@ -17,8 +15,8 @@
   div.card :hover a {
     /* box-shadow: 0 0 20px 5px;
     color: white; */
-   
-   
+
+
   }
 
   #font-card:hover {
@@ -27,15 +25,15 @@
     border-radius: 20px;
     */
   }
-  
+
 
   .card {
-        transition: transform 0.3s;
-    }
+    transition: transform 0.3s;
+  }
 
-    .card:hover {
-        transform: scale(1.1);
-    }
+  .card:hover {
+    transform: scale(1.1);
+  }
 
   @media screen and (max-width: 456px) {
     #menu {
@@ -102,15 +100,18 @@
               <div class="card-body">
                 <p class="card-title">
                   <!-- Tên sản phẩm: -->
-                  <strong><?= $data['sp_ten'] ?></strong> 
+                  <strong><?= $data['sp_ten'] ?></strong>
                 </p>
-                <p class="card-text">Giá :
-                  <?= $data['sp_gia'] ?>
+                <p class="card-text"> 
+                   <strong style="color:#f30;font-size:25px">
+                    <?= number_format($data['sp_gia'], 0, '.', ','); ?>
+                    <sup>đ</sup>
+                  </strong>
                 </p>
                 <a href="./product.php?sp_ma=<?= $data['sp_ma'] ?>" class="btn btn-primary">
-                <i class="fa-solid fa-cart-shopping"></i>
-                
-                Mua</a>
+                  <i class="fa-solid fa-cart-shopping"></i>
+
+                  Mua</a>
               </div>
             </div>
           </div>
@@ -128,5 +129,3 @@
 
 
 </body>
-
-
