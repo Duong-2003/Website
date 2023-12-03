@@ -104,10 +104,13 @@
                   <!-- Tên sản phẩm: -->
                   <strong><?= $data['sp_ten'] ?></strong> 
                 </p>
-                <p class="card-text">Giá sản phẩm:
+                <p class="card-text">Giá :
                   <?= $data['sp_gia'] ?>
                 </p>
-                <a href="./product.php?sp_ma=<?= $data['sp_ma'] ?>" class="btn btn-primary">Xem</a>
+                <a href="./product.php?sp_ma=<?= $data['sp_ma'] ?>" class="btn btn-primary">
+                <i class="fa-solid fa-cart-shopping"></i>
+                
+                Mua</a>
               </div>
             </div>
           </div>
