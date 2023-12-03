@@ -33,6 +33,9 @@
       border-radius: 20px;
       box-shadow: 0 0 12px 4px;
     }
+    .form-group{
+      margin:20px 0;
+    }
   </style>
 
   <div class="container py-4">
@@ -69,7 +72,9 @@
 
           <div class="text-center p-3">
             <button type="submit" id="loginSubmit" name="submit" class="btn btn-primary">Đăng nhập</button>
-            <a class="btn btn-primary" href="./resetpass.php">Quên mật khẩu</a>
+            
+            <a class="btn btn-primary" href="./register.php">Đăng ký</a>
+            <a class="btn btn-danger" href="./resetpass.php">Quên mật khẩu</a>
           </div>
 
         </form>
