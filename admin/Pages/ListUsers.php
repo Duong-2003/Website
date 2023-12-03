@@ -22,6 +22,18 @@
     <hr style="color:red">
 
 
+<!-- Button trigger modal -->
+<button style="margin: 0 100px;" type="button" class="btn btn-primary my-2" data-bs-toggle="modal" data-bs-target="#AddProduct">
+ Thêm người dùng
+</button>
+
+<?php
+  include_once($linkFE."ModalAddUsers.php");
+?>
+
+
+
+    
     <?php
     include_once($linkconnPages);
     $sql =  "SELECT * FROM users";
