@@ -66,6 +66,7 @@
                     <div class="dropdown-content">
                         <a href="#" style="cursor: pointer; border-radius:6px" class="menu-dropdown" id="menu-dr-price">Theo giá</a>
                         <a href="#" style="cursor: pointer;border-radius:6px" class="menu-dropdown" id="menu-dr-reviews">Theo đánh giá</a>
+                        <a style="cursor: pointer;" class="menu-dropdown" id=""> Khác </a>
                         <!-- <a  href="./List.php?page=1&&arrange=reviews" class="menu-dropdown" id ="menu-dr-reviews">Theo đánh giá</a>  -->
                     </div>
                 </div>

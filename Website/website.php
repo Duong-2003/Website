@@ -44,10 +44,11 @@ a{
     session_start();
     include($linkFE.'top_header.php');
     include($linkFE.'header.php');
-    // include($linkFE.'header1.php');
+  
     
-    // include($linkFE.'menu.php');
+    
     include($linkFE.'slide.php');
+    include($linkFE.'menu.php');
     include($linkFE.'content.php');
     include($linkFE.'footer_save.php');
     include($linkFE.'footer.php');

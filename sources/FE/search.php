@@ -3,6 +3,7 @@
         background-color: #6c757d;
         color: aliceblue;
     }
+    
 </style>
 
 <body>
@@ -31,6 +32,7 @@
         echo '<span style="color: red;font-size: 30px;">Không có sản phẩm nào có từ khóa: ' . htmlspecialchars($search) . '</span>';
         exit();
     }
+
     $duongdanimg = $linkImgSp;
     $dataArray = array();
     if ($result->num_rows > 0) {
@@ -43,13 +45,15 @@
     
     <div class="container ">
         <div class="dropdown py-3">
+            
             <a class="btn btn-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Sắp Xếp
             </a>
             <div class="dropdown-content">
                 <a style="cursor: pointer;" class="menu-dropdown" id="menu-dr-price">Theo giá</a>
-                <a style="cursor: pointer;" class="menu-dropdown" id="menu-dr-reviews">Theo đánh giá</a>
-                <!-- <a  href="./List.php?page=1&&arrange=reviews" class="menu-dropdown" id ="menu-dr-reviews">Theo đánh giá</a>  -->
+                <a style="cursor: pointer;" class="menu-dropdown" id="">Theo đánh giá</a>
+                <a style="cursor: pointer;" class="menu-dropdown" id=""> Khác </a>
+             
             </div>
         </div>
         <script>
