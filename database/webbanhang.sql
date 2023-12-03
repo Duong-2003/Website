@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2023 at 03:57 PM
+-- Generation Time: Dec 03, 2023 at 06:32 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -114,10 +114,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`name`, `pass`, `email`, `address`, `role`) VALUES
-('admin', '$2y$10$p4Avp8BrnI3K6tcQJnGP.u1Dlm1MVIIGhUQS1qKvd5wvELvzT/E0e', '$2y$10$tTVMPSgPmJIKBUGV2jWiBuArScbYWY3QFqu/gSxv7Bhw/wEcsQYMm', NULL, 1),
-('duong1234', '$2y$10$qazh61RtBa8tFmD2cB1whukerATkm74phj.kXvP0aSHZNgajKBSS2', '$2y$10$oB0IGoidgjoDCz793FtcLuYNyUB6TFJIeT7GNQi/jV20oEZoGGr7y', NULL, 0),
-('ndd', '$2y$10$D4fbYB/.Ai0s.390KginFOnKedtHFCclxLumZWIMN7Hw/ihiCSIR2', '$2y$10$D2v6enpj1cmBD7w6EaczgOuCTYTZqOnbVut02CVJewvHpRA1xbqDm', NULL, 0),
-('ndd145', '$2y$10$.MwpRxvVuzYQ2sCSyIZ3AOoQasD/hcPvJWlb1yPXPSvq08mAFVpIa', NULL, NULL, 0);
+('1234', '$2y$10$68uAC8dUjwMJ0d3cpLfXIeZVzQl9xUqF8cHpHMoEn/De3FTfXddUK', 'admin3@gmail.com', 'Hồ Chí minh', 0),
+('admin', '1234', 'admin@gmail.com', 'Hà Nội', 1),
+('admin14', '$2y$10$trvZXHb1JPblBG6v3bxwZ.Pp/FOO.ywnQmdcVof5CKkwI36EoZOBq', 'Admin20000@gmail.com', 'Hồ Chí minh1', 0),
+('admin2', '1234', 'Admin2000@gmail.com', 'hà nội', 0),
+('duong1234', '$2y$10$hSbSiP6ob///KHi/t/zP/.d6CotoPtKdXIIl.0fHmsdFlQDf.eRu.', 'Admin1@gmail.com', 'Hà nội1', 0);
 
 --
 -- Indexes for dumped tables
