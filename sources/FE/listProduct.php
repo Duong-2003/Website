@@ -7,7 +7,13 @@
     .card {
         transition: transform 0.3s;
         margin-bottom: 20px;
-    }
+      
+    box-shadow: 0 0 5px 0px;
+    color: #999;
+    margin-bottom: 20px;
+
+  }
+ 
 
     .card:hover {
         transform: scale(1.1);
@@ -249,6 +255,9 @@
                     </ul>
                 </nav>
             </div>
+            
+        </div>
+    </div>
 </body>
 
 </html>
