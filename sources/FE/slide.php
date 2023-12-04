@@ -72,74 +72,53 @@
 
 
       </div>
-
-
-
-
-
-
-
-
-      <!-- <div class=" slide2 col-sm-4">
-
-        <div class="col " id="slide2">
-          <img src=<?= $linkImgIndex . "slide_6.webp" ?> alt="">
-        </div>
-
-        <div class="col " id="slide3" style="padding-top: 18px;">
-          <img src=<?= $linkImgIndex . "slide_4.webp" ?> alt="">
-        </div>
-      </div> -->
-    </div>
   </div>
+</div>
 
-</body>
-<script>
-  // var index = 1;
-  // changeimg = function() {
-  //   var imgs = ["<?= $linkImgIndex . "slide_1.webp" ?>",
-  //     "<?= $linkImgIndex . "slide_3.webp" ?>", "<?= $linkImgIndex . "slide_4.webp" ?>"
-  //   ];
-  //   document.getElementById('slide').src = imgs[index];
-  //   index++;
-  //   if (index == 3) {
-  //     index = 0;
-  //   }
 
-  // }
-  // setInterval(changeimg, 2000)
-</script>
 
+
+
+
+
+
+     
 
 <script>
+  // Lấy phần tử gốc của carousel có id là "carouselInner"
     var carouselInner = document.getElementById("carouselInner");
+    // Lấy danh sách các phần tử con có lớp là "carousel-item"
     var carouselItems = carouselInner.getElementsByClassName("carousel-item");
+
+    // Lấy danh sách các chỉ số của carousel
     var indicators = document.getElementsByClassName("carousel-indicators")[0].getElementsByTagName("button");
+    // Khởi tạo biến currentSlideIndex để lưu chỉ số slide hiện tại
     var currentSlideIndex = 0;
+
     var slideInterval = setInterval(changeSlide, 2000); // Chuyển slide sau mỗi 2 giây
-  
+  // Hàm để thay đổi slide
     function changeSlide() {
       currentSlideIndex++;
       if (currentSlideIndex >= carouselItems.length) {
         currentSlideIndex = 0;
       }
-  
+  // Xóa lớp "active" khỏi tất cả các slide và chỉ số
       for (var i = 0; i < carouselItems.length; i++) {
         carouselItems[i].classList.remove("active");
         indicators[i].classList.remove("active");
       }
-  
+  // Thêm lớp "active" cho slide và chỉ số hiện tại
       carouselItems[currentSlideIndex].classList.add("active");
       indicators[currentSlideIndex].classList.add("active");
     }
-  
+  // Xử lý sự kiện khi người dùng nhấp vào nút 'previous'
     var prevButton = document.querySelector(".carousel-control-prev");
     prevButton.addEventListener("click", function() {
       clearInterval(slideInterval); // Dừng chuyển slide tự động khi người dùng nhấp vào nút 'previous'
       // changeSlide();
       slideInterval = setInterval(changeSlide, 2000); // Bắt đầu chuyển slide tự động sau khi người dùng nhấp vào nút 'previous'
     });
-  
+  // Xử lý sự kiện khi người dùng nhấp vào nút 'next'
     var nextButton = document.querySelector(".carousel-control-next");
     nextButton.addEventListener("click", function() {
       clearInterval(slideInterval); // Dừng chuyển slide tự động khi người dùng nhấp vào nút 'next'

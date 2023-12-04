@@ -1,10 +1,9 @@
-
-
 <style>
     .dropdown-content a {
         background-color: #6c757d;
         color: aliceblue;
     }
+
     .card {
         transition: transform 0.3s;
         margin-bottom: 20px;
@@ -13,7 +12,6 @@
     .card:hover {
         transform: scale(1.1);
     }
-
 </style>
 
 <body>
@@ -36,6 +34,13 @@
         $sql = "SELECT * FROM sanpham LIMIT $minShow,$productValueShow";
     } else if ($arrange == "price") {
         $sql = "SELECT * FROM sanpham ORDER BY sp_gia DESC LIMIT $minShow,$productValueShow";
+        // $sql = "SELECT * FROM sanpham WHERE loaisp_ten = 'Điện thoại'  LIMIT $minShow, $productValueShow";
+    }
+    if ($arrange == "") {
+        $sql = "SELECT * FROM sanpham LIMIT $minShow,$productValueShow";
+    } else if ($arrange == "price") {
+        $sql = "SELECT * FROM sanpham ORDER BY sp_gia DESC LIMIT $minShow,$productValueShow";
+        // $sql = "SELECT * FROM sanpham WHERE loaisp_ten = 'Ốp lưng điện thoại'  LIMIT $minShow, $productValueShow";
     }
 
     $result = $connect->query($sql);
@@ -50,116 +55,229 @@
 
     ?>
 
-    <div class="container px-5" style="margin-top:10px">
 
-        <ul>
-            <li>
-                <a href="" style="color:red;text-decoration:none;font-size:30px">
-                    <hr>Sản phẩm mới nhất
-                    <hr>
-                </a>
-                <div class="dropdown ">
-
-                    <a href="#" class="btn btn-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Sắp Xếp
+    <div class="product-list mb-3 p-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="" style="color: red; text-decoration: none; font-size: 30px">
+                        <hr>Ốp lưng mới nhất
+                        <hr>
                     </a>
-                    <div class="dropdown-content">
-                        <a href="#" style="cursor: pointer; border-radius:6px" class="menu-dropdown" id="menu-dr-price">Theo giá</a>
-                        <a href="#" style="cursor: pointer;border-radius:6px" class="menu-dropdown" id="menu-dr-reviews">Theo đánh giá</a>
-                        <a style="cursor: pointer;" class="menu-dropdown" id=""> Khác </a>
-                        <!-- <a  href="./List.php?page=1&&arrange=reviews" class="menu-dropdown" id ="menu-dr-reviews">Theo đánh giá</a>  -->
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
 
 
-
-
-
-    <script>
-        var arrange = "<?php echo $arrange ?>";
-        var element;
-        if (arrange == "price") {
-            element = document.getElementById("menu-dr-price");
-
-            console.log(element + " testt");
-        } else if (arrange == "reviews") {
-            element = document.getElementById("menu-dr-reviews");
-        }
-        if (element)
-            element.style.backgroundColor = "#6464d8";
-
-        document.getElementById("menu-dr-price").addEventListener("click", function() {
-            if (arrange == "price")
-                window.location.href = "./List.php?page=1";
-            else {
-                window.location.href = "./List.php?page=1&&arrange=price";
-            }
-        });
-    </script>
-    </div>
-
-
-
-    <div class="container text-center ">
-        <div class="row">
-            <?php foreach ($dataArray as $data) : ?>
-                <div class="col-lg-3 col-md-4 col-sm-6 py-2" id="font-card">
-                    <div id="card<?= $i ?>" class="card">
-                        <img src="<?= $duongdanimg . $data['sp_img'] ?>" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        <p class="card-title">
-                  <!-- Tên sản phẩm: -->
-                  <strong><?= $data['sp_ten'] ?></strong>
-                </p>
-                <strong style="color:#f30;font-size:25px">
-                    <?= number_format($data['sp_gia'], 0, '.', ','); ?>
-                    <sup>đ</sup>
-                  </strong></p>
-                            <a href="./product.php?sp_ma=<?= $data['sp_ma'] ?>" class="btn btn-primary" id="">
-                            <i class="fa-solid fa-cart-shopping"></i>
-                            Mua</a>
+                    <div class="dropdown">
+                        <a href="#" class="btn btn-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Sắp Xếp
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="#" style="cursor: pointer; border-radius:6px" class="menu-dropdown" id="menu-dr-price">Theo giá</a>
+                            <a href="#" style="cursor: pointer;border-radius:6px" class="menu-dropdown" id="menu-dr-reviews">Theo đánh giá</a>
+                            <a style="cursor: pointer;" class="menu-dropdown" id=""> Khác </a>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+
+
+
+
+        <script>
+            var arrange = "<?php echo $arrange ?>";
+            var element;
+            if (arrange == "price") {
+                element = document.getElementById("menu-dr-price");
+
+                console.log(element + " testt");
+            } else if (arrange == "reviews") {
+                element = document.getElementById("menu-dr-reviews");
+            }
+            if (element)
+                element.style.backgroundColor = "#6464d8";
+
+            document.getElementById("menu-dr-price").addEventListener("click", function() {
+                if (arrange == "price")
+                    window.location.href = "./List.php?page=1";
+                else {
+                    window.location.href = "./List.php?page=1&&arrange=price";
+                }
+            });
+        </script>
+    </div>
+
+
+
+
+
+
+    <div class="container text-center py-5">
+        <div class="row">
+            <?php foreach ($dataArray  as $data) : ?>
+                <?php if ($data['loaisp_ten'] === 'Điện thoại') : ?>
+                    <div class="col-lg-3 col-md-4 col-sm-6 py-2" id="font-card">
+                        <div id="card<?= $i ?>" class="card">
+                            <img src="<?= $duongdanimg . $data['sp_img'] ?>" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <p class="card-title">
+                                    <strong><?= $data['sp_ten'] ?></strong>
+                                </p>
+                                <p class="card-text">
+                                    <strong style="color:#f30;font-size:25px">
+                                        <?= number_format($data['sp_gia'], 0, '.', ','); ?>
+                                        <sup>đ</sup>
+                                    </strong>
+                                </p>
+                                <a href="./product.php?sp_ma=<?= $data['sp_ma'] ?>" class="btn btn-primary">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    Mua
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                <?php endif; ?>
             <?php endforeach; ?>
         </div>
     </div>
 
-    <div>
-        <?php
-        $sql =  "SELECT COUNT(*) as total FROM sanpham";
-        $result = $connect->query($sql);
-        $total = 0;
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            $total = $row['total'];
-        }
-        $pagination = ceil($total / $productValueShow);
-        // Đóng kết nối
-        $connect->close();
-        ?>
 
-        <nav aria-label="Page navigation example" style="display: flex; justify-content: center;">
-            <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                        <span aria-hidden="true" style="font-weight: bold; font-size: 30px;">&laquo;</span>
+
+
+
+
+
+
+
+    <!-- Trang2 -->
+
+    <?php
+    // Các mã PHP xử lý lấy dữ liệu sản phẩm và phân trang ở đây
+    ?>
+
+
+
+
+
+    <div class="product-list mb-3 p-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="" style="color: red; text-decoration: none; font-size: 30px">
+                        <hr>Ốp lưng mới nhất
+                        <hr>
                     </a>
-                </li>
-                <?php for ($i = 1; $i <= $pagination; $i++) : ?>
-                    <li class="page-item">
-                        <a class="page-link" href="./List.php?page=<?= $i ?>" style="font-weight: bold; font-size: 30px;">
-                            <?= $i ?>
+
+
+                    <div class="dropdown">
+                        <a href="#" class="btn btn-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Sắp Xếp
                         </a>
-                    </li>
-                <?php endfor; ?>
-                <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                        <span aria-hidden="true" style="font-weight: bold; font-size: 30px;">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+                        <div class="dropdown-content">
+                            <a href="#" style="cursor: pointer; border-radius:6px" class="menu-dropdown" id="menu-price">Theo giá</a>
+                            <a href="#" style="cursor: pointer;border-radius:6px" class="menu-dropdown" id="menu-reviews">Theo đánh giá</a>
+                            <a style="cursor: pointer;" class="menu-dropdown" id=""> Khác </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var arrange = "<?php echo $arrange ?>";
+            var element;
+            if (arrange == "price") {
+                element = document.getElementById("menu-price");
+
+                console.log(element + " testt");
+            } else if (arrange == "reviews") {
+                element = document.getElementById("menu-reviews");
+            }
+            if (element)
+                element.style.backgroundColor = "#6464d8";
+
+            document.getElementById("menu-dr-price").addEventListener("click", function() {
+                if (arrange == "price")
+                    window.location.href = "./List.php?page=1";
+                else {
+                    window.location.href = "./List.php?page=1&&arrange=price";
+                }
+            });
+        </script>
+        <div class="container text-center py-5">
+            <div class="row">
+                <?php foreach ($dataArray  as $data) : ?>
+                    <?php if ($data['loaisp_ten'] === 'Ốp lưng điện thoại') : ?>
+                        <div class="col-lg-3 col-md-4 col-sm-6 py-2" id="font-card">
+                            <div id="card<?= $i ?>" class="card">
+                                <img src="<?= $duongdanimg . $data['sp_img'] ?>" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <p class="card-title">
+                                        <strong><?= $data['sp_ten'] ?></strong>
+                                    </p>
+                                    <p class="card-text">
+                                        <strong style="color:#f30;font-size:25px">
+                                            <?= number_format($data['sp_gia'], 0, '.', ','); ?>
+                                            <sup>đ</sup>
+                                        </strong>
+                                    </p>
+                                    <a href="./product.php?sp_ma=<?= $data['sp_ma'] ?>" class="btn btn-primary">
+                                        <i class="fa-solid fa-cart-shopping"></i>
+                                        Mua
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+        <div>
+            <!-- Mã PHP xử lý phân trang ở đây -->
+
+
+
+
+
+
+            <div>
+                <?php
+                $sql =  "SELECT COUNT(*) as total FROM sanpham";
+                $result = $connect->query($sql);
+                $total = 0;
+                if ($result->num_rows > 0) {
+                    $row = $result->fetch_assoc();
+                    $total = $row['total'];
+                }
+                $pagination = ceil($total / $productValueShow);
+                // Đóng kết nối
+                $connect->close();
+                ?>
+
+
+                <nav aria-label="Page navigation example" style="display: flex; justify-content: center;">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true" style="font-weight: bold; font-size: 30px;">&laquo;</span>
+                            </a>
+                        </li>
+                        <?php for ($i = 1; $i <= $pagination; $i++) : ?>
+                            <li class="page-item">
+                                <a class="page-link" href="./List.php?page=<?= $i ?>" style="font-weight: bold; font-size: 30px;">
+                                    <?= $i ?>
+                                </a>
+                            </li>
+                        <?php endfor; ?>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true" style="font-weight: bold; font-size: 30px;">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+</body>
+
+</html>

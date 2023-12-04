@@ -57,75 +57,119 @@
 
 <body>
 
-  <div class="product-list mb-3 p-2 ">
+<body>
+  <div class="product-list mb-3 p-2">
     <div class="container">
       <div class="row">
-        <div class="col-md-12  ">
-          <a href="" style="color:red;text-decoration:none;font-size:30px">
-            <hr>Sản phẩm mới nhất
-            <hr>
+        <div class="col-md-12">
+          <a href="" style="color: red; text-decoration: none; font-size: 30px">
+            <hr>Sản phẩm nổi bật<hr>
           </a>
         </div>
       </div>
     </div>
 
     <?php
+      include_once($linkconnWebsite);
+      $valueCart = 20;
+      $sql = "SELECT * FROM sanpham LIMIT $valueCart";
+      $result = $connect->query($sql);
+      $duongdanimg = $linkImgSp;
 
-    include_once($linkconnWebsite);
-    $valueCart = 8;
-    $sql = "SELECT * FROM sanpham LIMIT $valueCart";
-    $result = $connect->query($sql);
-    $duongdanimg = $linkImgSp;
-
-    $dataArray = array();
-    if ($result->num_rows > 0) {
-      while ($row = $result->fetch_assoc()) {
-        $dataArray[] = $row;
+      $dataArray = array();
+      if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+          $dataArray[] = $row;
+        }
       }
-    }
-    // Đóng kết nối
-    $connect->close();
-
+      // Đóng kết nối
+      $connect->close();
     ?>
 
-    <!-- ________________Show thẻ_____________________ -->
     <div class="container text-center py-5">
       <div class="row">
-
-        <?php foreach ($dataArray as $data) : ?>
-
+        <?php foreach ($dataArray  as $data) : ?>
+          <?php if ($data['loaisp_ten'] === 'Điện thoại') : ?>
           <div class="col-lg-3 col-md-4 col-sm-6 py-2" id="font-card">
             <div id="card<?= $i ?>" class="card">
               <img src="<?= $duongdanimg . $data['sp_img'] ?>" class="card-img-top" alt="...">
               <div class="card-body">
                 <p class="card-title">
-                  <!-- Tên sản phẩm: -->
                   <strong><?= $data['sp_ten'] ?></strong>
                 </p>
-                <p class="card-text"> 
-                   <strong style="color:#f30;font-size:25px">
+                <p class="card-text">
+                  <strong style="color:#f30;font-size:25px">
                     <?= number_format($data['sp_gia'], 0, '.', ','); ?>
                     <sup>đ</sup>
                   </strong>
                 </p>
                 <a href="./product.php?sp_ma=<?= $data['sp_ma'] ?>" class="btn btn-primary">
                   <i class="fa-solid fa-cart-shopping"></i>
-
-                  Mua</a>
+                  Mua
+                </a>
               </div>
             </div>
           </div>
+          <?php endif; ?>
         <?php endforeach; ?>
-
       </div>
     </div>
 
+
+
+
+
+
+
+
+
+
+    <!-- trang2 -->
+    <div class="product-list mb-3 p-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <a href="" style="color: red; text-decoration: none; font-size: 30px">
+            <hr>Ốp lưng mới nhất<hr>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="container text-center py-5">
+      <div class="row">
+        <?php foreach ($dataArray  as $data) : ?>
+          <?php if ($data['loaisp_ten'] === 'Ốp lưng điện thoại') : ?>
+          <div class="col-lg-3 col-md-4 col-sm-6 py-2" id="font-card">
+            <div id="card<?= $i ?>" class="card">
+              <img src="<?= $duongdanimg . $data['sp_img'] ?>" class="card-img-top" alt="...">
+              <div class="card-body">
+                <p class="card-title">
+                  <strong><?= $data['sp_ten'] ?></strong>
+                </p>
+                <p class="card-text">
+                  <strong style="color:#f30;font-size:25px">
+                    <?= number_format($data['sp_gia'], 0, '.', ','); ?>
+                    <sup>đ</sup>
+                  </strong>
+                </p>
+                <a href="./product.php?sp_ma=<?= $data['sp_ma'] ?>" class="btn btn-primary">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  Mua
+                </a>
+              </div>
+            </div>
+          </div>
+          <?php endif; ?>
+        <?php endforeach; ?>
+      </div>
+    </div>
 
     <div class="text-center p-3">
       <a class="btn btn-primary" href="./List.php?page=1">Xem thêm</a>
     </div>
     <hr>
   </div>
-
-
+</body>
 </body>

@@ -17,8 +17,8 @@
    
     <h1 style="text-align: center; padding-top:40px;color:tomato">Danh mục sản phẩm</h1>
     <hr style="color:red">
-
-    <div> <?= isset($_GET["notifi"]) ? $_GET["notifi"] : '' ?></div>
+<!-- 
+    <div> <?= isset($_GET["notifi"]) ? $_GET["notifi"] : '' ?></div> -->
 
     <?php
     include_once($linkconnPages);
