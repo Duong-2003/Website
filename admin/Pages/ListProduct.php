@@ -93,7 +93,7 @@
                       </a></div>
                   </div>
                   <div class="col">
-                    <div class="p-2"><a href=<?=".Edit_product.php?datakey=" . $sp['sp_ma'] ?>>
+                    <div class="p-2"><a href=<?="Edit_product.php?datakey=" . $sp['sp_ma'] ?>>
                         <button type="submit" name="submit" type="button"  class="btn btn-dark">Sửa</button>
                       </a>
                     </div>

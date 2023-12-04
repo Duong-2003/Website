@@ -41,7 +41,7 @@
             <div class="row">
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="banner">
-                        <a href=""><img src=<?= $linkImgIndex . "img_3banner_1.webp" ?> alt="" style="height:auto;witdh:100%"></a>
+                    <a href= "" ><img src="<?= $linkImgIndex . "img_3banner_3.webp" ?>" alt="" style="height:auto;width:100%"></a>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -51,7 +51,7 @@
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
                     <div class="banner">
-                        <a href=""><img src=<?= $linkImgIndex . "img_3banner_3.webp" ?> alt="" style="height:auto;witdh:100%"></a>
+                        <a href=""><img src=<?= $linkImgIndex . "img_3banner_1.webp" ?> alt="" style="height:auto;witdh:100%"></a>
                     </div>
                 </div>
             </div>

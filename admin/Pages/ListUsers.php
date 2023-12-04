@@ -23,7 +23,7 @@
 
 
 <!-- Button trigger modal -->
-<button style="margin: 0 100px;" type="button" class="btn btn-primary my-2" data-bs-toggle="modal" data-bs-target="#AddProduct">
+<button style="margin: 0 300px;" type="button" class="btn btn-primary my-2" data-bs-toggle="modal" data-bs-target="#AddProduct">
  Thêm người dùng
 </button>
 
@@ -72,8 +72,7 @@
               <td><?= $user['email'] ?></td>
               <td><?= $user['pass'] ?></td>
               <td><?= $user['address'] ?></td>
-              <!-- <td><?= ($user['address'] == NULL ? 'Chưa nhập' : 'Đã nhập') ?></td> -->
-              <!-- <td><?= ($user['address'] == NULL ? 'Chưa nhập' : $user['address']) ?></td> -->
+
               <td><?= ($user['role'] ? 'admin' : 'user') ?></td>
               <td>
                 <div class="container text-center">

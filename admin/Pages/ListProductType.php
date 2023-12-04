@@ -3,7 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>Product List</title>
-
+<style>
+  a{
+    text-decoration: none;
+  }
+</style>
   </head>
   
   <body>
@@ -56,7 +60,7 @@
                     <div class="p-2"><a href=<?=$linkBE."DeleteSQL.php?key=loaisp_ten&table=loaisp&datakey=".$lsp['loaisp_ten']?>>Xóa</a></div>
                     </div>
                     <div class="col">
-                    <div class="p-2"><a href="">Sửa</a></div>
+                    <div class="p-2 "><a href="">Sửa</a></div>
                     </div>
                   </div>
                 </div>

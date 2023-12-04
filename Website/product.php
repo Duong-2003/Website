@@ -51,66 +51,6 @@
 
 
 
-        .km-hot {
-            position: relative;
-            background: #f7f7f7;
-            color: #000;
-            font-size: 14px;
-            padding: 0 0 10px;
-
-            border-radius: 5px;
-
-
-        }
-
-        .km-hot .title_km {
-            padding: 0 15px;
-            display: block;
-            font-weight: bold;
-            z-index: 5;
-        }
-
-        .km-hot .title_km span {
-            position: relative;
-            background: #cf5a51;
-            color: #fff;
-            text-transform: uppercase;
-            font-size: 18px;
-            padding: 5px 5px;
-
-
-        }
-
-        .km-hot .box-promotion {
-            padding: 5px 15px;
-            font-size: 14px;
-            position: relative;
-        }
-
-        .km-hot .box-promotion ul li {
-            padding-left: 17px;
-            position: relative;
-            margin-bottom: 7px;
-            line-height: 1.2;
-            font-size: 18px;
-            
-        }
-         .box-promotion ul li {
-            
-           color:#cf5a51
-        }
-
-        .km-hot .box-promotion ul li:before {
-            content: "";
-            width: 8px;
-            height: 8px;
-            background: #39b54a;
-            border-radius: 100%;
-            -webkit-border-radius: 100%;
-            position: absolute;
-            top: 5px;
-            left: 0px;
-        }
     </style>
 </head>
 
@@ -242,7 +182,26 @@
                             <strong id="item">Chi tiết: <?= $sp['sp_motachitiet'] ?></strong>
 
                         </div>
-                    </div>
+
+
+                   
+                        <div class="title_km">
+                            <h2 class="title_km">
+                                <span>Khuyến mãi - ưu đãi</span>
+                            </h2>
+                            <div class="box-promotion">
+
+                                <ul>
+                                    <li>Tặng tai nghe Airpod 3 chính hãng</li>
+                                    <li>Tăng ốp lưng chống sốc trị giá 200k</li>
+                                    <li>Tặng thêm 1 năm bảo hành miễn phí</li>
+                                    <li>Dán cường lực miễn phí trọn đời</li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    
+
                     <hr>
                     <div>
                         <div class="p-1" id='pay'>
@@ -271,23 +230,7 @@
 
 
 
-                    <div class="km-hot">
-                        <div class="box-km">
-                            <h2 class="title_km">
-                                <span>Khuyến mãi - ưu đãi</span>
-                            </h2>
-                            <div class="box-promotion">
-
-                                <ul>
-                                    <li>Tặng tai nghe Airpod 3 chính hãng</li>
-                                    <li>Tăng ốp lưng chống sốc trị giá 200k</li>
-                                    <li>Tặng thêm 1 năm bảo hành miễn phí</li>
-                                    <li>Dán cường lực miễn phí trọn đời</li>
-
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                 
 
 
 
@@ -361,3 +304,55 @@ include($linkFE . 'footer.php');
 ?>
 
 </html>
+
+<style>
+    
+   
+
+        .title_km {
+            padding: 0 15px;
+            display: block;
+            font-weight: bold;
+            z-index: 5;
+        }
+
+         .title_km span {
+            position: relative;
+            background: #cf5a51;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 18px;
+            padding: 5px 5px;
+            border-radius: 15px;
+
+        }
+
+   .box-promotion {
+            padding: 5px 15px;
+            font-size: 14px;
+            position: relative;
+        }
+
+      .box-promotion ul li {
+            padding-left: 17px;
+            position: relative;
+            margin-bottom: 7px;
+            line-height: 1.2;
+            font-size: 18px;
+            color:#cf5a51
+            
+        }
+         
+        /* ::before và ::after */
+      .box-promotion ul li:before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: #39b54a;
+            border-radius: 100%;
+            -webkit-border-radius: 100%;
+            position: absolute;
+            top: 5px;
+            left: 0px;
+        }
+</style>
