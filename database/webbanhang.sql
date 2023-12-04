@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2023 at 06:32 AM
+-- Generation Time: Dec 04, 2023 at 01:44 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -78,12 +78,17 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`sp_ma`, `loaisp_ten`, `sp_ten`, `sp_gia`, `sp_mota`, `sp_motachitiet`, `sp_img`, `sp_soluong`) VALUES
-(68, 'Điện thoại', 'IP !4 PRO MAX', '20', 'điện thoại promax siêu promax', 'điện thoại promax siêu promax', 'iphone-14-pro-max.webp', 100),
 (70, 'Điện thoại', 'IP 12 PRO MAX', '20000', 'ip 12 PRO MAX 64GB', 'ip 12 PRO MAX 64GB', 'iphone-12-64gb-chinh-hang-vn-a1.webp', 1),
 (74, 'Điện thoại', 'IP 11 PRO MAX', '20000', 'cũ', 'cũ', 'iphone-11-pro-max-64gb-chinh-hang-vna-1.webp', 2),
 (84, 'Điện thoại', 'IP XS PRO MAX 64GB', '20000', 'CHẤT LƯỢNG CŨ', 'CHẤT LƯỢNG CŨ', 'iphone-xs-cu-64gb-nguyen-ban-dep', 1),
 (85, 'Điện thoại', 'XIAOMI REDMI K60', '20000', '8GB 128GB BẢN CHÍNH HÃNG', '8GB 128GB BẢN CHÍNH HÃNG', 'Xiaomi redmi K60 pro 5g 8gb 128gb.webp', 1),
-(86, 'Điện thoại', 'REDMI NOTE 12 TURBO ', '20000', '256GB ', '256GB ', 'redmi-note-12-turbo-8gb-256gb-ch.webp', 1);
+(86, 'Điện thoại', 'REDMI NOTE 12 TURBO ', '20000', '256GB ', '256GB ', 'redmi-note-12-turbo-8gb-256gb-ch.webp', 1),
+(88, 'Ốp lưng điện thoại', 'Ốp lưng ', '1000', 'Ốp lưng xịn xò', 'Ốp lưng xịn xò', 'oplung1.jfif', 100),
+(89, 'Ốp lưng điện thoại', 'Ốp lưng ', '1000', 'Ốp lưng xìn xòa', 'Ốp lưng xìn xòa', 'oplung2.jfif', 100),
+(90, 'Ốp lưng điện thoại', 'Ốp lưng ', '1000', 'Ốp lưng ', 'Ốp lưng ', 'oplung3.jfif', 100),
+(91, 'Ốp lưng điện thoại', 'Ốp lưng ', '3334', 'Ốp lưng ', 'Ốp lưng ', 'oplung1.jfif', 12),
+(92, 'Điện thoại', 'IP 14 PRO MAX', '20000000', 'IP 14 PRO MAX', 'IP 14 PRO MAX', 'iphone-14-pro-max.webp', 100),
+(93, 'Điện thoại', 'IP XS PRO MAX', '20000000', 'IP 14 PRO MAX chất lựng đã cũ nhưng vẫn còn sai được ', 'IP 14 PRO MAX chất lựng đã cũ nhưng vẫn còn sai được ', 'iphone-xs-cu-64gb-nguyen-ban-dep', 15);
 
 -- --------------------------------------------------------
 
@@ -115,7 +120,6 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`name`, `pass`, `email`, `address`, `role`) VALUES
 ('1234', '$2y$10$68uAC8dUjwMJ0d3cpLfXIeZVzQl9xUqF8cHpHMoEn/De3FTfXddUK', 'admin3@gmail.com', 'Hồ Chí minh', 0),
-('admin', '1234', 'admin@gmail.com', 'Hà Nội', 1),
 ('admin14', '$2y$10$trvZXHb1JPblBG6v3bxwZ.Pp/FOO.ywnQmdcVof5CKkwI36EoZOBq', 'Admin20000@gmail.com', 'Hồ Chí minh1', 0),
 ('admin2', '1234', 'Admin2000@gmail.com', 'hà nội', 0),
 ('duong1234', '$2y$10$hSbSiP6ob///KHi/t/zP/.d6CotoPtKdXIIl.0fHmsdFlQDf.eRu.', 'Admin1@gmail.com', 'Hà nội1', 0);
@@ -165,13 +169,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `donhang`
 --
 ALTER TABLE `donhang`
-  MODIFY `donhang_ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `donhang_ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `sp_ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `sp_ma` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- Constraints for dumped tables
