@@ -63,7 +63,7 @@
       <div class="row">
         <div class="col-md-12">
           <a href="" style="color: red; text-decoration: none; font-size: 30px">
-            <hr>Sản phẩm nổi bật<hr>
+            <hr>Sản phẩm mới nhất<hr>
           </a>
         </div>
       </div>

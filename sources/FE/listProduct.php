@@ -169,41 +169,12 @@
                     </a>
 
 
-                    <div class="dropdown">
-                        <a href="#" class="btn btn-secondary dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Sắp Xếp
-                        </a>
-                        <div class="dropdown-content">
-                            <a href="#" style="cursor: pointer; border-radius:6px" class="menu-dropdown" id="menu-price">Theo giá</a>
-                            <a href="#" style="cursor: pointer;border-radius:6px" class="menu-dropdown" id="menu-reviews">Theo đánh giá</a>
-                            <a style="cursor: pointer;" class="menu-dropdown" id=""> Khác </a>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
 
-        <script>
-            var arrange = "<?php echo $arrange ?>";
-            var element;
-            if (arrange == "price") {
-                element = document.getElementById("menu-price");
-
-                console.log(element + " testt");
-            } else if (arrange == "reviews") {
-                element = document.getElementById("menu-reviews");
-            }
-            if (element)
-                element.style.backgroundColor = "#6464d8";
-
-            document.getElementById("menu-dr-price").addEventListener("click", function() {
-                if (arrange == "price")
-                    window.location.href = "./List.php?page=1";
-                else {
-                    window.location.href = "./List.php?page=1&&arrange=price";
-                }
-            });
-        </script>
+       
         <div class="container text-center py-5">
             <div class="row">
                 <?php foreach ($dataArray  as $data) : ?>
