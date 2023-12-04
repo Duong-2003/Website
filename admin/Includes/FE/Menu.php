@@ -35,7 +35,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div>
-        <a class="navbar-brand" href="#">TRANG QUẢN TRỊ ADMIN </a>
+        <a class="navbar-brand" href="#" style="font-family:'Courier New', Courier, monospace">TRANG QUẢN TRỊ ADMIN </a>
       </div>
       <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar">
         <div class="offcanvas-header">
