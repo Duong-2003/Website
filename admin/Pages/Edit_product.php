@@ -77,7 +77,7 @@
         <input type="hidden" name="sp_ma" value="<?= $sp['sp_ma'] ?>">
         <div class="input-group mb-3">
           <span class="input-group-text" id="">Tên sp<span style="color: red;">*</span></span>
-          <input value="<?= $sp['sp_ten'] ?>" name="sp_ten" type="text" class="form-control" >
+          <input value="<?= $sp['sp_ten'] ?>" name="sp_ten" type="text" class="form-control">
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text" id="">Tên Loại sp<span style="color: red;">*</span></span>
@@ -91,7 +91,7 @@
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text" id="">Giá sp<span style="color: red;">*</span></span>
-          <input value="<?= $sp['sp_gia'] ?>" name="sp_gia" type="text" class="form-control" >
+          <input value="<?= $sp['sp_gia'] ?>" name="sp_gia" type="text" class="form-control">
         </div>
         <div class="mb-3">
           <label for="exampleFormControlTextarea1" class="form-label">Mô tả sp</label>
@@ -103,11 +103,11 @@
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text" id="">Img<span style="color: red;">*</span></span>
-          <input name="sp_img" type="file" class="form-control" >
+          <input name="sp_img" type="file" class="form-control">
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text" id="">Số lượng<span style="color: red;">*</span></span>
-          <input value="<?= $sp['sp_soluong'] ?>" name="sp_soluong" type="number" min='0' value="1" class="form-control" >
+          <input value="<?= $sp['sp_soluong'] ?>" name="sp_soluong" type="number" min='0' value="1" class="form-control">
         </div>
         <button type="submit" name="submit" type="button" class="btn btn-dark">Sửa</button>
       </form>

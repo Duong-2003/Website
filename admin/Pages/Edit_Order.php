@@ -1,5 +1,3 @@
-
-
 <head>
     <meta charset="utf-8">
     <title>Product List</title>
@@ -102,7 +100,7 @@
         var selectElement = document.getElementById('select_trangthai');
         var selectedValue = selectElement.value;
         window.onload = showOtherInput(selectedValue);
-    
+
 
         // Lấy form và nút "Sửa"
         const form = document.querySelector("form");

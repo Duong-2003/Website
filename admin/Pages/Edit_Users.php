@@ -51,17 +51,17 @@
         </tr>
       </thead>
       <tbody>
-       
-          <tr>
-            <td><?= $user['name'] ?></td>
-            <td><?= $user['email'] ?></td>
-            <td><?= $user['pass'] ?></td>
-            <td><?= $user['address'] ?></td>
-            <td><?= ($user['role'] ? 'admin' : 'user') ?></td>
+
+        <tr>
+          <td><?= $user['name'] ?></td>
+          <td><?= $user['email'] ?></td>
+          <td><?= $user['pass'] ?></td>
+          <td><?= $user['address'] ?></td>
+          <td><?= ($user['role'] ? 'admin' : 'user') ?></td>
 
 
-          </tr>
-      
+        </tr>
+
       </tbody>
     </table>
 

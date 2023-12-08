@@ -21,19 +21,19 @@
     <h1 style="text-align: center; padding-top:40px;color:tomato">Danh sách người dùng</h1>
     <hr style="color:red">
 
+      <div class="container">
+    <!-- Button trigger modal -->
+    <button  type="button" class="btn btn-primary my-2" data-bs-toggle="modal" data-bs-target="#AddProduct">
+      Thêm người dùng
+    </button>
+    </div>
+    <?php
+    include_once($linkFE . "ModalAddUsers.php");
+    ?>
 
-<!-- Button trigger modal -->
-<button style="margin: 0 300px;" type="button" class="btn btn-primary my-2" data-bs-toggle="modal" data-bs-target="#AddProduct">
- Thêm người dùng
-</button>
-
-<?php
-  include_once($linkFE."ModalAddUsers.php");
-?>
 
 
 
-    
     <?php
     include_once($linkconnPages);
     $sql =  "SELECT * FROM users";

@@ -2,13 +2,14 @@
   <div class="modal-dialog">
     <div class="modal-content" style="margin: 150px 0px;">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Thêm người dùng</h1>
+        <h1 class="modal-title fs-5" id="">Thêm người dùng</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
       </div>
       <div id="error-message" class="text-danger" style="text-align:center ;font-size:25px" ></div>
       <div class="modal-body">
-      <div class="menu-content  " >
+      <div class="menu-content" >
+
       <form action=<?= $linkBE . "Add_Users.php" ?> method="post" enctype="multipart/form-data">
       <div class="input-group mb-3">
           <span class="input-group-text" id="name">Tên đăng nhập<span style="color: red;">*</span></span>
