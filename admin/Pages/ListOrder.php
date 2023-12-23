@@ -24,11 +24,11 @@
 
     <?php
     include_once($linkconnPages);
-    $sql =  "SELECT * FROM donhang";
+    $sql = "SELECT * FROM donhang";
     $result = $connect->query($sql);
 
     $danhsachdonhang = [];
-    while ($row =  mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+    while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
       $danhsachdonhang[] = array(
         'donhang_ma' => $row['donhang_ma'],
         'sp_ma' => $row['sp_ma'],
@@ -41,8 +41,12 @@
     }
 
     ?>
-    <div> <?= isset($_GET["notifi"]) ? $_GET["notifi"] : '' ?></div>
-    <div> <?= isset($_GET["error"]) ? $_GET["error"] : '' ?></div>
+    <div>
+      <?= isset($_GET["notifi"]) ? $_GET["notifi"] : '' ?>
+    </div>
+    <div>
+      <?= isset($_GET["error"]) ? $_GET["error"] : '' ?>
+    </div>
     <div class="container">
 
       <table id="danhsach" class=" table table-striped table-hover table-secondary table-bordered table-hover">
@@ -60,30 +64,46 @@
         </thead>
         <tbody>
           <?php
-          foreach ($danhsachdonhang as $donhang) :
-            $donhanggia =  number_format($donhang['donhang_gia'], 0, '.', ','); ?>
+          foreach ($danhsachdonhang as $donhang):
+            $donhanggia = number_format($donhang['donhang_gia'], 0, '.', ','); ?>
             <tr>
-              <td><?= $donhang['donhang_ma'] ?></td>
-              <td><?= $donhang['sp_ma'] ?></td>
-              <td><?= $donhang['name'] ?></td>
-              <td><?= $donhang['timeorder'] ?></td>
-              <td><?= $donhang['donhang_trangthai'] ?></td>
-              <td><?= $donhanggia ?></td>
-              <td><?= $donhang['donhang_soluongsp'] ?></td>
+              <td>
+                <?= $donhang['donhang_ma'] ?>
+              </td>
+              <td>
+                <?= $donhang['sp_ma'] ?>
+              </td>
+              <td>
+                <?= $donhang['name'] ?>
+              </td>
+              <td>
+                <?= $donhang['timeorder'] ?>
+              </td>
+              <td id="trangthai">
+                <?= $donhang['donhang_trangthai'] ?>
+              </td>
+              <td>
+                <?= $donhanggia ?>
+              </td>
+              <td>
+                <?= $donhang['donhang_soluongsp'] ?>
+              </td>
 
               <td>
                 <div class="container text-center">
                   <div class="row gx-5">
                     <div class="col">
-                      <div class=""><a data-bs-toggle="modal" data-bs-target="#infoOrder<?= $donhang['donhang_ma'] ?>" href="#">Thông tin</a></div>
+                      <div class=""><a data-bs-toggle="modal" data-bs-target="#infoOrder<?= $donhang['donhang_ma'] ?>"
+                          href="#">Thông tin</a></div>
                     </div>
                     <div class="col">
                       <div class="p-2"><a href="./Edit_Order.php?datakey=<?= $donhang['donhang_ma'] ?>">Sửa</a></div>
                     </div>
                     <?php
-                    if ($donhang['donhang_trangthai'] != "Đã hủy") : ?>
+                    if ($donhang['donhang_trangthai'] != "Đã hủy"): ?>
                       <div class="col">
-                        <div class="p-2"><a href="<?= $linkBE ?>OrderCancel.php?datakey=<?= $donhang['donhang_ma'] ?>">Huỷ đơn</a></div>
+                        <div class="p-2"><a href="<?= $linkBE ?>OrderCancel.php?datakey=<?= $donhang['donhang_ma'] ?>">Huỷ
+                            đơn</a></div>
                       </div>
                     <?php endif;
                     ?>
@@ -91,7 +111,7 @@
                 </div>
               </td>
             </tr>
-          <?php
+            <?php
           endforeach;
           ?>
         </tbody>
@@ -99,7 +119,7 @@
     </div>
   </div>
   <script>
-    $(document).ready(function() {
+    $(document).ready(function () {
       $('#danhsach').DataTable();
     });
   </script>

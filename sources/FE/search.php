@@ -9,8 +9,6 @@
 <body>
 
     <?php
-
-
     include($linkconnWebsite);
     $search = strtolower($_GET['search']);
     $arrange = isset($_GET['arrange']) ? $_GET['arrange'] : "";
@@ -28,9 +26,9 @@
     $stmt->execute();
     $result = $stmt->get_result();
 
-    if ($result->num_rows == 0) {
-        echo '<span style="color: red;font-size: 30px;">Không có sản phẩm nào có từ khóa: ' . htmlspecialchars($search) . '</span>';
-        exit();
+    if ($result->num_rows == 0) { echo '<span id ="error" style="color: red;font-size: 30px;">Không có sản phẩm nào có từ khóa: ' . htmlspecialchars($search) . '</span>';
+        
+       exit();
     }
 
     $duongdanimg = $linkImgSp;

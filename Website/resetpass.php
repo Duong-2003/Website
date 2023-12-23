@@ -75,7 +75,7 @@
           <div class="form-group">
             <strong>Email: <span style="color: red;">*</span></strong>
 
-            <input id="email" placeholder="Email của bạn" type="text" class="form-control" name="email" >
+            <input id="email" placeholder="Email của bạn" type="email" class="form-control" name="email" >
          
       </div>
       <div class="form-group">

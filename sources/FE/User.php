@@ -46,11 +46,7 @@ if (isset($loggedInUsername)) {
                         </div>
 
 
-
                         <div class="input-group mb-3">
-
-                            <span class="input-group-text" id="password">Mật khẩu<span style="color: red;">*</span></span>
-                            <input name="password" type="text" class="form-control" value="<?php echo $user['pass']; ?>" >
                             <a href="">  <button type="button" class="btn btn-dark">Đổi mật khẩu</button></a>
                         </div>
 

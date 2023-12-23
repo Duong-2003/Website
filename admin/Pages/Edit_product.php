@@ -17,18 +17,18 @@
   <div class="content" style="padding: 100px 30px;">
     <?php
     include_once($linkconnPages);
-    $sqlLSP =  "SELECT * FROM loaisp";
+    $sqlLSP = "SELECT * FROM loaisp";
     $resultLSP = $connect->query($sqlLSP);
 
     $danhsachLSP = [];
-    while ($row =  mysqli_fetch_array($resultLSP, MYSQLI_ASSOC)) {
+    while ($row = mysqli_fetch_array($resultLSP, MYSQLI_ASSOC)) {
       $danhsachLSP[] = array(
         'loaisp_ten' => $row['loaisp_ten'],
       );
     }
     $dataKey = $_GET['datakey'];
 
-    $sqlSP =  "SELECT * FROM sanpham WHERE sp_ma = '$dataKey'";
+    $sqlSP = "SELECT * FROM sanpham WHERE sp_ma = '$dataKey'";
     $result = $connect->query($sqlSP);
     if ($result->num_rows != 1) {
       echo ('ERROR');
@@ -51,14 +51,30 @@
       </thead>
       <tbody>
         <tr>
-          <td><?= $sp['sp_ma'] ?></td>
-          <td><?= $sp['sp_ten'] ?></td>
-          <td><?= $sp['loaisp_ten'] ?></td>
-          <td><?= number_format($sp['sp_gia'], 0, '.', ',') ?></td>
-          <td><?= $sp['sp_mota'] ?></td>
-          <td><?= $sp['sp_motachitiet'] ?></td>
-          <td><?= $sp['sp_img'] ?></td>
-          <td><?= $sp['sp_soluong'] ?></td>
+          <td>
+            <?= $sp['sp_ma'] ?>
+          </td>
+          <td>
+            <?= $sp['sp_ten'] ?>
+          </td>
+          <td>
+            <?= $sp['loaisp_ten'] ?>
+          </td>
+          <td>
+            <?= number_format($sp['sp_gia'], 0, '.', ',') ?>
+          </td>
+          <td>
+            <?= $sp['sp_mota'] ?>
+          </td>
+          <td>
+            <?= $sp['sp_motachitiet'] ?>
+          </td>
+          <td>
+            <?= $sp['sp_img'] ?>
+          </td>
+          <td>
+            <?= $sp['sp_soluong'] ?>
+          </td>
         </tr>
 
       </tbody>
@@ -84,7 +100,9 @@
           <select name="productType" class="form-select" aria-label="Default select example">
             <?php
             foreach ($danhsachLSP as $Lsp) : ?>
-              <option value="<?= $Lsp['loaisp_ten'] ?>"><?= $Lsp['loaisp_ten'] ?></option>
+              <option value="<?= $Lsp['loaisp_ten'] ?>">
+                <?= $Lsp['loaisp_ten'] ?>
+              </option>
             <?php endforeach;
             ?>
           </select>
@@ -101,9 +119,12 @@
           <label for="exampleFormControlTextarea1" class="form-label">Mô tả sp chi tiết<span style="color: red;">*</span></span></label>
           <textarea name="sp_motachitiet" class="form-control" id="exampleFormControlTextarea1" rows="3"><?= $sp['sp_motachitiet'] ?></textarea>
         </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" onchange="toggleSection()" id="checkbox_Img">
+          <label class="form-check-label" for="flexCheckDefault">Sửa ảnh sản phẩm</label>
+        </div>
         <div class="input-group mb-3">
-          <span class="input-group-text" id="">Img<span style="color: red;">*</span></span>
-          <input name="sp_img" type="file" class="form-control">
+          <input name="sp_img" type="file" class="form-control" id="input_Img" style="display:none">
         </div>
         <div class="input-group mb-3">
           <span class="input-group-text" id="">Số lượng<span style="color: red;">*</span></span>
@@ -127,6 +148,19 @@
       });
     }
   }
+
+  function toggleSection() {
+    var checkBoxImg = document.getElementById("checkbox_Img");
+    var inputImg = document.getElementById("input_Img");
+
+    // Kiểm tra trạng thái của checkbox và ẩn/hiện phần tử tương ứng
+    if (checkBoxImg.checked) {
+      inputImg.style.display = "block";
+    } else {
+      inputImg.style.display = "none";
+      inputImg.value = null;
+    }
+  }
   // Lấy form và nút "Sửa"
   const form = document.querySelector("form");
   const submitButton = document.querySelector('button[name="submit"]');
@@ -138,7 +172,6 @@
     const productNewType = document.querySelector('select[name="productType"]').value;
     const productNewPrice = document.querySelector('input[name="sp_gia"]').value;
     const productNewDetail = document.querySelector('textarea[name="sp_motachitiet"]').value;
-    const productNewImage = document.querySelector('input[name="sp_img"]').value;
     const productNewQuantity = document.querySelector('input[name="sp_soluong"]').value;
 
     if (

@@ -16,13 +16,13 @@ if(isset($_POST['submit']) && $_POST['username'] != '' && $_POST['password'] != 
     if($password != $rePass)
     {
         $connect->close();
-        $error = 'Nhập lại mật khẩu sai';
+        $error = 'Mật khẩu nhập lại không giống';
         header("location:".$linkWebsite."register.php?error=".$error);
     }
     $checkQuery = "SELECT * FROM users WHERE name = '$username'";
     $result = $connect->query($checkQuery);
     if ($result->num_rows > 0) {
-        $error = 'Tên đăng nhập đã tồn tại';
+        $error = 'Tài khoản đã tồn tại';
         header("location:".$linkWebsite."register.php?error=".$error);
     }
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);

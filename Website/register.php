@@ -59,7 +59,7 @@
             <strong>Email: </strong>
 
 
-            <input id="email" placeholder="Email để lấy lại mật khẩu" type="text" class="form-control" name="email" >
+            <input id="email" placeholder="Email để lấy lại mật khẩu" type="email" class="form-control" name="email" >
 
           </div>
           <div class="form-group">
@@ -93,7 +93,7 @@
           <div class="text-center p-3">
             <button type="submit" name="submit" id="reg_submit" class="btn btn-primary">Đăng ký</button>
           
-            <a class="btn btn-primary" href="./login.php">Đăng nhập</a>
+            <!-- <a class="btn btn-primary" href="./login.php">Đăng nhập</a> -->
             <a class="btn btn-danger" href="./resetpass.php">Quên mật khẩu</a>
           </div>
         </form>

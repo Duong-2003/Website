@@ -70,14 +70,9 @@
 
 
         .hidden-header {
-            /* display: none; */
             opacity: 0;
+            pointer-events: none;
         }
-
-
-
-
-
 
 
         @media screen and (max-width: 456px) {
@@ -162,46 +157,25 @@
     </style>
 </head>
 <script>
-    window.onscroll = function() {
-        var header = document.getElementById("header");
-        if (window.pageYOffset > 100) {
-            header.classList.add("hidden-header");
-        } else {
-            header.classList.remove("hidden-header");
-        }
-    };
-
-    window.onscroll = function() {
-        var header = document.getElementById("header");
-        if (window.pageYOffset < 100) {
-            header.classList.remove("hidden-header");
-        } else {
-            header.classList.add("hidden-header");
-        }
-    };
-
-
-    if (window.pageYOffset >= 100) {
-        header.classList.add("hidden-header");
-    } else {
-        handleScrollDirection();
-    };
+    handleScrollDirection();
 
     function handleScrollDirection() {
         var lastScrollTop = 0;
 
         window.addEventListener("scroll", function() {
-            var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            if (window.pageYOffset >= 100) {
+                var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-            if (currentScroll > lastScrollTop) {
-                // Hành động khi người dùng cuộn chuột xuống
-                header.classList.add("hidden-header");
-            } else {
-                // Hành động khi người dùng cuộn chuột lên
-                header.classList.remove("hidden-header");
+                if (currentScroll > lastScrollTop) {
+                    // Hành động khi người dùng cuộn chuột xuống
+                    header.classList.add("hidden-header");
+                } else {
+                    // Hành động khi người dùng cuộn chuột lên
+                    header.classList.remove("hidden-header");
+                }
+
+                lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Đảm bảo giá trị không âm
             }
-
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Đảm bảo giá trị không âm
         });
     }
 
@@ -235,7 +209,6 @@
 
         // Xử lý thay đổi icone user
         function myFunction() {
-            console.log(username);
             if (typeof username !== 'undefined' && username !== null) {
                 console.log("Đăng nhập: " + username);
                 var newElement = document.getElementById("ic-user");
@@ -255,7 +228,9 @@
     <div class="dropdown" id="ic-user" style="display: none;">
         <a href="#">
             <img src="https://avatars.githubusercontent.com/u/125018793?s=400&u=d66a7dc1d555eb23d223fe07b638e9701a5735be&v=4" alt="" width="32" height="32" class="rounded-circle me-2">
-            <strong><?= $loggedInUsername ?></strong>
+            <strong>
+                <?= $loggedInUsername ?>
+            </strong>
         </a>
         <div class="dropdown-content">
             <a href="#" data-bs-toggle="modal" data-bs-target="#User" class="menu-dropdown">Thông tin</a>
@@ -277,7 +252,7 @@
                 <div class="col-lg-3 col-md-12 text-white " style="text-align:center;padding: 8px 0;">
                     <form action="./listSearch.php" method="GET">
                         <div class="input-group mb-3 " id="header-input" style="padding:5px 5px">
-                            <input id="searchInput" type="text" class="form-control" placeholder="Nội dung tìm kiếm" name="search">
+                            <input id="searchInput" type="text" class="form-control" placeholder="Nội dung tìm kiếm" name="search">                            
                             <span class="input-group-text" style="background-color:#9fa3fe;">
                                 <a style="cursor: pointer;" id="searchClick" name="searchClick">
                                     <i class="fa fa-search" aria-hidden="true"></i>
@@ -290,11 +265,19 @@
 
             <script>
                 var inputSearch = document.getElementById('searchInput');
-               
+                document.getElementById("searchInput").addEventListener("keydown", function(event) {
+                    if (event.key === "Enter") {
+                        if (this.value.trim() === "") {
+                            event.preventDefault();
+                            alert("Vui lòng nhập dữ liệu để tìm kiếm!");
+                        }
+                    }
+                });
                 document.getElementById("searchClick").addEventListener("click", function() {
                     Search();
                 });
-                function Search(){
+
+                function Search() {
                     var searchValue = inputSearch.value;
                     if (searchValue) {
                         window.location.href = "./listSearch.php?search=" + searchValue;
